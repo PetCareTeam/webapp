@@ -516,7 +516,7 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<version>2.3</version>
 				<configuration>
-					<warName>petCare</warName>
+					<warName>petCareWeb</warName>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -563,7 +563,8 @@
 					<server>tomcat-development-server</server>
 					
 					<port>9966</port>
-					<path>/petCare</path>
+					<path>/petCareWeb</path>
+					
 				</configuration>
 			</plugin>
 		</plugins>

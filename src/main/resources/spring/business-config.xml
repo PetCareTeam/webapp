@@ -11,28 +11,27 @@
 
 	<!-- ========================= RESOURCE DEFINITIONS ========================= -->
 
-	<!-- import the dataSource definition -->
-	<!-- <import resource="datasource-config.xml" /> -->
-
-	<!-- <context:component-scan base-package="mk.ukim.finki.sih.webtv.service" /> -->
-	
-
 	<!-- Configurer that replaces ${...} placeholders with values from a properties 
-		file -->
-	<!-- (in this case, JDBC-related settings for the JPA EntityManager definition 
+		file (in this case, JDBC-related settings for the JPA EntityManager definition 
 		below) -->
-	<!-- <context:property-placeholder location="classpath:spring/data-access.properties"
-		system-properties-mode="OVERRIDE" /> -->
+	<context:property-placeholder location="classpath:spring/data-access.properties" order="1"
+		ignore-unresolvable="true"/>
+
+	<!-- import the dataSource definition -->
+	<import resource="datasource-config.xml" />
+
+	<context:component-scan base-package="mk.ukim.finki.wp.service" />
+	<!-- <context:component-scan base-package="mk.ukim.finki.wp.repository" 
+		/> <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"> 
+		<property name="dataSource" ref="dataSource" /> <property name="packagesToScan" 
+		value="mk.ukim.finki.wp.model" /> </bean> <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager" 
+		p:sessionFactory-ref="sessionFactory" /> -->
 
 	<!-- enables scanning for @Transactional annotations -->
-	<!-- <tx:annotation-driven />
+	<tx:annotation-driven />
 
-	<beans profile="spring-data-jpa">
-
-		<jpa:repositories base-package="mk.ukim.finki.sih.webtv.repository" />
-
-
-
+	<beans>
+		<jpa:repositories base-package="mk.ukim.finki.wp.repository" />
 		<bean id="entityManagerFactory"
 			class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
 			p:dataSource-ref="dataSource">
@@ -40,22 +39,18 @@
 				<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"
 					p:database="${jpa.database}" p:generateDdl="${jpa.generateDDL}"
 					p:showSql="${jpa.showSQL}" />
-
-
 			</property>
-			<property name="persistenceUnitName" value="webtv" />
-			<property name="packagesToScan" value="mk.ukim.finki.sih.webtv" />
+			<property name="persistenceUnitName" value="wp" />
+			<property name="packagesToScan" value="mk.ukim.finki.wp" />
 		</bean>
-
 		<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"
-			p:entityManagerFactory-ref="entityManagerFactory" /> -->
+			p:entityManagerFactory-ref="entityManagerFactory" />
+		<bean
+			class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+	</beans>
 
-
-		<!-- Post-processor to perform exception translation on @Repository classes 
-			(from native exceptions such as JPA PersistenceExceptions to Spring's DataAccessException 
-			hierarchy). -->
-		<!-- <bean
-			class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" /> -->
-	<!-- </beans> -->
+	<!-- Post-processor to perform exception translation on @Repository classes 
+		(from native exceptions such as JPA PersistenceExceptions to Spring's DataAccessException 
+		hierarchy). -->
 
 </beans>
