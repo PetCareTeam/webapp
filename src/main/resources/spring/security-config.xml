@@ -41,7 +41,7 @@
 
 	<bean id="unauthorizedEntryPoint" class="mk.ukim.finki.sih.webtv.web.rest.auth.UnauthorizedEntryPoint" />
 
-	<bean id="authTokenFilter" class="mk.ukim.finki.sih.webtv.web.rest.auth.AuthenticationTokenProcessingFilter" />
+	<bean id="authTokenFilter" class="mk.ukim.finki.sih.webtv.web.rest.auth.AuthenticationTokenProcessingFilter"  />
 
 
 </beans>

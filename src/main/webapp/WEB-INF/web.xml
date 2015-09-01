@@ -3,13 +3,10 @@
   <display-name>Web Programming Starter Project</display-name>
   <description>Project used for the Web Programming Subject</description>
  
-<context-param>
- 
- <param-name>contextConfigLocation</param-name>
- <param-value>classpath:spring/business-config.xml</param-value>
- 
-</context-param>
- 
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:spring/business-config.xml; classpath:spring/security-config-static.xml</param-value>
+	</context-param>
  
   <!-- Postoi samo eden application context na nivo na celata aplikacija. Ovoj del sluzi za vcituvanje na spring vo aplikacijata:Spring can be easily integrated into any Java-based web framework.
    All you need to do is to declare the ContextLoaderListener in your web.xml and use a contextConfigLocation to set which context files to load.
@@ -44,5 +41,16 @@
         <url-pattern>/</url-pattern>
        
   </servlet-mapping>
+  
+<!-- Spring Security -->  
+ <filter>  
+  <filter-name>springSecurityFilterChain</filter-name>  
+  <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>  
+ </filter>  
+  
+ <filter-mapping>  
+  <filter-name>springSecurityFilterChain</filter-name>  
+  <url-pattern>/*</url-pattern>  
+ </filter-mapping> 
  
 </web-app>
