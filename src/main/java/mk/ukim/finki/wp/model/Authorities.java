@@ -11,7 +11,7 @@ import javax.persistence.Table;
 public class Authorities extends BaseEntity{
 
 	@ManyToOne
-	@JoinColumn(name = "username")
+	@JoinColumn(name = "username",unique=true)
 	private PetUser username;
 	
 	@Column(name="rolename")

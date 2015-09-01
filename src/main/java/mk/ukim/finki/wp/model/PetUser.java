@@ -2,23 +2,22 @@ package mk.ukim.finki.wp.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
-import org.springframework.web.multipart.MultipartFile;
+import org.hibernate.validator.constraints.Email;
 
 @Entity
 @Table(name="users")
 public class PetUser {
 	
 	@Id
-	@Column(name="username",nullable=false)
+	@Email(message="Invalid email address")
+	@Column(name="username",nullable=false,unique=true)
 	private String username;
 	
+	@Size(min=4,max=10,message="password must be beetween 4 and 10 characters")
 	@Column(name="password",nullable=false)
 	private String password;
 	

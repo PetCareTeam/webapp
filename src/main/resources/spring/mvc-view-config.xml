@@ -29,8 +29,6 @@
 			</list>
 		</property>
 	</bean>
-	<bean id="fileValidator"
-		class="mk.ukim.finki.wp.validator.FileValidator" />
 
 	<bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
