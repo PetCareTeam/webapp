@@ -193,6 +193,8 @@
 			<artifactId>spring-security-ldap</artifactId>
 			<version>${spring-security.version}</version>
 		</dependency>
+		
+
 
 		<!-- Database connection pool See here for more details on commons-dbcp 
 			versus tomcat-jdbc: http://blog.ippon.fr/2013/03/13/improving-the-performance-of-the-spring-petclinic-sample-application-part-3-of-5/ -->

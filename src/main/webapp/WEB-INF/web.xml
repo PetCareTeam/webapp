@@ -41,6 +41,18 @@
         <url-pattern>/</url-pattern>
        
   </servlet-mapping>
+
+	<!-- <servlet>
+        <servlet-name>FileUploadHandler</servlet-name>
+        <servlet-class>mk.ukim.finki.wp.handlers.FileUploadHandler</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>FileUploadHandler</servlet-name>
+        <url-pattern>/done</url-pattern>
+    </servlet-mapping>
+ -->
+
   
 <!-- Spring Security -->  
  <filter>  
