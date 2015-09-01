@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>Web Programming Starter Project</display-name>
+  <description>Project used for the Web Programming Subject</description>
+ 
+<welcome-file-list>
+	<welcome-file>jsp/index.jsp</welcome-file>
+</welcome-file-list>
+
+<context-param>
+ 
+ <param-name>contextConfigLocation</param-name>
+ <param-value>classpath:spring/business-config.xml</param-value>
+ 
+</context-param>
+ 
+ 
+  <!-- Postoi samo eden application context na nivo na celata aplikacija. Ovoj del sluzi za vcituvanje na spring vo aplikacijata:Spring can be easily integrated into any Java-based web framework.
+   All you need to do is to declare the ContextLoaderListener in your web.xml and use a contextConfigLocation to set which context files to load.
+    -->
+<listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+</listener>  
+ 
+ 
+  <!-- Web Application Context sluzi za veb delot od aplikacijata i dete na Application Context, odnosno dobra praksa e da se razdelat Application i Web
+  Application Context. Sekoj dispatcher servlet definiran vo Spring Web Aplikacija kje ima svoj WebApplicationContext.
+  Vo ovoj del se definiraat views, controllers, handlers etc...
+   -->
+ 
+<servlet>
+       
+        <servlet-name>springDispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+       
+        <init-param>
+                <param-name>contextConfigLocation</param-name>
+                <param-value>classpath:spring/mvc-core-config.xml</param-value>
+        </init-param>
+       
+        <load-on-startup>1</load-on-startup>
+ 
+</servlet>  
+ 
+  <servlet-mapping>
+       
+        <servlet-name>springDispatcher</servlet-name>
+        <url-pattern>/</url-pattern>
+       
+  </servlet-mapping>
+ 
+</web-app>
