@@ -28,7 +28,7 @@ public class RegisterServiceImpl implements PetUserService {
 	}
 
 	@Override
-	public PetUser register(String username, String password, String firstName, String lastName, String profileImage,int enabled) {
+	public PetUser register(String username, String password, String firstName, String lastName, byte[] profileImage,int enabled) {
 			PetUser newUser = new PetUser();
 			newUser.setUsername(username);
 			newUser.setPassword(password);

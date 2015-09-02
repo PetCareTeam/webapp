@@ -43,9 +43,7 @@ http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 		<security:logout logout-success-url="/login?logout" />
 
 		<security:intercept-url pattern="/admin"
-			access="permitAll" />
-				<security:intercept-url pattern="/login"
-			access="permitAll" />
+			access="hasRole('ROLE_USER')" />
 		<security:intercept-url pattern="/users/post"
 			access="hasRole('ROLE_USER')" />
 		<security:intercept-url pattern="/users/get"

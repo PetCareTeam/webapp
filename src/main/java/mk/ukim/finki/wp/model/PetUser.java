@@ -3,6 +3,7 @@ package mk.ukim.finki.wp.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
@@ -27,8 +28,9 @@ public class PetUser {
 	@Column(name="lastName",nullable=false)
 	private String lastName;
 	
+	@Lob
 	@Column(name="profileImage",nullable=true)
-	private String profileImage;
+	private byte[] profileImage;
 	
 	@Column(name="enabled", nullable=false)
 	private int enabled;
@@ -37,27 +39,30 @@ public class PetUser {
 		return enabled;
 	}
 
-
-
-
-
-
 	public void setEnabled(int enabled) {
 		this.enabled = enabled;
 	}
-
-
-
-
-
 
 	public PetUser() {
 		// TODO Auto-generated constructor stub
 	}
 
-	
+	public byte[] getProfileImage() {
+		return profileImage;
+	}
 
-	
+
+
+
+
+
+	public void setProfileImage(byte[] profileImage) {
+		this.profileImage = profileImage;
+	}
+
+
+
+
 
 
 	public String getUsername() {
@@ -67,24 +72,6 @@ public class PetUser {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-
-	public String getProfileImage() {
-		return profileImage;
-	}
-
-
-
-
-
-
-	public void setProfileImage(String profileImage) {
-		this.profileImage = profileImage;
-	}
-
-
-
-
-
 
 	public String getPassword() {
 		return password;

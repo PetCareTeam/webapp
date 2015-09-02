@@ -10,9 +10,9 @@
 <body>
 
 	<h1>${user.username}</h1>
-	${user.profileImage}
-	<img src="C:\Users\Denicija\Pictures\webcam-toy-photo1.jpg" alt="my image" />
-	<form action="post" method="post" commandName="petuser">
+	
+	<img src="denicija.jpg"/>
+	<form action="post" method="post">
 		<p>Enter comment text:</p>
 		<textarea name="message" rows="5" cols="20"></textarea>
 		
