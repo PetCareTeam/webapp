@@ -1,5 +1,7 @@
 package mk.ukim.finki.wp.model;
 
+import java.util.Collection;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -8,6 +10,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
+import org.springframework.security.core.GrantedAuthority;
 
 @Entity
 @Table(name="users")
@@ -43,8 +46,20 @@ public class PetUser {
 		this.enabled = enabled;
 	}
 
+	
 	public PetUser() {
-		// TODO Auto-generated constructor stub
+		super();
+	}
+
+	public PetUser(String username, String password, String firstName,
+			String lastName, byte[] profileImage, int enabled) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.profileImage = profileImage;
+		this.enabled = enabled;
 	}
 
 	public byte[] getProfileImage() {
