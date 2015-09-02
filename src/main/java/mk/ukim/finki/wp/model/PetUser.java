@@ -51,19 +51,9 @@ public class PetUser {
 		return profileImage;
 	}
 
-
-
-
-
-
 	public void setProfileImage(byte[] profileImage) {
 		this.profileImage = profileImage;
 	}
-
-
-
-
-
 
 	public String getUsername() {
 		return username;

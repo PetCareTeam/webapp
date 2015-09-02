@@ -9,8 +9,8 @@
 			${user.firstName}
 			<br>
 			${user.lastName}
-			<br>
-			oVa e slika ${user.profileImage}
+			<br> 
+			<img src="data:image/jpg;base64,${pic}" />
 			| <a href="/petCareWeb/j_spring_security_logout" > Logout</a>
 		</h2>
 	</c:if>

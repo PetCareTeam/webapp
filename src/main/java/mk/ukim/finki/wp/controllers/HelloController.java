@@ -1,8 +1,13 @@
 package mk.ukim.finki.wp.controllers;
 
+import java.util.List;
+
 import mk.ukim.finki.wp.model.Authorities;
+import mk.ukim.finki.wp.model.Comment;
+import mk.ukim.finki.wp.model.FilePicture;
 import mk.ukim.finki.wp.model.PetUser;
 import mk.ukim.finki.wp.service.AuthoritiesService;
+import mk.ukim.finki.wp.service.CommentService;
 import mk.ukim.finki.wp.service.PetUserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +24,9 @@ public class HelloController {
 	
 	@Autowired
 	PetUserService user_service;
+	
+	@Autowired
+	CommentService comment_service;
 
 	
 	@RequestMapping(value = { "/", "/welcome**" }, method = RequestMethod.GET)
@@ -35,36 +43,26 @@ public class HelloController {
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)
 	public ModelAndView profilePage() {
 		ModelAndView model = new ModelAndView();
-		model.setViewName("admin");
+		model.setViewName("profile");
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String username = auth.getName();
 		PetUser user=user_service.findUser(username);
-		
 		if(user!=null)
 		{
 			model.addObject("user", user);
+			String pic=FilePicture.getBytes(user.getProfileImage());
+			List<Comment> comments=comment_service.findByPet(user);
+			model.addObject("comments",comments);
+			model.addObject("pic",pic);
 		}
 		
 		
 		return model;
 	}
-	
-	/*@RequestMapping(value="/login", method = RequestMethod.POST)
-	public ModelAndView log(@ModelAttribute("user") User user, BindingResult result){
-		
-		ModelAndView mav=new ModelAndView();
-		mav.setViewName("profile");
-		
-		U user=service.register(petuser.getUsername(), petuser.getPassword(),
-				petuser.getFirstName(),petuser.getLastName(),"C:\\Users\\Denicija\\Pictures\\20150724_233039.jpg");
-		
-		//System.out.println("/////////////////////////////////// " + user.getUsername() + "   " + user.getPassword() + "Picture " +picturePath);
-		
-		mav.addObject("user",user);
-		return mav;
-		
-	}*/
-
+	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	public String entry() {
+		return "index";
+	}
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public ModelAndView login(
 		@RequestParam(value = "error", required = false) String error,

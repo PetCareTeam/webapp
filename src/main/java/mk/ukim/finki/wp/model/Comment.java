@@ -1,16 +1,20 @@
 package mk.ukim.finki.wp.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.joda.time.DateTime;
 
 @Entity
 @Table(name="comments")
 public class Comment extends BaseEntity {
-	
 	
 	@ManyToOne
 	private PetUser pet;
@@ -19,7 +23,8 @@ public class Comment extends BaseEntity {
 	public String message;
 	
 	@Column(name="time_post")
-	public DateTime time_post;
+	@Temporal(TemporalType.TIMESTAMP)
+	public Date time_post;
 	
 	@Column(name="longitude")
 	public double longitude;
@@ -30,8 +35,9 @@ public class Comment extends BaseEntity {
 	@Column(name="type")
 	public String type;
 	
+	@Lob
 	@Column(name="image_comment")
-	public String image_comment;
+	public byte[] image_comment;
 	
 	@Column(name="contact_phone")
 	public String contact_phone;
@@ -39,9 +45,9 @@ public class Comment extends BaseEntity {
 	public Comment() {
 		super();
 	}
-	public Comment(PetUser username, String message, DateTime time_post,
+	public Comment(PetUser username, String message, Date time_post,
 			double longitude, double latitude, String type,
-			String image_comment, String contact_phone) {
+			byte[] image_comment, String contact_phone) {
 		super();
 		this.pet = username;
 		this.message = message;
@@ -53,14 +59,14 @@ public class Comment extends BaseEntity {
 		this.contact_phone = contact_phone;
 	}
 
-	public PetUser getUsername() {
+
+
+	public PetUser getPet() {
 		return pet;
 	}
-
-	public void setUsername(PetUser username) {
-		this.pet = username;
+	public void setPet(PetUser pet) {
+		this.pet = pet;
 	}
-
 	public String getMessage() {
 		return message;
 	}
@@ -69,14 +75,13 @@ public class Comment extends BaseEntity {
 		this.message = message;
 	}
 
-	public DateTime getTime_post() {
+
+	public Date getTime_post() {
 		return time_post;
 	}
-
-	public void setTime_post(DateTime time_post) {
+	public void setTime_post(Date time_post) {
 		this.time_post = time_post;
 	}
-
 	public double getLongitude() {
 		return longitude;
 	}
@@ -101,14 +106,12 @@ public class Comment extends BaseEntity {
 		this.type = type;
 	}
 
-	public String getImage_comment() {
+	public byte[] getImage_comment() {
 		return image_comment;
 	}
-
-	public void setImage_comment(String image_comment) {
+	public void setImage_comment(byte[] image_comment) {
 		this.image_comment = image_comment;
 	}
-
 	public String getContact_phone() {
 		return contact_phone;
 	}

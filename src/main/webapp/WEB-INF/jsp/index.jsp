@@ -17,7 +17,7 @@
     <title>WP Todo List</title>
 
     <!-- Bootstrap core CSS -->
-    
+    ${pageContext.request.contextPath}
     <link href="${pageContext.request.contextPath}/resources/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/resources/bower_components/bootstrap/dist/css/font-awesome.min.css" rel="stylesheet">
 	
@@ -59,7 +59,7 @@
     <script src="${pageContext.request.contextPath}/resources/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/bower_components/jquery-cookie/jquery.cookie.js"></script>
     <script src="${pageContext.request.contextPath}/resources/bower_components/momentjs/min/moment-with-langs.min.js"></script>
-    <%-- <script src="${pageContext.request.contextPath}/resources/bower_components/bootstrap/dist/js/bootstrap.min.js"></script> --%>
+    <script src="${pageContext.request.contextPath}/resources/bower_components/bootstrap/dist/js/bootstrap.min.js"></script> 
     <script src="${pageContext.request.contextPath}/resources/bower_components/ng-file-upload/angular-file-upload-shim.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/bower_components/angular/angular.js"></script>
     <script src="${pageContext.request.contextPath}/resources/bower_components/angular-resource/angular-resource.js"></script>

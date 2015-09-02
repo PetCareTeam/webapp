@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@page session="true"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,6 +8,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-${comment.message}
+${comment.message}<br>
+${comment.pet.firstName}<br>
+${comment.time_post}<br>
+${comment.type}<br> 
+<img src="data:image/jpg;base64,${pic}"	height="200" width="150" />
 </body>
 </html>
