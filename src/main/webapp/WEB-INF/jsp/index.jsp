@@ -17,7 +17,6 @@
     <title>WP Todo List</title>
 
     <!-- Bootstrap core CSS -->
-    ${pageContext.request.contextPath}
     <link href="${pageContext.request.contextPath}/resources/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/resources/bower_components/bootstrap/dist/css/font-awesome.min.css" rel="stylesheet">
 	

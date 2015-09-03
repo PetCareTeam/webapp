@@ -24,7 +24,7 @@ http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 		authorities-by-username-query="
         SELECT u.USERNAME, r.ROLENAME
         FROM USERS u, USER_ROLE r
-        WHERE u.username = r.username
+        WHERE u.id = r.pet
         AND u.USERNAME=?;" /> 
 
 
@@ -44,7 +44,7 @@ http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
 		<security:intercept-url pattern="/admin"
 			access="hasRole('ROLE_USER')" />
-		<security:intercept-url pattern="/users/post"
+		<security:intercept-url pattern="/post"
 			access="hasRole('ROLE_USER')" />
 		<security:intercept-url pattern="/users/get"
 			access="hasRole('ROLE_USER')" />

@@ -11,7 +11,9 @@ public interface PetUserService {
 	
 	public List<PetUser> getUsers();
 	
-	public PetUser findUser(String username);
+	public PetUser findUser(Long id);
+	
+	public PetUser findByUsername(String username);
 	
 	
 	

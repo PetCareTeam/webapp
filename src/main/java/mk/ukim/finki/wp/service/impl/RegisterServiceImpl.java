@@ -23,8 +23,8 @@ public class RegisterServiceImpl implements PetUserService {
 	}
 
 	@Override
-	public PetUser findUser(String username) {
-	return repository.findOne(username);
+	public PetUser findUser(Long id) {
+	return repository.findOne(id);
 	}
 
 	@Override
@@ -42,4 +42,10 @@ public class RegisterServiceImpl implements PetUserService {
 			return newUser;
 			
 		}
+
+	@Override
+	public PetUser findByUsername(String username) {
+		PetUser user=repository.findByUsername(username);
+		return user;
+	}
 }

@@ -90,9 +90,6 @@
   	<script src="${pageContext.request.contextPath}/resources/js/controllers.js"></script>
   	<script src="${pageContext.request.contextPath}/resources/js/router.js"></script>
   	
-  	
-  	
-  	
   	<toaster-container toaster-options="{'time-out': 3000}"></toaster-container>
   </body>
 </html>

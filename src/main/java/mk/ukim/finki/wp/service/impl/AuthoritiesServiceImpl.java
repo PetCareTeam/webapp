@@ -15,10 +15,10 @@ public class AuthoritiesServiceImpl implements AuthoritiesService {
 	AuthoritiesRepository repository;
 
 	@Override
-	public Authorities save_role(PetUser username, String role) {
+	public Authorities save_role(PetUser pet, String role) {
 		Authorities auth=new Authorities();
 		auth.setAuthority(role);
-		auth.setUsername(username);
+		auth.setPet(pet);
 		repository.save(auth);
 		return auth;
 	}

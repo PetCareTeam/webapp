@@ -2,11 +2,9 @@ package mk.ukim.finki.wp.controllers;
 
 import java.util.List;
 
-import mk.ukim.finki.wp.model.Authorities;
 import mk.ukim.finki.wp.model.Comment;
 import mk.ukim.finki.wp.model.FilePicture;
 import mk.ukim.finki.wp.model.PetUser;
-import mk.ukim.finki.wp.service.AuthoritiesService;
 import mk.ukim.finki.wp.service.CommentService;
 import mk.ukim.finki.wp.service.PetUserService;
 
@@ -14,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -39,6 +38,7 @@ public class HelloController {
 		return model;
 
 	}
+	
 
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)
 	public ModelAndView profilePage() {
@@ -46,7 +46,7 @@ public class HelloController {
 		model.setViewName("profile");
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String username = auth.getName();
-		PetUser user=user_service.findUser(username);
+		PetUser user=user_service.findByUsername(username);
 		if(user!=null)
 		{
 			model.addObject("user", user);
@@ -58,10 +58,6 @@ public class HelloController {
 		
 		
 		return model;
-	}
-	@RequestMapping(value = "/index", method = RequestMethod.GET)
-	public String entry() {
-		return "index";
 	}
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public ModelAndView login(

@@ -31,8 +31,7 @@ public class PetUserCommentController {
 	@Autowired
 	private CommentService comment_service;
 	
-	
-	
+
 	@RequestMapping(value="/post", method = RequestMethod.POST )
 	public ModelAndView postComment(@ModelAttribute("comment") Comment comment, BindingResult result, 
 			@RequestParam(value = "image", required = false) MultipartFile image){
@@ -56,7 +55,7 @@ public class PetUserCommentController {
 		}
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String username = auth.getName();
-		PetUser user=petuser_service.findUser(username);
+		PetUser user=petuser_service.findByUsername(username);
 		try {
 			Date date=new Date();
 		Comment comment2=comment_service.post(user,date,comment.getMessage(), 0.0, 0.0, comment.getType(),image.getBytes(), comment.getContact_phone());

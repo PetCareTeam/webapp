@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -30,15 +31,13 @@ public class PetUserController{
 
 	@Autowired
 	AuthoritiesService role_service;
-	
-	
+
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public String entry() {
 		return "register";
 	}
-	
 	@RequestMapping(value = "/get", method = RequestMethod.GET)
-	public ModelAndView getEm() {
+	public ModelAndView getAllUsers() {
 		List<PetUser> users = service.getUsers();
 		ModelAndView maw = new ModelAndView();
 		maw.setViewName("all");
@@ -72,7 +71,7 @@ public class PetUserController{
 
 			System.out.println(image.getOriginalFilename());
 		}
-		PetUser user = service.findUser(petuser.getUsername());
+		PetUser user = service.findByUsername(petuser.getUsername());
 		if (user != null) {
 			mav.setViewName("register");
 			mav.addObject("error", "This Username is taken");
@@ -84,14 +83,9 @@ public class PetUserController{
 					petuser.getLastName(), image.getBytes(), 1);
 			
 			role_service.save_role(user, "ROLE_USER");
-			
-			String base64string=FilePicture.getBytes(user.getProfileImage());
-			
-			mav.setViewName("profile");
-			mav.addObject("pic",base64string);
-			mav.addObject("user", user);
-			
-
+			mav.addObject("title", "Pet Care welcome page");
+			mav.addObject("message", "U are seccessfully register, u can now log in!");
+			mav.setViewName("hello");
 			return mav;
 		} catch (IOException io) {
 			result.reject(io.getMessage());
@@ -99,6 +93,18 @@ public class PetUserController{
 			return mav;
 		}
 	}
-	
+	@RequestMapping(value ="/{id}", method = RequestMethod.GET)
+	public ModelAndView welcomePage(@PathVariable("id") Long id) {
 
+		System.out.println("Username is "+ id);
+		ModelAndView model = new ModelAndView();
+		model.setViewName("profile");
+		PetUser user=service.findUser(id);
+		if(user!=null)
+		{
+			System.out.println("User "+ user.getFirstName());
+			model.addObject("user", user);
+		}
+		return model;
+	}
 }

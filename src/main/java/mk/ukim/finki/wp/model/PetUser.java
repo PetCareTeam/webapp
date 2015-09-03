@@ -4,6 +4,8 @@ import java.util.Collection;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
@@ -14,13 +16,12 @@ import org.springframework.security.core.GrantedAuthority;
 
 @Entity
 @Table(name="users")
-public class PetUser {
+public class PetUser extends BaseEntity {
 	
-	@Id
 	@Email(message="Invalid email address")
 	@Column(name="username",nullable=false,unique=true)
 	private String username;
-	
+
 	@Size(min=4,max=10,message="password must be beetween 4 and 10 characters")
 	@Column(name="password",nullable=false)
 	private String password;
