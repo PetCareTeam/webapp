@@ -1,0 +1,6 @@
+FirstApp.controller('RegisterController', [ function() {
+
+	
+	
+	
+}]);

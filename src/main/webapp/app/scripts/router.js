@@ -10,16 +10,47 @@
  *        through the $scope.
  * @see https://docs.angularjs.org/guide/di
  */
-FirstApp.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/', {
-    templateUrl: 'views/main.html',
-    controller: 'MainCtrl'
+FirstApp
+
+  .config(['$routeProvider',  function($routeProvider) {
+  
+	$routeProvider.when('/', {
+	    templateUrl: 'views/welcome.html',
+	    controller: 'WelcomeController'
   });
 
   $routeProvider.when('/404', {
     templateUrl: '404.html'
   });
+
+  $routeProvider.when('/login', {
+	  
+	    templateUrl: 'views/login.html',
+	    controller: 'LoginController',
+	    reloadOnSearch: false
+	   
+	  });
+  $routeProvider.when('/register', {
+	  
+	    templateUrl: 'views/register.html',
+	    controller: 'RegisterController'
+	  });
   $routeProvider.otherwise({
     redirectTo: '/'
   });
-}]);
+  
+  }])
+
+   
+  .run(['$rootScope', function($rootScope){
+	  
+	  $rootScope.$on("$locationChangeSuccess", function(){
+		
+	  });
+	  
+	  $rootScope.$on("$locationChangeStart", function(){
+			 
+		  });
+	  
+  }]);
+  

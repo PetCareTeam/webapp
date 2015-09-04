@@ -31,11 +31,7 @@ public class PetUserController{
 
 	@Autowired
 	AuthoritiesService role_service;
-
-	@RequestMapping(value = "/register", method = RequestMethod.GET)
-	public String entry() {
-		return "register";
-	}
+	
 	@RequestMapping(value = "/get", method = RequestMethod.GET)
 	public ModelAndView getAllUsers() {
 		List<PetUser> users = service.getUsers();

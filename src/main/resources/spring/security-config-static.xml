@@ -48,6 +48,8 @@ http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 			access="hasRole('ROLE_USER')" />
 		<security:intercept-url pattern="/users/get"
 			access="hasRole('ROLE_USER')" />
+		<security:intercept-url pattern="/users/{id}"
+			access="hasRole('ROLE_USER')" />
 
 	</security:http>
 

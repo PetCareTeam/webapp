@@ -8,7 +8,8 @@ import mk.ukim.finki.wp.model.PetUser;
 
 public interface CommentService {
 	
-	public Comment post(PetUser username, Date time_post,String message,Double longitude, Double latitude,String type,byte[] image_comment,String contact_phone);
+	public Comment post(PetUser username, Date time_post,String message,Double longitude, 
+			Double latitude,String type,byte[] image_comment,String contact_phone);
 	
 	public List<Comment> getComments();
 	
