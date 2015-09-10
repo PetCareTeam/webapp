@@ -30,8 +30,7 @@ public class PetUser extends BaseEntity {
 	private String profileImage;
 	
 	@Column(name="skypeId",nullable=true)
-	private String skypeId;
-	
+	private String skypeId;	
 	
 	@Column(name="enabled", nullable=false)
 	private int enabled;

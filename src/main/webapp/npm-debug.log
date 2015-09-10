@@ -1,0 +1,331 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'angular-mask' ]
+2 info using npm@2.11.3
+3 info using node@v0.12.7
+4 verbose install initial load of C:\Users\Denicija\git\webapp1\src\main\webapp\package.json
+5 warn package.json avangularstartup@0.0.0 No description
+6 warn package.json avangularstartup@0.0.0 No repository field.
+7 warn package.json avangularstartup@0.0.0 No README data
+8 warn package.json avangularstartup@0.0.0 No license field.
+9 verbose installManyTop reading scoped package data from C:\Users\Denicija\git\webapp1\src\main\webapp\node_modules\angular-local-storage\package.json
+10 verbose readDependencies loading dependencies from C:\Users\Denicija\git\webapp1\src\main\webapp\package.json
+11 silly cache add args [ 'angular-mask', null ]
+12 verbose cache add spec angular-mask
+13 silly cache add parsed spec { raw: 'angular-mask',
+13 silly cache add   scope: null,
+13 silly cache add   name: 'angular-mask',
+13 silly cache add   rawSpec: '',
+13 silly cache add   spec: '*',
+13 silly cache add   type: 'range' }
+14 silly addNamed angular-mask@*
+15 verbose addNamed "*" is a valid semver range for angular-mask
+16 silly addNameRange { name: 'angular-mask', range: '*', hasData: false }
+17 silly mapToRegistry name angular-mask
+18 silly mapToRegistry using default registry
+19 silly mapToRegistry registry https://registry.npmjs.org/
+20 silly mapToRegistry uri https://registry.npmjs.org/angular-mask
+21 verbose addNameRange registry:https://registry.npmjs.org/angular-mask not in flight; fetching
+22 verbose request uri https://registry.npmjs.org/angular-mask
+23 verbose request no auth needed
+24 info attempt registry request try #1 at 11:51:25 AM
+25 verbose request id be0d73d45c0f0519
+26 http request GET https://registry.npmjs.org/angular-mask
+27 http 200 https://registry.npmjs.org/angular-mask
+28 silly get cb [ 200,
+28 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+28 silly get     etag: '"EV35CWONX9B5X1GF80U4W9ZUO"',
+28 silly get     'content-type': 'application/json',
+28 silly get     'cache-control': 'max-age=60',
+28 silly get     'content-length': '8781',
+28 silly get     'accept-ranges': 'bytes',
+28 silly get     date: 'Wed, 09 Sep 2015 09:51:27 GMT',
+28 silly get     via: '1.1 varnish',
+28 silly get     age: '0',
+28 silly get     connection: 'keep-alive',
+28 silly get     'x-served-by': 'cache-fra1250-FRA',
+28 silly get     'x-cache': 'MISS',
+28 silly get     'x-cache-hits': '0',
+28 silly get     'x-timer': 'S1441792287.382952,VS0,VE188',
+28 silly get     vary: 'Accept' } ]
+29 verbose get saving angular-mask to C:\Users\Denicija\AppData\Roaming\npm-cache\registry.npmjs.org\angular-mask\.cache.json
+30 silly addNameRange number 2 { name: 'angular-mask', range: '*', hasData: true }
+31 silly addNameRange versions [ 'angular-mask', [ '1.2.2', '1.4.0' ] ]
+32 silly addNamed angular-mask@1.4.0
+33 verbose addNamed "1.4.0" is a plain semver version for angular-mask
+34 silly mapToRegistry name angular-mask
+35 silly mapToRegistry using default registry
+36 silly mapToRegistry registry https://registry.npmjs.org/
+37 silly mapToRegistry uri https://registry.npmjs.org/angular-mask
+38 verbose addRemoteTarball https://registry.npmjs.org/angular-mask/-/angular-mask-1.4.0.tgz not in flight; adding
+39 verbose addRemoteTarball [ 'https://registry.npmjs.org/angular-mask/-/angular-mask-1.4.0.tgz',
+39 verbose addRemoteTarball   '5b79efdac4d051b32bfdb6db44adce1f11ba52b6' ]
+40 info retry fetch attempt 1 at 11:51:25 AM
+41 info attempt registry request try #1 at 11:51:25 AM
+42 http fetch GET https://registry.npmjs.org/angular-mask/-/angular-mask-1.4.0.tgz
+43 http fetch 200 https://registry.npmjs.org/angular-mask/-/angular-mask-1.4.0.tgz
+44 silly fetchAndShaCheck shasum 5b79efdac4d051b32bfdb6db44adce1f11ba52b6
+45 verbose addTmpTarball C:\Users\Denicija\AppData\Local\Temp\npm-7536-74344e31\registry.npmjs.org\angular-mask\-\angular-mask-1.4.0.tgz not in flight; adding
+46 verbose addTmpTarball already have metadata; skipping unpack for angular-mask@1.4.0
+47 silly cache afterAdd angular-mask@1.4.0
+48 verbose afterAdd C:\Users\Denicija\AppData\Roaming\npm-cache\angular-mask\1.4.0\package\package.json not in flight; writing
+49 verbose afterAdd C:\Users\Denicija\AppData\Roaming\npm-cache\angular-mask\1.4.0\package\package.json written
+50 silly install resolved [ { name: 'angular-mask',
+50 silly install resolved     version: '1.4.0',
+50 silly install resolved     description: 'Personalized input masks for AngularJS',
+50 silly install resolved     main: 'releases/angular-input-masks.min.js',
+50 silly install resolved     repository:
+50 silly install resolved      { type: 'git',
+50 silly install resolved        url: 'https://github.com/assisrafael/angular-input-masks.git' },
+50 silly install resolved     homepage: 'http://github.com/assisrafael/angular-input-masks',
+50 silly install resolved     scripts:
+50 silly install resolved      { test: 'gulp test',
+50 silly install resolved        postinstall: 'bower install',
+50 silly install resolved        postupdate: 'bower update' },
+50 silly install resolved     keywords: [ 'input', 'mask', 'angularjs' ],
+50 silly install resolved     author: { name: 'igor.rafael@gmail.com' },
+50 silly install resolved     license: 'MIT',
+50 silly install resolved     dependencies: {},
+50 silly install resolved     devDependencies:
+50 silly install resolved      { 'angular-moment-service': '^0.1.0',
+50 silly install resolved        'event-stream': '^3.1.7',
+50 silly install resolved        express: '^4.8.5',
+50 silly install resolved        gulp: '^3.7.0',
+50 silly install resolved        'gulp-changed': '~0.3.0',
+50 silly install resolved        'gulp-concat': '^2.3.4',
+50 silly install resolved        'gulp-exit': '0.0.2',
+50 silly install resolved        'gulp-filter': '^2.0.2',
+50 silly install resolved        'gulp-footer': '^1.0.5',
+50 silly install resolved        'gulp-header': '^1.0.5',
+50 silly install resolved        'gulp-jshint': '^1.6.1',
+50 silly install resolved        'gulp-load-plugins': '^0.6.0',
+50 silly install resolved        'gulp-protractor': '0.0.11',
+50 silly install resolved        'gulp-uglify': '^0.3.2',
+50 silly install resolved        'jasmine-core': '^2.2.0',
+50 silly install resolved        'jshint-stylish': '~0.1.5',
+50 silly install resolved        karma: '^0.12.31',
+50 silly install resolved        'karma-chrome-launcher': '^0.1.7',
+50 silly install resolved        'karma-coverage': '^0.2.7',
+50 silly install resolved        'karma-coveralls': '^0.1.5',
+50 silly install resolved        'karma-jasmine': '^0.3.5',
+50 silly install resolved        moment: '^2.8.4',
+50 silly install resolved        protractor: '^1.0.0',
+50 silly install resolved        requirejs: '~2.1.10',
+50 silly install resolved        'string-mask': '^0.2.0' },
+50 silly install resolved     gitHead: '55e1eb2af20bc92f5725f53b025316ac4fe9b859',
+50 silly install resolved     bugs: { url: 'https://github.com/assisrafael/angular-input-masks/issues' },
+50 silly install resolved     _id: 'angular-mask@1.4.0',
+50 silly install resolved     _shasum: '5b79efdac4d051b32bfdb6db44adce1f11ba52b6',
+50 silly install resolved     _from: 'angular-mask@*',
+50 silly install resolved     _npmVersion: '2.1.14',
+50 silly install resolved     _nodeVersion: '0.10.34',
+50 silly install resolved     _npmUser: { name: 'assisrafael', email: 'igor.rafael@gmail.com' },
+50 silly install resolved     maintainers: [ [Object] ],
+50 silly install resolved     dist:
+50 silly install resolved      { shasum: '5b79efdac4d051b32bfdb6db44adce1f11ba52b6',
+50 silly install resolved        tarball: 'http://registry.npmjs.org/angular-mask/-/angular-mask-1.4.0.tgz' },
+50 silly install resolved     directories: {},
+50 silly install resolved     _resolved: 'https://registry.npmjs.org/angular-mask/-/angular-mask-1.4.0.tgz' } ]
+51 info install angular-mask@1.4.0 into C:\Users\Denicija\git\webapp1\src\main\webapp
+52 info installOne angular-mask@1.4.0
+53 verbose installOne of angular-mask to C:\Users\Denicija\git\webapp1\src\main\webapp not in flight; installing
+54 verbose lock using C:\Users\Denicija\AppData\Roaming\npm-cache\_locks\angular-mask-48d33c477f633bac.lock for C:\Users\Denicija\git\webapp1\src\main\webapp\node_modules\angular-mask
+55 silly install write writing angular-mask 1.4.0 to C:\Users\Denicija\git\webapp1\src\main\webapp\node_modules\angular-mask
+56 verbose unbuild node_modules\angular-mask
+57 silly gentlyRm C:\Users\Denicija\git\webapp1\src\main\webapp\node_modules\angular-mask is being purged from base C:\Users\Denicija\git\webapp1\src\main\webapp
+58 verbose gentlyRm don't care about contents; nuking C:\Users\Denicija\git\webapp1\src\main\webapp\node_modules\angular-mask
+59 verbose tar unpack C:\Users\Denicija\AppData\Roaming\npm-cache\angular-mask\1.4.0\package.tgz
+60 verbose tar unpacking to C:\Users\Denicija\git\webapp1\src\main\webapp\node_modules\angular-mask
+61 silly gentlyRm C:\Users\Denicija\git\webapp1\src\main\webapp\node_modules\angular-mask is being purged
+62 verbose gentlyRm don't care about contents; nuking C:\Users\Denicija\git\webapp1\src\main\webapp\node_modules\angular-mask
+63 silly gunzTarPerm modes [ '777', '666' ]
+64 silly gunzTarPerm extractEntry package.json
+65 silly gunzTarPerm modified mode [ 'package.json', 436, 438 ]
+66 silly gunzTarPerm extractEntry .npmignore
+67 silly gunzTarPerm modified mode [ '.npmignore', 436, 438 ]
+68 silly gunzTarPerm extractEntry README.md
+69 silly gunzTarPerm modified mode [ 'README.md', 436, 438 ]
+70 silly gunzTarPerm extractEntry LICENSE
+71 silly gunzTarPerm modified mode [ 'LICENSE', 436, 438 ]
+72 silly gunzTarPerm extractEntry gulpfile.js
+73 silly gunzTarPerm modified mode [ 'gulpfile.js', 436, 438 ]
+74 silly gunzTarPerm extractEntry .jshintrc
+75 silly gunzTarPerm modified mode [ '.jshintrc', 436, 438 ]
+76 silly gunzTarPerm extractEntry bower.json
+77 silly gunzTarPerm modified mode [ 'bower.json', 436, 438 ]
+78 silly gunzTarPerm extractEntry .travis.yml
+79 silly gunzTarPerm modified mode [ '.travis.yml', 436, 438 ]
+80 silly gunzTarPerm extractEntry config/karma.conf.js
+81 silly gunzTarPerm modified mode [ 'config/karma.conf.js', 436, 438 ]
+82 silly gunzTarPerm extractEntry config/protractor.conf.js
+83 silly gunzTarPerm modified mode [ 'config/protractor.conf.js', 436, 438 ]
+84 silly gunzTarPerm extractEntry config/test-utils.js
+85 silly gunzTarPerm modified mode [ 'config/test-utils.js', 436, 438 ]
+86 silly gunzTarPerm extractEntry demo/index.html
+87 silly gunzTarPerm modified mode [ 'demo/index.html', 436, 438 ]
+88 silly gunzTarPerm extractEntry demo/us.html
+89 silly gunzTarPerm modified mode [ 'demo/us.html', 436, 438 ]
+90 silly gunzTarPerm extractEntry CHANGELOG.md
+91 silly gunzTarPerm modified mode [ 'CHANGELOG.md', 436, 438 ]
+92 silly gunzTarPerm extractEntry src/helpers.js
+93 silly gunzTarPerm modified mode [ 'src/helpers.js', 436, 438 ]
+94 silly gunzTarPerm extractEntry src/masks.js
+95 silly gunzTarPerm modified mode [ 'src/masks.js', 436, 438 ]
+96 silly gunzTarPerm extractEntry src/br/br-masks.js
+97 silly gunzTarPerm modified mode [ 'src/br/br-masks.js', 436, 438 ]
+98 silly gunzTarPerm extractEntry src/br/cep/cep.js
+99 silly gunzTarPerm modified mode [ 'src/br/cep/cep.js', 436, 438 ]
+100 silly gunzTarPerm extractEntry src/br/cep/cep.spec.js
+101 silly gunzTarPerm modified mode [ 'src/br/cep/cep.spec.js', 436, 438 ]
+102 silly gunzTarPerm extractEntry src/br/cep/cep.test.js
+103 silly gunzTarPerm modified mode [ 'src/br/cep/cep.test.js', 436, 438 ]
+104 silly gunzTarPerm extractEntry src/br/cpf-cnpj/cnpj.spec.js
+105 silly gunzTarPerm modified mode [ 'src/br/cpf-cnpj/cnpj.spec.js', 436, 438 ]
+106 silly gunzTarPerm extractEntry src/br/cpf-cnpj/cnpj.test.js
+107 silly gunzTarPerm modified mode [ 'src/br/cpf-cnpj/cnpj.test.js', 436, 438 ]
+108 silly gunzTarPerm extractEntry src/br/cpf-cnpj/cpf-cnpj.js
+109 silly gunzTarPerm modified mode [ 'src/br/cpf-cnpj/cpf-cnpj.js', 436, 438 ]
+110 silly gunzTarPerm extractEntry src/br/cpf-cnpj/cpf-cnpj.spec.js
+111 silly gunzTarPerm modified mode [ 'src/br/cpf-cnpj/cpf-cnpj.spec.js', 436, 438 ]
+112 silly gunzTarPerm extractEntry src/br/cpf-cnpj/cpf-cnpj.test.js
+113 silly gunzTarPerm modified mode [ 'src/br/cpf-cnpj/cpf-cnpj.test.js', 436, 438 ]
+114 silly gunzTarPerm extractEntry src/br/cpf-cnpj/cpf.spec.js
+115 silly gunzTarPerm modified mode [ 'src/br/cpf-cnpj/cpf.spec.js', 436, 438 ]
+116 silly gunzTarPerm extractEntry src/br/cpf-cnpj/cpf.test.js
+117 silly gunzTarPerm modified mode [ 'src/br/cpf-cnpj/cpf.test.js', 436, 438 ]
+118 silly gunzTarPerm extractEntry src/br/inscricao-estadual/ie.js
+119 silly gunzTarPerm modified mode [ 'src/br/inscricao-estadual/ie.js', 436, 438 ]
+120 silly gunzTarPerm extractEntry src/br/inscricao-estadual/ie.spec.js
+121 silly gunzTarPerm modified mode [ 'src/br/inscricao-estadual/ie.spec.js', 436, 438 ]
+122 silly gunzTarPerm extractEntry src/br/inscricao-estadual/ie.test.js
+123 silly gunzTarPerm modified mode [ 'src/br/inscricao-estadual/ie.test.js', 436, 438 ]
+124 silly gunzTarPerm extractEntry src/br/nfe/nfe.js
+125 silly gunzTarPerm modified mode [ 'src/br/nfe/nfe.js', 436, 438 ]
+126 silly gunzTarPerm extractEntry src/br/nfe/nfe.spec.js
+127 silly gunzTarPerm modified mode [ 'src/br/nfe/nfe.spec.js', 436, 438 ]
+128 silly gunzTarPerm extractEntry src/br/nfe/nfe.test.js
+129 silly gunzTarPerm modified mode [ 'src/br/nfe/nfe.test.js', 436, 438 ]
+130 silly gunzTarPerm extractEntry src/br/nfe/nfe.html
+131 silly gunzTarPerm modified mode [ 'src/br/nfe/nfe.html', 436, 438 ]
+132 silly gunzTarPerm extractEntry src/br/phone/br-phone.js
+133 silly gunzTarPerm modified mode [ 'src/br/phone/br-phone.js', 436, 438 ]
+134 silly gunzTarPerm extractEntry src/br/phone/br-phone.spec.js
+135 silly gunzTarPerm modified mode [ 'src/br/phone/br-phone.spec.js', 436, 438 ]
+136 silly gunzTarPerm extractEntry src/br/phone/br-phone.test.js
+137 silly gunzTarPerm modified mode [ 'src/br/phone/br-phone.test.js', 436, 438 ]
+138 silly gunzTarPerm extractEntry src/global/global-masks.js
+139 silly gunzTarPerm modified mode [ 'src/global/global-masks.js', 436, 438 ]
+140 silly gunzTarPerm extractEntry src/global/date/date.js
+141 silly gunzTarPerm modified mode [ 'src/global/date/date.js', 436, 438 ]
+142 silly gunzTarPerm extractEntry src/global/date/date.spec.js
+143 silly gunzTarPerm modified mode [ 'src/global/date/date.spec.js', 436, 438 ]
+144 silly gunzTarPerm extractEntry src/global/date/date.test.js
+145 silly gunzTarPerm modified mode [ 'src/global/date/date.test.js', 436, 438 ]
+146 silly gunzTarPerm extractEntry src/global/date/date-pt-br.html
+147 silly gunzTarPerm modified mode [ 'src/global/date/date-pt-br.html', 436, 438 ]
+148 silly gunzTarPerm extractEntry src/global/date/date.html
+149 silly gunzTarPerm modified mode [ 'src/global/date/date.html', 436, 438 ]
+150 silly gunzTarPerm extractEntry src/global/money/money.js
+151 silly gunzTarPerm modified mode [ 'src/global/money/money.js', 436, 438 ]
+152 silly gunzTarPerm extractEntry src/global/money/money.spec.js
+153 silly gunzTarPerm modified mode [ 'src/global/money/money.spec.js', 436, 438 ]
+154 silly gunzTarPerm extractEntry src/global/money/money.test.js
+155 silly gunzTarPerm modified mode [ 'src/global/money/money.test.js', 436, 438 ]
+156 silly gunzTarPerm extractEntry src/global/number/number.js
+157 silly gunzTarPerm modified mode [ 'src/global/number/number.js', 436, 438 ]
+158 silly gunzTarPerm extractEntry src/global/number/number.spec.js
+159 silly gunzTarPerm modified mode [ 'src/global/number/number.spec.js', 436, 438 ]
+160 silly gunzTarPerm extractEntry src/global/number/number.test.js
+161 silly gunzTarPerm modified mode [ 'src/global/number/number.test.js', 436, 438 ]
+162 silly gunzTarPerm extractEntry src/global/percentage/percentage.js
+163 silly gunzTarPerm modified mode [ 'src/global/percentage/percentage.js', 436, 438 ]
+164 silly gunzTarPerm extractEntry src/global/percentage/percentage.spec.js
+165 silly gunzTarPerm modified mode [ 'src/global/percentage/percentage.spec.js', 436, 438 ]
+166 silly gunzTarPerm extractEntry src/global/percentage/percentage.test.js
+167 silly gunzTarPerm modified mode [ 'src/global/percentage/percentage.test.js', 436, 438 ]
+168 silly gunzTarPerm extractEntry src/global/scientific-notation/scientific-notation.js
+169 silly gunzTarPerm modified mode [ 'src/global/scientific-notation/scientific-notation.js',
+169 silly gunzTarPerm   436,
+169 silly gunzTarPerm   438 ]
+170 silly gunzTarPerm extractEntry src/global/scientific-notation/scientific-notation.spec.js
+171 silly gunzTarPerm modified mode [ 'src/global/scientific-notation/scientific-notation.spec.js',
+171 silly gunzTarPerm   436,
+171 silly gunzTarPerm   438 ]
+172 silly gunzTarPerm extractEntry src/global/scientific-notation/scientific-notation.test.js
+173 silly gunzTarPerm modified mode [ 'src/global/scientific-notation/scientific-notation.test.js',
+173 silly gunzTarPerm   436,
+173 silly gunzTarPerm   438 ]
+174 silly gunzTarPerm extractEntry src/global/scientific-notation/scientific-notation.html
+175 silly gunzTarPerm modified mode [ 'src/global/scientific-notation/scientific-notation.html',
+175 silly gunzTarPerm   436,
+175 silly gunzTarPerm   438 ]
+176 silly gunzTarPerm extractEntry src/global/time/time.js
+177 silly gunzTarPerm modified mode [ 'src/global/time/time.js', 436, 438 ]
+178 silly gunzTarPerm extractEntry src/global/time/time.spec.js
+179 silly gunzTarPerm modified mode [ 'src/global/time/time.spec.js', 436, 438 ]
+180 silly gunzTarPerm extractEntry src/global/time/time.test.js
+181 silly gunzTarPerm modified mode [ 'src/global/time/time.test.js', 436, 438 ]
+182 silly gunzTarPerm extractEntry src/global/time/time.html
+183 silly gunzTarPerm modified mode [ 'src/global/time/time.html', 436, 438 ]
+184 silly gunzTarPerm extractEntry src/us/us-masks.js
+185 silly gunzTarPerm modified mode [ 'src/us/us-masks.js', 436, 438 ]
+186 silly gunzTarPerm extractEntry src/us/phone/us-phone.js
+187 silly gunzTarPerm modified mode [ 'src/us/phone/us-phone.js', 436, 438 ]
+188 silly gunzTarPerm extractEntry src/us/phone/us-phone.spec.js
+189 silly gunzTarPerm modified mode [ 'src/us/phone/us-phone.spec.js', 436, 438 ]
+190 silly gunzTarPerm extractEntry src/us/phone/us-phone.test.js
+191 silly gunzTarPerm modified mode [ 'src/us/phone/us-phone.test.js', 436, 438 ]
+192 verbose write writing to C:\Users\Denicija\git\webapp1\src\main\webapp\node_modules\angular-mask\package.json
+193 info preinstall angular-mask@1.4.0
+194 verbose readDependencies loading dependencies from C:\Users\Denicija\git\webapp1\src\main\webapp\node_modules\angular-mask\package.json
+195 verbose readDependencies loading dependencies from C:\Users\Denicija\git\webapp1\src\main\webapp\node_modules\angular-mask\package.json
+196 silly install resolved []
+197 verbose about to build C:\Users\Denicija\git\webapp1\src\main\webapp\node_modules\angular-mask
+198 info build C:\Users\Denicija\git\webapp1\src\main\webapp\node_modules\angular-mask
+199 info linkStuff angular-mask@1.4.0
+200 silly linkStuff angular-mask@1.4.0 has C:\Users\Denicija\git\webapp1\src\main\webapp\node_modules as its parent node_modules
+201 verbose linkBins angular-mask@1.4.0
+202 verbose linkMans angular-mask@1.4.0
+203 verbose rebuildBundles angular-mask@1.4.0
+204 info install angular-mask@1.4.0
+205 info postinstall angular-mask@1.4.0
+206 verbose unsafe-perm in lifecycle true
+207 info angular-mask@1.4.0 Failed to exec postinstall script
+208 verbose unlock done using C:\Users\Denicija\AppData\Roaming\npm-cache\_locks\angular-mask-48d33c477f633bac.lock for C:\Users\Denicija\git\webapp1\src\main\webapp\node_modules\angular-mask
+209 verbose stack Error: angular-mask@1.4.0 postinstall: `bower install`
+209 verbose stack Exit status 1
+209 verbose stack     at EventEmitter.<anonymous> (C:\Program Files\nodejs\node_modules\npm\lib\utils\lifecycle.js:213:16)
+209 verbose stack     at EventEmitter.emit (events.js:110:17)
+209 verbose stack     at ChildProcess.<anonymous> (C:\Program Files\nodejs\node_modules\npm\lib\utils\spawn.js:24:14)
+209 verbose stack     at ChildProcess.emit (events.js:110:17)
+209 verbose stack     at maybeClose (child_process.js:1015:16)
+209 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:1087:5)
+210 verbose pkgid angular-mask@1.4.0
+211 verbose cwd C:\Users\Denicija\git\webapp1\src\main\webapp
+212 error Windows_NT 6.1.7601
+213 error argv "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "angular-mask"
+214 error node v0.12.7
+215 error npm  v2.11.3
+216 error code ELIFECYCLE
+217 error angular-mask@1.4.0 postinstall: `bower install`
+217 error Exit status 1
+218 error Failed at the angular-mask@1.4.0 postinstall script 'bower install'.
+218 error This is most likely a problem with the angular-mask package,
+218 error not with npm itself.
+218 error Tell the author that this fails on your system:
+218 error     bower install
+218 error You can get their info via:
+218 error     npm owner ls angular-mask
+218 error There is likely additional logging output above.
+219 verbose exit [ 1, true ]
+220 verbose unbuild node_modules\angular-mask
+221 info preuninstall angular-mask@1.4.0
+222 info uninstall angular-mask@1.4.0
+223 verbose unbuild rmStuff angular-mask@1.4.0 from C:\Users\Denicija\git\webapp1\src\main\webapp\node_modules
+224 info postuninstall angular-mask@1.4.0
+225 silly gentlyRm C:\Users\Denicija\git\webapp1\src\main\webapp\node_modules\angular-mask is being purged from base C:\Users\Denicija\git\webapp1\src\main\webapp
+226 verbose gentlyRm don't care about contents; nuking C:\Users\Denicija\git\webapp1\src\main\webapp\node_modules\angular-mask
+227 silly vacuum-fs purging C:\Users\Denicija\git\webapp1\src\main\webapp\node_modules\angular-mask
+228 silly vacuum-fs quitting because other entries in C:\Users\Denicija\git\webapp1\src\main\webapp\node_modules

@@ -38,7 +38,6 @@ public class RegisterServiceImpl implements PetUserService {
 			newUser.setEnabled(enabled);
 			newUser.setSkypeId(skypeId);
 			repository.save(newUser);
-
 			return newUser;
 			
 		}

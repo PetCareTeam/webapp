@@ -53,16 +53,17 @@ FirstApp.controller('ProfileController', ['$scope','profileService', '$resource'
 			return (new Date(timestamp)).toUTCString().split("GMT")[0];
 		};
 		
-	
+	/*ova e updateUserPosts*/
 		$scope.updateUserComments = function(id){							
 			
-			var Comments = $resource('/petCareWeb/comments/get/:userId', {userId:'@id'});
+			var Post = $resource('/petCareWeb/posts/get/:userId', {userId:'@id'});
 			// Create an instance of User resource
-			var comments = Comments.get({userId:id}, function(){
-				$scope.comments=comments.comments;
-				$scope.pictureNo=comments.pictureNo;
-				$scope.locationNo=comments.locationNo;
-				$scope.commentsNo=comments.comments.length;
+			var post = Post.get({userId:id}, function(){
+				$scope.comments=post.posts;
+				console.log(post.posts);
+				$scope.pictureNo=post.pictureNo;
+				$scope.locationNo=post.locationNo;
+				$scope.commentsNo=post.posts.length;
 				
 				console.log("Komnatriiiii beee:" + $scope.comments);
 			});	

@@ -1,5 +1,5 @@
-FirstApp.controller('HomeController', ['$scope','homeService', '$location','$rootScope','postService','LoginService',
-                                         function($scope, homeService, $location, $rootScope, postService, LoginService) {
+FirstApp.controller('HomeController', ['$scope','homeService', '$location','$rootScope','postService','LoginService', 'likecomment',
+                                         function($scope, homeService, $location, $rootScope, postService, LoginService, likecomment) {
 	
 	$scope.participants = ["mike"];
 	
@@ -9,13 +9,16 @@ FirstApp.controller('HomeController', ['$scope','homeService', '$location','$roo
 	$scope.comment = {
 			message : '',
 			skypeId : '',
+			address: '',
+			longitude: 0,
+			latitude: 0,
 			type : 'sell'
 	}
 	
 	
-	$scope.showType = "to sell";
+	$scope.showType = false;
 	
-	$scope.showHR = false;
+	$scope.showContact = false;
 	
 	$scope.comments = [];
 	
@@ -35,11 +38,17 @@ FirstApp.controller('HomeController', ['$scope','homeService', '$location','$roo
 	
 	$scope.error=false;
 	
+	$scope.showImage=false;
 	
+	
+	$scope.like=function(id){
+		
+		likecomment.like(id);
+	};
 	
 	$scope.convertTimestampToDate = function(timestamp){
 		return (new Date(timestamp)).toUTCString().split("GMT")[0];
-	}
+	};
 	
 	var handleFileSelect = function(evt) {
 	    var files = evt.target.files;
@@ -53,7 +62,7 @@ FirstApp.controller('HomeController', ['$scope','homeService', '$location','$roo
 	           
 	            $scope.base64imageFileStr = btoa(binaryString);          
 	            document.getElementById("previewImg").src = "data:image/jpeg;base64," + btoa(binaryString);
-	           $scope.showHR = true;
+	          
 	        };
 
 	        reader.readAsBinaryString(file);
@@ -62,19 +71,11 @@ FirstApp.controller('HomeController', ['$scope','homeService', '$location','$roo
 	
 	if (window.File && window.FileReader && window.FileList && window.Blob) {
 		document.getElementById('file-upload').addEventListener('change', handleFileSelect, false);
+		$scope.showImage=true;
 	} else {
 	    alert('The File APIs are not fully supported in this browser.');
 	}
-	
-	
-/*	$scope.convertTimestampToDateTime = function(timestamp){
-		
-		console.log('CONVERT');
-		dateTime.date = (new Date(timestamp)).toDateString();
-		dateTime.time = (new Date(timestamp)).toTimeString();
-		
-	}
-	*/
+
 	$scope.loadComments = function() {	
 		
 	
@@ -83,7 +84,7 @@ FirstApp.controller('HomeController', ['$scope','homeService', '$location','$roo
 				function success(response){
 					
 					console.log('loaded comments: ', response);
-					$scope.comments = response.comments;
+					$scope.comments = response.posts;
 				},
 				function failure(error){
 					
@@ -93,11 +94,23 @@ FirstApp.controller('HomeController', ['$scope','homeService', '$location','$roo
 		
 	};
 	
+	$scope.loadLikes = function(user_id,post_id) {	
+		
+		
+		likecomment.like(user_id, post_id);
+		
+		
+	};
+	
+	
+	
+	
+	
 	
 	
 	$scope.post = function() {	
 		
-		var uploadUrl="http://localhost:9966/petCareWeb/comments/post";
+		var uploadUrl="http://localhost:9966/petCareWeb/posts/post";
 		postService.postComment(uploadUrl, $scope.comment).then(
 				
 				function success(response){
@@ -159,6 +172,12 @@ FirstApp.controller('HomeController', ['$scope','homeService', '$location','$roo
 				message : '',
 				type  : "buy"
 		}
+		$scope.showType="";
+		$scope.showLocation=false;
+		$scope.showContact=false;
+		$scope.showType=false;
+		$scope.showImage=false;
+		$scope.addressShow="";
 	}
 	
 	$scope.openProfile = function(){
@@ -178,6 +197,7 @@ FirstApp.controller('HomeController', ['$scope','homeService', '$location','$roo
 		if (!$scope.toAddContactPhone) {
 			$scope.toAddLocation = false;
 			$scope.toAddType = false;
+			$scope.showContact=true;
 		}
 		$scope.toAddContactPhone=!$scope.toAddContactPhone;
 	}
@@ -186,6 +206,7 @@ FirstApp.controller('HomeController', ['$scope','homeService', '$location','$roo
 		if (!$scope.toAddType) {
 			$scope.toAddContactPhone = false;
 			$scope.toAddLocation = false;
+			$scope.showType=true;
 		}
 		$scope.toAddType=!$scope.toAddType;
 	}
@@ -207,14 +228,6 @@ FirstApp.controller('HomeController', ['$scope','homeService', '$location','$roo
 	/* ui bootstrap */
 	 $scope.isCollapsed = true;
 	/* ui bootstrap */
-	 
-	 $scope.pokazi = function(){
-		 console.log('slikata e : ' + $scope.comment.image_comment);
-	 }
-	 
-	 $scope.vidi = function(){
-		 return ($scope.comment.image_comment === undefined);
-	 }
 	 
 	 $scope.tips = function(){
 		 $location.path('/tips');

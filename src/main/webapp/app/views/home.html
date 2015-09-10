@@ -15,6 +15,11 @@
 	background-color: #f2dede;
 	border-color: #ebccd1;
 }
+
+#simple-btn-keyboard-nav:HOVER {
+	 text-decoration: none;
+}
+
 </style>
 <link rel="stylesheet" href="styles/homepage.css" /> 
 </head>
@@ -23,13 +28,13 @@
 	<div id="wrapper">
 
 		<!-- Navigation -->
-		<nav id="boxforComments" style="height: 90px; "
+		<nav id="boxforComments" 
 			class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 			<!-- Brand and toggle get grouped for better mobile display -->
-			<div id="boxheader" class="navbar-header">
+			<div id="boxheader" class="navbar-header" style="padding-top: 14px; padding-left:50px;">
 
 
-				<img alt="" src="images/LogoWEB_PAGE.png" height="60" width="175">
+				<img alt="" src="images/LogoWEB_PAGE.png" height="30" width="89" >
 
 
 
@@ -40,8 +45,8 @@
 
 			<!-- Top Menu Items -->
 			<div ng-init="getUser()">
-				<ul class="nav navbar-right top-nav">
-					<li class="dropdown"><a id="user" ng-click="openProfile()">
+				<ul class="nav navbar-right top-nav" style="padding-bottom: 7px; padding-top: 7px;"   >
+					<li class="dropdown"><a id="user" ng-click="openProfile()" style="font-size: 16px;">
 							{{user.firstName}} {{user.lastName}}</a></li>
 					<li class="dropdown" ng-click="logout()"><a
 						data-toggle="dropdown" style="cursor: pointer"><i
@@ -51,7 +56,7 @@
 
 				<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 				<ul id="shadovfromright" class="nav navbar-nav side-nav"
-					style="margin-top: 39px; width: 300px;">
+					style="margin-top: 13px; width: 300px;">
 
 					<li id="slidbarright_home" class="sidbarheader"><a
 						style="width: inherit;" >
@@ -67,8 +72,8 @@
 
 								</div>
 								<div class="row">
-									<div class="col-lg-9">
-										<p style="color: #fff;">
+									<div class="col-lg-9" >
+										<p style="color: #fff; ">
 											<b>{{user.firstName}} {{user.lastName}}</b>
 										</p>
 									</div>
@@ -116,13 +121,7 @@
 
 									</div>
 									<div class="col-lg-10" style="maring-left:0px">
-										<ul style="margin-left:0px">
-											<li class="fa fa-map-marker" style="color:#FFCC00"> <span style="color:#A3C2C2"> {{addressShow}} </span></li>
-											<br>
-											<li class="fa fa-phone" style="color:#99CCFF"> <span style="color:#A3C2C2"> {{comment.contact_phone}} </span> </li>
-											<br>
-											<li class="fa fa-paw"  style="color:#00FF99" > <span style="color:#A3C2C2" ng-model="showType" > {{showType}} </span></li>
-										</ul>
+										
 										<br>
 										<br>
 										<textarea id="text_area_in_post" ng-model="comment.message"
@@ -138,11 +137,8 @@
 									<input ng-model="comment.address" class="form-control"
 										ng-show="toAddLocation" googleplace /> 
 										
-										
-										<input type="number"
-										ng-model="comment.contact_phone" ng-show="toAddContactPhone"
-										tabindex="1" class="form-control"
-										placeholder="Enter you phone contact ..." />
+										<input class="form-control" type='text' ng-model="comment.contact_phone" tabindex="1" 
+										placeholder="Enter you phone contact ..." ng-show="toAddContactPhone" phone-input/>
 
 									<div ng-show="toAddType">
 										<ul class="list-inline" style="margin-bottom: 0px;">
@@ -168,17 +164,25 @@
 
 									<hr style="margin-bottom: 20px; margin-top: 20px">
 									<img id="previewImg" class="img-responsive"
-										style="margin-bottom: 10px">
+										style="margin-bottom: 10px" ng-show="showImage">
+										
+										<ul style="margin-left:0px" class="list-inline">
+											<li class="fa fa-map-marker" style="color:#FFCC00" ng-show="showLocation"> <span style="color:#A3C2C2"> {{addressShow}} </span></li>
+											
+											<li class="fa fa-phone" style="color:#99CCFF" ng-show="showContact"> <span style="color:#A3C2C2"> {{comment.contact_phone}} </span> </li>
+											
+											<li class="fa fa-paw"  style="color:#00FF99" ng-show="showType"> <span style="color:#A3C2C2" ng-model="showType" > {{showType}} </span></li>
+										</ul>
 									<hr ng-if="showHR" style="margin-bottom: 7px;">
 
 									<div class="col-lg-10">
 										<ul class="list-inline" style="margin-bottom: 0px;">
 											<li style="cursor:pointer">
 												<div class="form-group"
-													style="color: #14ad92; font-size: 18px;">
+													style="color: #B0F2E5; font-size: 18px;">
 													<label for="file-upload" class="glyphicon glyphicon-camera" />
 													<input id="file-upload" type="file" name="file"
-														style="color: #14ad92;" file-model="comment.image_comment"
+														style="color: #B0F2E5;" file-model="comment.image_comment"
 														accept=".jpg" />
 												</div>
 											</li>
@@ -190,9 +194,9 @@
 													ng-click="addPhone()"></span></a></li>
 
 											<div class="btn-group" dropdown keyboard-nav>
-												<p style="cursor:pointer"><a id="simple-btn-keyboard-nav" class="fa fa-paw"
+												<p style="cursor:pointer"><a id="simple-btn-keyboard-nav"    class="fa fa-paw"
 													dropdown-toggle
-													style="color: #B0F2E5; font-size: 20px; background: transparent; border: none">
+													style="color: #B0F2E5; font-size: 20px; background: transparent; border: none  ">
 													<span class="caret"></span>
 												</a>
 												<ul class="dropdown-menu" role="menu"
@@ -257,7 +261,7 @@
 
 
 										<div class="col-md-12" ng-if="comment.image_comment">
-											<img ng-src="images/comments/{{comment.image_comment}}"
+											<img ng-src="images/posts/{{comment.image_comment}}"
 												class="img-responsive " alt="" style="">
 										</div>
 
@@ -299,11 +303,12 @@
 										<div class="col-lg-12">{{comment.message}}</div>
 
 										<div class="col-md-12" ng-if="comment.image_comment">
-											<img ng-src="images/comments/{{comment.image_comment}}"
+											<img ng-src="images/posts/{{comment.image_comment}}"
 												class="img-responsive " alt="" style="">
 										</div>
 
 									</div>
+									<input type="button" value="like" ng-click="like( user.id,comment.id)"/>
 								</div>
 
 							</div>

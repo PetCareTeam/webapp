@@ -71,20 +71,21 @@ FirstApp.service('crudResource', ['$resource',
 			getComments:{
 				method:'GET',
 				params:{
-					service:'comments',
+					service:'posts',
 					action: 'get'
 					
 				}
 			},
 			
-			getCommentsForUser:{
-				method:'GET',
+			updateLike:{
+				method:'POST',
 				params:{
-					service:'comments',
-					action: 'get'
+					service:'posts',
+					action: 'like'
 					
 				}
-			},
+			}
+			
 			
 		});
 

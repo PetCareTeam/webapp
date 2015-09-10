@@ -4,80 +4,59 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import org.joda.time.DateTime;
+@Entity(name="comments")
+public class Comment extends  BaseEntity {
 
-@Entity
-@Table(name="comments")
-public class Comment extends BaseEntity {
+	@ManyToOne
+	private PetUser user;
 	
 	@ManyToOne
-	private PetUser pet;
+	private Post post;
 	
-	@Column(name="message", nullable=false)
-	public String message;
+	@Column(name="message")
+	private String message;
 	
-	@Column(name="address")
-	public String address;
-	
-	@Column(name="time_post")
+	@Column(name="time_comment")
 	@Temporal(TemporalType.TIMESTAMP)
-	public Date time_post;
+	public Date time_comment;
 	
-	@Column(name="longitude")
-	public double longitude;
-	
-	
-
-	@Column(name="latitude")
-	public double latitude;
-	
-	@Column(name="type")
-	public String type;
-
 	@Column(name="image_comment")
 	public String image_comment;
-	
-	@Column(name="contact_phone")
-	public String contact_phone;
+
+	public Comment(PetUser user, Post post, String message, Date time_comment,
+			String image_comment) {
+		super();
+		this.user = user;
+		this.post = post;
+		this.message = message;
+		this.time_comment = time_comment;
+		this.image_comment = image_comment;
+	}
 
 	public Comment() {
 		super();
 	}
-	
-	public Comment(PetUser username, String message, Date time_post,
-			double longitude, double latitude, String type,
-			String image_comment, String contact_phone, String address) {
-		super();
-		this.pet = username;
-		this.message = message;
-		this.time_post = time_post;
-		this.longitude = longitude;
-		this.latitude = latitude;
-		this.type = type;
-		this.image_comment = image_comment;
-		this.contact_phone = contact_phone;
-		this.address=address;
+
+	public PetUser getUser() {
+		return user;
 	}
 
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
+	public void setUser(PetUser user) {
+		this.user = user;
 	}
 
-	public PetUser getPet() {
-		return pet;
+	public Post getPost() {
+		return post;
 	}
-	public void setPet(PetUser pet) {
-		this.pet = pet;
+
+	public void setPost(Post post) {
+		this.post = post;
 	}
+
 	public String getMessage() {
 		return message;
 	}
@@ -86,50 +65,21 @@ public class Comment extends BaseEntity {
 		this.message = message;
 	}
 
-
 	public Date getTime_post() {
-		return time_post;
+		return time_comment;
 	}
+
 	public void setTime_post(Date time_post) {
-		this.time_post = time_post;
-	}
-	public double getLongitude() {
-		return longitude;
+		this.time_comment = time_post;
 	}
 
-	public void setLongitude(double longitude) {
-		this.longitude = longitude;
-	}
-
-	public double getLatitude() {
-		return latitude;
-	}
-
-	public void setLatitude(double latitude) {
-		this.latitude = latitude;
-	}
-
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
 	public String getImage_comment() {
 		return image_comment;
 	}
+
 	public void setImage_comment(String image_comment) {
 		this.image_comment = image_comment;
 	}
-	public String getContact_phone() {
-		return contact_phone;
-	}
-
-	public void setContact_phone(String contact_phone) {
-		this.contact_phone = contact_phone;
-	}
-
 	
 	
 	

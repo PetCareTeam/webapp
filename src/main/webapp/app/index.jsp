@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="styles/kraj.css" /> 
  
   
-  
+
   
     <!-- build:css(.tmp) styles/main.css -->
   
@@ -38,7 +38,7 @@
 	ng-app is directive that declares that the element 
 	and its children will be handled by angular.js 
 -->
-<body ng-app="avAngularStartupApp">
+<body ng-app="avAngularStartupApp" style="padding-top: 0px; padding-bottom: 0px; background: #fff;">
 	<!--[if lt IE 7]>
 	<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
 	    your browser</a> to improve your experience.</p>
@@ -73,6 +73,14 @@
 	<script src="bower_components/angular-ui-bootstrap/ui-bootstrap.min.js"></script>
 	<script src="bower_components/ngMask-master/dist/ngMask.min.js"></script>
 	<script src="bower_components/ngMask-master/dist/ngMask.js"></script>
+	
+	
+	<script src="bower_components/scrollspyscripti/agency.js"></script>
+	<script src="bower_components/scrollspyscripti/cbpAnimatedHeader.js"></script>
+	<script src="bower_components/scrollspyscripti/cbpAnimatedHeader.min.js"></script>
+	<script src="bower_components/scrollspyscripti/classie.js"></script>
+	
+	
 	
 	
  	<script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
@@ -119,6 +127,8 @@
 	<script src="scripts/services/home.js"></script>
 	<script src="scripts/services/profile.js"></script>
 	<script src="scripts/services/mail.js"></script>
+	<script src="scripts/services/scrollFunctionality.js"></script>
+	<script src="scripts/services/likecomment.js"></script>
 	
 	<!-- services -->
 
@@ -126,8 +136,16 @@
 	<script src="scripts/directives/gmDirective.js"></script>
 	<script src="scripts/directives/fileUpload.js"></script>
 	<script src="scripts/directives/SkypeCall.js"></script>
+	<script src="scripts/directives/phoneInput.js"></script>
+	
+	
 	
 	<!-- directives -->
+	
+	
+	<!-- filters -->
+	<script src="scripts/filters/phoneFilter.js"></script>
+	<!-- filters -->
 	
 	<!-- endbuild -->
 </body>

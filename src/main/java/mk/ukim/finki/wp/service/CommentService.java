@@ -5,19 +5,15 @@ import java.util.List;
 
 import mk.ukim.finki.wp.model.Comment;
 import mk.ukim.finki.wp.model.PetUser;
+import mk.ukim.finki.wp.model.Post;
 
 public interface CommentService {
 	
-	public Comment post(PetUser username, Date time_post,String message,Double longitude, 
-			Double latitude,String type,String image_comment,String contact_phone, String address);
+	public Comment postComment(PetUser petUser, Post post, String message, Date time_post,String image_comment);
 	
-	public List<Comment> getComments();
+	public List<Comment> findByPost(Post post);
+
 	
-	public List<Comment> findByPet(PetUser username);
-	
-	public List<Comment> findByType(String type);
-	
-	public int countByPet(PetUser petUser);
 }
 
 

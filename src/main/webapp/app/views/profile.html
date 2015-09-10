@@ -8,7 +8,7 @@
     </head>
     <body>
 
-        <div id="wrapper"  style="" ng-init="getUser()">
+        <div id="wrapper" ng-init="getUser()">
 
             <!-- Navigation -->
             <nav id="boxforComments" style="height:90px" class="navbar navbar-inverse navbar-fixed-top" role="navigation"  >
@@ -86,18 +86,26 @@
                                             <img alt="" ng-src="images/users/{{comment.pet.profileImage}}" class="img-responsive" width="50" height="50">
                                         </div>
                                         <div id="header_for_name_time" class="col-sm-10 col-md-10  col-lg-10 " style="">
-                                            <h4 id="style_name" >{{comment.user.firstName}} {{comment.user.lastName}}</h4>
-                                            <p  id="stile_time" >{{convertTimestampToDate(comment.time_post)}}</p>
-                                        </div>
+                                            <h4 id="style_name" style="font-size:20px">{{comment.pet.firstName}}
+											{{comment.pet.lastName}}</h4>
+                                        
                                         <div id="style_img_and_comment" class="row ">
+                                        	<i class="fa fa-phone" style="color:#99CCFF"> </i><span style="color:#A3C2C2"> {{comment.contact_phone}} </span>
+										<br>
+										<i class="fa fa-map-marker" style="color:#FFCC00" id="stile_location"> </i> <span style="color:#A3C2C2"> {{comment.address}} </span>
+										<br>
+										<i  class="fa fa-paw"  style="color:#00FF99"> </i> <span style="color:#A3C2C2"> {{comment.type}}</span>
+										<br>
+										<i class="fa fa-clock-o" style="color:#FF0000"></i><span style="color:#A3C2C2"> {{convertTimestampToDate(comment.time_post)}}</span> 
                                             <div class="col-lg-12">
                                                 <p >{{comment.message}}</p>
                                             </div>
 
                                             <div class="col-md-12" style=" " ng-if="comment.image_comment">
-                                                <img ng-src="images/comments/{{comment.image_comment}}" class="img-responsive " alt="" style="">
+                                                <img ng-src="images/posts/{{comment.image_comment}}" class="img-responsive " alt="" style="">
                                             </div>
 
+                                        </div>
                                         </div>
                                     </div>
 
@@ -105,6 +113,12 @@
 
                             </div>
                             <!-- *****************************CUSTUM**ITEM*******************************************-->
+                            
+
+									
+										
+									
+                            
 
 
                         </div>

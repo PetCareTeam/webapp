@@ -14,7 +14,7 @@ import mk.ukim.finki.wp.model.User;
 import mk.ukim.finki.wp.resources.TokenTransfer;
 import mk.ukim.finki.wp.resources.TokenUtils;
 import mk.ukim.finki.wp.service.AuthoritiesService;
-import mk.ukim.finki.wp.service.CommentService;
+import mk.ukim.finki.wp.service.PostService;
 import mk.ukim.finki.wp.service.PetUserService;
 
 import org.apache.commons.codec.binary.Base64;
@@ -50,7 +50,7 @@ public class HelloController implements ServletContextAware {
 	AuthoritiesService role_service;
 
 	@Autowired
-	CommentService comment_service;
+	PostService post_service;
 
 	@Autowired
 	UserDetailsService user_details_setvice;

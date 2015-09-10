@@ -9,12 +9,13 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import mk.ukim.finki.wp.model.Comment;
+import mk.ukim.finki.wp.model.Post;
 import mk.ukim.finki.wp.model.FilePicture;
-import mk.ukim.finki.wp.model.ListComments;
+import mk.ukim.finki.wp.model.ListPosts;
 import mk.ukim.finki.wp.model.PetUser;
-import mk.ukim.finki.wp.service.CommentService;
+import mk.ukim.finki.wp.service.LikedPostService;
 import mk.ukim.finki.wp.service.PetUserService;
+import mk.ukim.finki.wp.service.PostService;
 
 import org.apache.commons.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,23 +32,28 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 @Controller
-public class PetUserCommentController implements ServletContextAware {
+public class PetUserPostController implements ServletContextAware {
 
 	@Autowired
 	private PetUserService petuser_service;
 
 	@Autowired
-	private CommentService comment_service;
+	private PostService post_service;
+	
+	@Autowired
+	private LikedPostService likedPost_service;
 
 	@Autowired
 	private ServletContext servletContext;
-
-	@RequestMapping(value = "/comments/get", method = RequestMethod.GET, produces = "application/json")
+	
+	
+	
+	@RequestMapping(value = "/posts/get", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
-	public ListComments getAllComments() {
-		List<Comment> comments = comment_service.getComments();
-		ListComments list_comments = new ListComments();
-		list_comments.setComments(comments);
+	public ListPosts getAllComments() {
+		List<Post> posts = post_service.getPosts();
+		ListPosts list_comments = new ListPosts();
+		list_comments.setPosts(posts);
 		/*
 		 * ModelAndView maw = new ModelAndView(); maw.setViewName("all");
 		 * maw.addObject("comments", comments);
@@ -55,9 +61,22 @@ public class PetUserCommentController implements ServletContextAware {
 		return list_comments;
 	}
 
-	@RequestMapping(value = "/comments/post", method = RequestMethod.POST, produces = "application/json")
+	
+	@RequestMapping(value="/posts/like", method=RequestMethod.POST)
 	@ResponseBody
-	public Comment postComment(MultipartHttpServletRequest mRequest,
+	public void like(@RequestBody Long post_id, @RequestBody Long user_id)
+	{
+		Post post=post_service.findPost(post_id);
+		PetUser user=petuser_service.findUser(user_id);
+		
+		System.out.println("User_id " + user_id + "Post_id: "+ post_id);
+		likedPost_service.saveLike(post, user);
+		
+	}
+	
+	@RequestMapping(value = "/posts/post", method = RequestMethod.POST, produces = "application/json")
+	@ResponseBody
+	public Post postPost(MultipartHttpServletRequest mRequest,
 			HttpServletRequest request, HttpServletResponse response) {
 
 		System.out.println("Vlagam tuka");
@@ -89,16 +108,20 @@ public class PetUserCommentController implements ServletContextAware {
 				FilePicture.saveImage(
 						new String(Base64.encodeBase64(user.getUsername()
 								.getBytes())) + date.getTime() + ".jpg", mFile,
-						servletContext, "comments");
+						servletContext, "posts");
 		} catch (IOException e) {
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 		}
 		System.out.println("pred kreiranje na vtor komentar");	
 		System.out.println("comment is: " + mRequest.getParameter("message"));	
+		if(mRequest.getParameter("address")==null)
+		{
+			System.out.println("Addresata e null");
+		}
+		Post comment =null;
 		
-		Comment	comment =null;
-		if(mFile!=null){
-		comment = comment_service.post(
+		if(mFile!=null ){
+		comment = post_service.post(
 					user,
 					date,
 					mRequest.getParameter("message"),
@@ -108,10 +131,10 @@ public class PetUserCommentController implements ServletContextAware {
 					new String(Base64.encodeBase64(user.getUsername()
 							.getBytes())) + date.getTime() + ".jpg",
 					mRequest.getParameter("contact_phone"),
-					mRequest.getParameter("address"));
+					mRequest.getParameter("address"),0);
 		}
-	else
-		comment = comment_service.post(
+		else
+		comment = post_service.post(
 				user,
 				date,
 				mRequest.getParameter("message"),
@@ -120,7 +143,7 @@ public class PetUserCommentController implements ServletContextAware {
 				mRequest.getParameter("type"),
 				null,
 				mRequest.getParameter("contact_phone"),
-				mRequest.getParameter("address"));
+				mRequest.getParameter("address"),0);
 
 		response.setStatus(HttpServletResponse.SC_OK);
 
@@ -128,19 +151,19 @@ public class PetUserCommentController implements ServletContextAware {
 
 	}
 
-	@RequestMapping(value = "/comments/type/get", method = RequestMethod.GET, produces = "application/json")
+	@RequestMapping(value = "/posts/type/get", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
-	public ListComments getCommentsByType(@RequestBody String type,
+	public ListPosts getCommentsByType(@RequestBody String type,
 			HttpServletResponse response) {
-		List<Comment> comments = comment_service.findByType(type);
-		ListComments list_comments = new ListComments();
-		list_comments.setComments(comments);
+		List<Post> comments = post_service.findByType(type);
+		ListPosts list_comments = new ListPosts();
+		list_comments.setPosts(comments);
 		return list_comments;
 	}
 
-	@RequestMapping(value = "/comments/get/{id}", method = RequestMethod.GET, produces = "application/json")
+	@RequestMapping(value = "/posts/get/{id}", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
-	public ListComments getCommentsForUser(@PathVariable("id") long userId,
+	public ListPosts getCommentsForUser(@PathVariable("id") long userId,
 			HttpServletResponse response, HttpServletRequest request) {
 
 		System.out.println("lalal");
@@ -149,21 +172,28 @@ public class PetUserCommentController implements ServletContextAware {
 
 		PetUser user = petuser_service.findUser(userId);
 		if (user != null) {
-			List<Comment> comments = comment_service.findByPet(user);
-			for (Comment comment : comments) {
+			List<Post> posts = post_service.findByPet(user);
+			for (Post post : posts) {
 				{
-					if (comment.getImage_comment() != null)
+					if (post.getImage_comment() != null)
 						pictureNo++;
-					if (comment.getAddress() != null)
-						locationNo++;
+					if (post.getAddress() != null)
+					{
+						if(!post.getAddress().equals("")){
+						System.out.println("-"+post.getAddress() +"-");
+						locationNo++;	
+						}
+					}
 
 				}
 			}
 
-			ListComments list_comments = new ListComments();
-			list_comments.setComments(comments);
+			ListPosts list_comments = new ListPosts();
+			
+			list_comments.setPosts(posts);
 			list_comments.setLocationNo(locationNo);
 			list_comments.setPictureNo(pictureNo);
+			System.out.println(posts.get(0).message);
 			return list_comments;
 		} else
 			return null;

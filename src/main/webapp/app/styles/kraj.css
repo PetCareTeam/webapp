@@ -16,3 +16,44 @@
 -o-background-size: cover; 
 }
 
+
+            #navbar-wellcomepage {
+                background-color:transparent;
+                border-bottom: none;
+                border-color: #1ab394;
+            }
+            #ul-header-wellcome>li>a{
+                color: #fff;
+                font-size: 17px;
+            }
+            .navbar-default .navbar-nav>.active>a:hover,
+            .navbar-default .navbar-nav>.active>a:focus {
+                color: #fff;
+                background-color: #096a57;
+            }
+
+            .navbar-default .nav li a:hover,
+            .navbar-default .nav li a:focus {
+                outline: 0;
+                color: #096a57;
+            }
+
+            .navbar-default .navbar-nav>.active>a {
+                border-radius: 0;
+                color: #fff;
+                background-color: #096a57;
+                border-radius: 4px;
+            }
+            
+            #navbarwellcome{
+            background-color: #1ab394; 
+              border-color: transparent;
+            
+            }
+            
+            
+            .ng-scope > .navbar-default{
+              background-color: #1ab394; 
+              border-color: transparent;
+            }
+

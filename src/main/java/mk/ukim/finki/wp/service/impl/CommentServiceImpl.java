@@ -5,6 +5,7 @@ import java.util.List;
 
 import mk.ukim.finki.wp.model.Comment;
 import mk.ukim.finki.wp.model.PetUser;
+import mk.ukim.finki.wp.model.Post;
 import mk.ukim.finki.wp.repository.CommentRepository;
 import mk.ukim.finki.wp.service.CommentService;
 
@@ -12,56 +13,29 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CommentServiceImpl implements CommentService {
+public class CommentServiceImpl implements CommentService{
 
-	@Autowired // injection
+	
+	@Autowired
 	CommentRepository repository;
 	@Override
-	public List<Comment> getComments() {
-		List<Comment> comments = repository.findAll();
-		return comments;
-	}
-	@Override
-	public Comment post(PetUser pet, Date time_post, String message,
-			Double longitude, Double latitude, String type,
-			String image_comment, String contact_phone, String address) {
+	public Comment postComment(PetUser petUser, Post post, String message,
+			Date time_comment, String image_comment) {
 		
 		Comment comment=new Comment();
-		comment.setPet(pet);
-		comment.setTime_post(time_post);
+		comment.setUser(petUser);
+		comment.setPost(post);
 		comment.setMessage(message);
-		comment.setLongitude(longitude);
-		comment.setLatitude(latitude);
-		comment.setType(type);
+		comment.setTime_post(time_comment);
 		comment.setImage_comment(image_comment);
-		comment.setContact_phone(contact_phone);
-		comment.setAddress(address);
 		repository.save(comment);
-		
 		return comment;
 	}
 
-
-
 	@Override
-	public List<Comment> findByPet(PetUser username) {
-		
-		List<Comment> comments = repository.findByPet(username);
-		if(comments.isEmpty()) 
-			System.out.println("listata e prazna");
+	public List<Comment> findByPost(Post post) {
+		List<Comment> comments=repository.findByPost(post);
 		return comments;
 	}
-	@Override
-	public List<Comment> findByType(String type) {
-		List<Comment> comments=repository.findByType(type);
-		return comments;
-	}
-	@Override
-	public int countByPet(PetUser petUser) {
-		int number=repository.countByPet(petUser);
-		return number;
-	}
 
-
-			
 }

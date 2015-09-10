@@ -4,51 +4,23 @@ import java.util.List;
 
 public class ListComments {
 
-	private List<Comment> comments;
+	private List<Comment> comment;
 
-	private int pictureNo;
-	private int locationNo;
-	
-	public ListComments(List<Comment> comments, int pictureNo, int locationNo) {
+	public List<Comment> getComment() {
+		return comment;
+	}
+
+	public void setComment(List<Comment> comment) {
+		this.comment = comment;
+	}
+
+	public ListComments(List<Comment> comment) {
 		super();
-		this.comments = comments;
-		this.pictureNo = pictureNo;
-		this.locationNo = locationNo;
-	}
-
-	public int getPictureNo() {
-		return pictureNo;
-	}
-
-	public void setPictureNo(int pictureNo) {
-		this.pictureNo = pictureNo;
-	}
-
-	public int getLocationNo() {
-		return locationNo;
-	}
-
-	public void setLocationNo(int locationNo) {
-		this.locationNo = locationNo;
+		this.comment = comment;
 	}
 
 	public ListComments() {
 		super();
 	}
-	
-	public ListComments(List<Comment> comments) {
-		super();
-		this.comments = comments;
-	}
-	
-	public List<Comment> getComments() {
-		return comments;
-	}
-
-	public void setComments(List<Comment> comments) {
-		this.comments = comments;
-	}
-
-	
 	
 }

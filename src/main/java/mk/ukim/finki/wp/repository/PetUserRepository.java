@@ -2,7 +2,7 @@ package mk.ukim.finki.wp.repository;
 
 import java.util.List;
 
-import mk.ukim.finki.wp.model.Comment;
+import mk.ukim.finki.wp.model.Post;
 import mk.ukim.finki.wp.model.PetUser;
 
 import org.springframework.data.jpa.repository.JpaRepository;
