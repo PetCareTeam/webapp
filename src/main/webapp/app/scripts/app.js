@@ -13,4 +13,10 @@
  *       directive
  * @description # avAngularStartupApp Main module of the application.
  */
-var FirstApp = angular.module('avAngularStartupApp', ['ngRoute']);
+var FirstApp = angular.module('avAngularStartupApp', 
+		['ngRoute',
+		 'ngResource',
+		 'ui.bootstrap',
+		 'ngCookies',
+		 'ngMask'
+		]);

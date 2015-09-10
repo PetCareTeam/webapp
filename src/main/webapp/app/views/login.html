@@ -1,13 +1,34 @@
 <!DOCTYPE html>
 <html>
-<html>
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+	  <link rel="stylesheet" href="styles/kraj.css" /> 
+         <style>
+.error {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	color: #a94442;
+	background-color: #f2dede;
+	border-color: #ebccd1;
+	width:480px;
+}
+.msg {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	color: #31708f;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+</style>
     </head>
 
-    <body id="bodylogin" >
+    <body id="loginbe"  >
 
         <div class="container">
             <div class="row">
@@ -23,39 +44,44 @@
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <ng-form id="form" action="login()" method="POST" role="form" style="display: block;">
+                                        <form id="form"  method="POST" role="form" style="display: block;" ng-submit="login()" novalidate>
+                                          
+                                            <p ng-if="alert" class="error" style="margin-top:10px;margin-left:5px">Bad credentials</p>
+                                    <p ng-show="success" class="msg" style="margin-top:10px;margin-left:5px">You have successfully logged in</p>
                                             <div class="form-group">
-                                                <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+                                            
+                                                <input type="text" ng-model="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
                                             </div>
                                             <div class="form-group">
-                                                <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                                                <input type="password" ng-model="password" id="password" tabindex="2" class="form-control" placeholder="Password">
                                             </div>
 
                                             <!-- Ova mozi no i nemora da go ima -->
-                                            <div class="form-group text-center">
+                                          <!-- <div class="form-group text-center">
                                                 <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
                                                 <label for="remember"> Remember Me</label>
-                                            </div>
+                                            </div> -->  
                                             <!-- Ova mozi no i nemora da go ima -->
                                             <div class="form-group">
                                                 <div class="row">
                                                     <div class="col-sm-6 col-sm-offset-3">
-                                                        <input type="submit" name="submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
-                                                    </div>
+                                                        <input type="submit"  id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In"/>
+                                                   </div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <div class="row">
                                                     <div class="col-lg-12">
                                                         <!-- Ova mozi no i nemora da go ima -->
-                                                        <div class="text-center">
+                                                       <!-- <div class="text-center">
                                                             <a href="#" tabindex="5" class="forgot-password">Forgot Password?</a>
                                                         </div>
+                                                         --> 
                                                         <!-- Ova mozi no i nemora da go ima -->
                                                     </div>
                                                 </div>
                                             </div>
-                                        </nq-form>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -63,7 +89,8 @@
                     </div>
                 </div>
             </div>
+            
+              
     </body>
-</html>
 
 </html>

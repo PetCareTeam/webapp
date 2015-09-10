@@ -19,8 +19,11 @@ public class Comment extends BaseEntity {
 	@ManyToOne
 	private PetUser pet;
 	
-	@Column(name="message")
+	@Column(name="message", nullable=false)
 	public String message;
+	
+	@Column(name="address")
+	public String address;
 	
 	@Column(name="time_post")
 	@Temporal(TemporalType.TIMESTAMP)
@@ -29,15 +32,16 @@ public class Comment extends BaseEntity {
 	@Column(name="longitude")
 	public double longitude;
 	
+	
+
 	@Column(name="latitude")
 	public double latitude;
 	
 	@Column(name="type")
 	public String type;
-	
-	@Lob
+
 	@Column(name="image_comment")
-	public byte[] image_comment;
+	public String image_comment;
 	
 	@Column(name="contact_phone")
 	public String contact_phone;
@@ -45,9 +49,10 @@ public class Comment extends BaseEntity {
 	public Comment() {
 		super();
 	}
+	
 	public Comment(PetUser username, String message, Date time_post,
 			double longitude, double latitude, String type,
-			byte[] image_comment, String contact_phone) {
+			String image_comment, String contact_phone, String address) {
 		super();
 		this.pet = username;
 		this.message = message;
@@ -57,9 +62,15 @@ public class Comment extends BaseEntity {
 		this.type = type;
 		this.image_comment = image_comment;
 		this.contact_phone = contact_phone;
+		this.address=address;
 	}
 
-
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
 
 	public PetUser getPet() {
 		return pet;
@@ -105,11 +116,10 @@ public class Comment extends BaseEntity {
 	public void setType(String type) {
 		this.type = type;
 	}
-
-	public byte[] getImage_comment() {
+	public String getImage_comment() {
 		return image_comment;
 	}
-	public void setImage_comment(byte[] image_comment) {
+	public void setImage_comment(String image_comment) {
 		this.image_comment = image_comment;
 	}
 	public String getContact_phone() {

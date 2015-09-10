@@ -1,18 +1,12 @@
 package mk.ukim.finki.wp.model;
 
-import java.util.Collection;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
-import org.springframework.security.core.GrantedAuthority;
 
 @Entity
 @Table(name="users")
@@ -32,9 +26,12 @@ public class PetUser extends BaseEntity {
 	@Column(name="lastName",nullable=false)
 	private String lastName;
 	
-	@Lob
 	@Column(name="profileImage",nullable=true)
-	private byte[] profileImage;
+	private String profileImage;
+	
+	@Column(name="skypeId",nullable=true)
+	private String skypeId;
+	
 	
 	@Column(name="enabled", nullable=false)
 	private int enabled;
@@ -53,7 +50,7 @@ public class PetUser extends BaseEntity {
 	}
 
 	public PetUser(String username, String password, String firstName,
-			String lastName, byte[] profileImage, int enabled) {
+			String lastName, String profileImage, int enabled, String skypeId) {
 		super();
 		this.username = username;
 		this.password = password;
@@ -61,13 +58,22 @@ public class PetUser extends BaseEntity {
 		this.lastName = lastName;
 		this.profileImage = profileImage;
 		this.enabled = enabled;
+		this.skypeId=skypeId;
 	}
 
-	public byte[] getProfileImage() {
+	public String getSkypeId() {
+		return skypeId;
+	}
+
+	public void setSkypeId(String skypeId) {
+		this.skypeId = skypeId;
+	}
+
+	public String getProfileImage() {
 		return profileImage;
 	}
 
-	public void setProfileImage(byte[] profileImage) {
+	public void setProfileImage(String profileImage) {
 		this.profileImage = profileImage;
 	}
 

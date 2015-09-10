@@ -28,7 +28,7 @@ public class RegisterServiceImpl implements PetUserService {
 	}
 
 	@Override
-	public PetUser register(String username, String password, String firstName, String lastName, byte[] profileImage,int enabled) {
+	public PetUser register(String username, String password, String firstName, String lastName, String profileImage,int enabled,String skypeId) {
 			PetUser newUser = new PetUser();
 			newUser.setUsername(username);
 			newUser.setPassword(password);
@@ -36,9 +36,9 @@ public class RegisterServiceImpl implements PetUserService {
 			newUser.setLastName(lastName);
 			newUser.setProfileImage(profileImage);
 			newUser.setEnabled(enabled);
+			newUser.setSkypeId(skypeId);
 			repository.save(newUser);
-			System.out.println("MY NEW USER'S USERNAME AND PASSWORD ARE: "   + " " + newUser.getUsername() + " " + newUser.getPassword());
-			
+
 			return newUser;
 			
 		}

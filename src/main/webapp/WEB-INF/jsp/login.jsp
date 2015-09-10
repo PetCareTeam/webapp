@@ -49,7 +49,9 @@
 			<tr>
 				<td colspan='2'><input name="submit" type="submit"
 					value="Login" /></td>
+			
 			</tr>
+			
 		  </table>
         </form>
     </body>

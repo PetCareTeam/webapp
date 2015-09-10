@@ -1,249 +1,289 @@
-/*!
- * Start Bootstrap - Agency Bootstrap Theme (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2.9.2015, 20:35:
+    Author     : Kristijan
+*/
 #headerPicture{
-                background-image: url(../images/cns-dogs-holidays-2.png);
-                background-position: center center;
-                background-size: cover;
-                -o-background-size: cover;
+    background-image: url(../images/cns-dogs-holidays-2.png);
+    background-position: center center;
+    background-size: cover;
+    -o-background-size: cover;
 
-            }
-            #wellcomepage{
-                text-align: center;
-                color: #fff;
-                background-attachment: scroll;
-                background-image: url(../images/bacground.jpg);
-                background-position: center center;
-                background-repeat: none;
-                -webkit-background-size: cover;
-                -moz-background-size: cover;
-                background-size: cover;
-                -o-background-size: cover;
-            }
-            header .intro-text {
-                padding-top: 100px;
-                padding-bottom: 50px;
-            }
+}
+#wellcomepage{
+    text-align: center;
+    color: #fff;
+    background-attachment: scroll;
+    background-image: url(../images/bacground.jpg);
+    background-position: center center;
+    background-repeat: none;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+header .intro-text {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
 
-            header .intro-text .intro-lead-in {
-                margin-top: 38px;
-                font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
-                font-size: 25px;
-                font-style: italic;
-                line-height: 22px;
-            }
+header .intro-text .intro-lead-in {
+    margin-top: 38px;
+    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 25px;
+    font-style: italic;
+    line-height: 22px;
+}
 
-            header .intro-text .intro-heading {
-                margin-bottom: 25px;
-                text-transform: uppercase;
-                font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-                font-size: 10px;
-                font-weight: 700;
-                line-height: 50px;
-            } 
-            #loginbtn{
-                border-radius: 0px;
-                background: #18c09f;
-                border-color: #18c09f;
-                font-size: 15px;
-                padding-left: 35px;
-                padding-right: 35px;
-                padding-top: 10px;
-                padding-bottom: 10px;
+header .intro-text .intro-heading {
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 50px;
+} 
+#loginbtn{
+    border-radius: 0px;
+    background: #18c09f;
+    border-color: #18c09f;
+    font-size: 15px;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 
-            }
-            #btnsendmessage{
-                border-radius: 0px;
-                background: #18c09f;
-                border-color: #18c09f;
-                font-size: 25px;
-                color:white;
-                padding-left: 35px;
-                padding-right: 35px;
-                padding-top: 10px;
-                padding-bottom: 10px;
-            }
-            #hederstyle{
-                border-color:  #9ce3d5;
-                color: #15a78a;
-            }
-            #servisesrow{
-                color: #15a78a;
-                font-size: 200px;
-            }
-
-
-
-            @media(min-width:768px) {
-                header .intro-text {
-                    padding-top: 170px;
-                    padding-bottom: 300px;
-                }
-
-                header .intro-text .intro-lead-in {
-                    margin-top: 38px;
-                    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
-                    font-size: 40px;
-                    font-style: italic;
-                    line-height: 40px;
-                }
-
-                header .intro-text .intro-heading {
-                    margin-bottom: 10px;
-                    text-transform: uppercase;
-                    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-                    font-size: 16px;
-                    font-weight: 700;
-                    line-height: 75px;
-                }
-                #loginbtn{
-                    border-radius: 0px;
-                    background: #18c09f;
-                    border-color: #18c09f;
-                    font-size: 15px;
-                    padding-left: 35px;
-                    padding-right: 35px;
-                    padding-top: 10px;
-                    padding-bottom: 10px;
-
-                }
+}
+#registerbtn{
+   border-radius: 0px;
+    background: #fff;
+    border-color: #18c09f;
+    font-size: 15px;
+    color:#18c09f;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 10px;
+    padding-bottom: 10px; 
+}
+#registerbtn:hover,
+#registerbtn:focus{
+    border-radius: 0px;
+    background: #EBF9F6;
+    border-color: #18c09f;
+    font-size: 15px;
+    color:#18c09f;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#btnsendmessage{
+    border-radius: 0px;
+    background: #18c09f;
+    border-color: #18c09f;
+    font-size: 25px;
+    color:white;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#hederstyle{
+    border-color:  #9ce3d5;
+    color: #15a78a;
+}
+#servisesrow{
+    color: #15a78a;
+    font-size: 200px;
+}
 
 
-            }   
+
+@media(min-width:768px) {
+    header .intro-text {
+        padding-top: 170px;
+        padding-bottom: 300px;
+    }
+
+    header .intro-text .intro-lead-in {
+        margin-top: 38px;
+        font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 40px;
+        font-style: italic;
+        line-height: 40px;
+    }
+
+    header .intro-text .intro-heading {
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 75px;
+    }
+    #loginbtn{
+        border-radius: 0px;
+        background: #18c09f;
+        border-color: #18c09f;
+        font-size: 15px;
+        padding-left: 35px;
+        padding-right: 35px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+    }
+
+    #loginbtn:hover,
+    #loginbtn:focus{
+        border-radius: 0px;
+        background: #fff;
+        border-color: #18c09f;
+        color:#18c09f;
+        font-size: 15px;
+        padding-left: 35px;
+        padding-right: 35px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
 
 
-            section#contact {
-                background-color:#096a57;
-                background-image: url(../images/map-image.png);
-                background-position: center;
-                background-repeat: no-repeat;
-                margin-top: 50px;
-                padding-top: 150px; 
-                padding-bottom: 150px;
-            }
-
-            section#contact .section-heading {
-                color: #fff;
-            }
-
-            section#contact .form-group {
-                margin-bottom: 25px;
-            }
-
-            section#contact .form-group input,
-            section#contact .form-group textarea {
-                padding: 20px;
-            }
-
-            section#contact .form-group input.form-control {
-                height: auto;
-            }
-
-            section#contact .form-group textarea.form-control {
-                height: 236px;
-            }
-
-            section#contact .form-control:focus {
-                border-color: #2ad7b4;
-                box-shadow: none;
-            }
-
-            section#contact::-webkit-input-placeholder {
-                text-transform: uppercase;
-                font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-                font-weight: 700;
-                color: #bbb;
-            }
-
-            section#contact:-moz-placeholder {
-                text-transform: uppercase;
-                font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-                font-weight: 700;
-                color: #bbb;
-            }
-
-            section#contact::-moz-placeholder {
-                text-transform: uppercase;
-                font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-                font-weight: 700;
-                color: #bbb;
-            }
-
-            section#contact:-ms-input-placeholder {
-                text-transform: uppercase;
-                font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-                font-weight: 700;
-                color: #bbb;
-            }
-
-            section#contact .text-danger {
-                color: #e74c3c;
-            }
+}   
 
 
-            ul.social-buttons {
-                margin-bottom: 0;
-            }
+section#contact {
+    background-color:#096a57;
+    background-image: url(../images/map-image.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 50px;
+    padding-top: 150px; 
+    padding-bottom: 150px;
+}
 
-            ul.social-buttons li a {
-                display: block;
-                width: 40px;
-                height: 40px;
-                border-radius: 100%;
-                font-size: 20px;
-                line-height: 40px;
-                outline: 0;
-                color: #fff;
-                background-color: #096a57;
-                -webkit-transition: all .3s;
-                -moz-transition: all .3s;
-                transition: all .3s;
-            }
+section#contact .section-heading {
+    color: #fff;
+}
 
-            ul.social-buttons li a:hover,
-            ul.social-buttons li a:focus,
-            ul.social-buttons li a:active {
-                background-color: #18c09f;
-            }
-            footer {
-                padding: 25px 0;
-                text-align: center;
-            }
+section#contact .form-group {
+    margin-bottom: 25px;
+}
 
-            footer span.copyright {
-                text-transform: uppercase;
-                text-transform: none;
-                font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-                line-height: 40px;
-            }
+section#contact .form-group input,
+section#contact .form-group textarea {
+    padding: 20px;
+}
 
-            footer ul.quicklinks {
-                margin-bottom: 0;
-                text-transform: uppercase;
-                text-transform: none;
-                font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-                line-height: 40px;
-            }
+section#contact .form-group input.form-control {
+    height: auto;
+}
 
-            #servises_comment{
-                font-size: 18px; 
-                color: #222;
-            }
+section#contact .form-group textarea.form-control {
+    height: 236px;
+}
 
-            #wellcome_txt{
-                padding-right: 0px; 
-                padding-left: 60px;
-                font-family: Comic Sans MS;
-            }
-            #aboutus{
-                background: #18c09f;
-                margin-top: 140px;
-            }
-            #about_us_text{
-                font-size: 18px; 
-                color: white;
-                padding-left: 80px;
-                padding-right: 80px;
-            }
+section#contact .form-control:focus {
+    border-color: #2ad7b4;
+    box-shadow: none;
+}
+
+section#contact::-webkit-input-placeholder {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: #bbb;
+}
+
+section#contact:-moz-placeholder {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: #bbb;
+}
+
+section#contact::-moz-placeholder {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: #bbb;
+}
+
+section#contact:-ms-input-placeholder {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: #bbb;
+}
+
+section#contact .text-danger {
+    color: #e74c3c;
+}
+
+
+ul.social-buttons {
+    margin-bottom: 0;
+}
+
+ul.social-buttons li a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    font-size: 20px;
+    line-height: 40px;
+    outline: 0;
+    color: #fff;
+    background-color: #096a57;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+}
+
+ul.social-buttons li a:hover,
+ul.social-buttons li a:focus,
+ul.social-buttons li a:active {
+    background-color: #18c09f;
+}
+footer {
+    padding: 25px 0;
+    text-align: center;
+}
+
+footer span.copyright {
+    text-transform: uppercase;
+    text-transform: none;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 40px;
+}
+
+footer ul.quicklinks {
+    margin-bottom: 0;
+    text-transform: uppercase;
+    text-transform: none;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 40px;
+}
+
+#servises_comment{
+    font-size: 18px; 
+    color: #222;
+}
+
+#wellcome_txt{
+    padding-right: 0px; 
+    padding-left: 60px;
+    font-family: Comic Sans MS;
+}
+#aboutus{
+    background: #18c09f;
+    margin-top: 140px;
+}
+#about_us_text{
+    font-size: 18px; 
+    color: white;
+    padding-left: 80px;
+    padding-right: 80px;
+}

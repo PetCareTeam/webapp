@@ -24,7 +24,7 @@ public class CommentServiceImpl implements CommentService {
 	@Override
 	public Comment post(PetUser pet, Date time_post, String message,
 			Double longitude, Double latitude, String type,
-			byte[] image_comment, String contact_phone) {
+			String image_comment, String contact_phone, String address) {
 		
 		Comment comment=new Comment();
 		comment.setPet(pet);
@@ -35,7 +35,7 @@ public class CommentServiceImpl implements CommentService {
 		comment.setType(type);
 		comment.setImage_comment(image_comment);
 		comment.setContact_phone(contact_phone);
-		
+		comment.setAddress(address);
 		repository.save(comment);
 		
 		return comment;
@@ -50,6 +50,16 @@ public class CommentServiceImpl implements CommentService {
 		if(comments.isEmpty()) 
 			System.out.println("listata e prazna");
 		return comments;
+	}
+	@Override
+	public List<Comment> findByType(String type) {
+		List<Comment> comments=repository.findByType(type);
+		return comments;
+	}
+	@Override
+	public int countByPet(PetUser petUser) {
+		int number=repository.countByPet(petUser);
+		return number;
 	}
 
 

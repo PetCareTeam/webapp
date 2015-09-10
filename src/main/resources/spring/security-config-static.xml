@@ -28,21 +28,33 @@ http://www.springframework.org/schema/security/spring-security-3.1.xsd">
         AND u.USERNAME=?;" /> 
 
 
-		<!-- 	<security:user-service> <security:user authorities="ROLE_USER" name="admin" 
-				password="admin" /> </security:user-service> --> 
+	
 		</security:authentication-provider>
 	</security:authentication-manager>
 
 	<security:http realm="Login protection" use-expressions="true"
 		auto-config="true" authentication-manager-ref="authenticationManager">
 		<security:form-login login-page='/login'
-			login-processing-url="/login.do" default-target-url="/admin"
-			authentication-failure-url="/login?error" username-parameter="username"
+			login-processing-url="/login.do"  default-target-url="/"
+			authentication-failure-url="/login?error" 
+			username-parameter="username"
 			password-parameter="password" />
 
 		<security:logout logout-success-url="/login?logout" />
+		
+		<security:remember-me/>
+		
+		<security:session-management>
+			<security:concurrency-control
+				max-sessions="1" expired-url="/spring_security_login" />
+		</security:session-management>
+		
 
-		<security:intercept-url pattern="/admin"
+		<security:intercept-url pattern="/login*" access="isAnonymous()" />
+		
+		<security:intercept-url pattern="/register*" access="isAnonymous()" />
+		
+		<security:intercept-url pattern="/userDetails/{id}"
 			access="hasRole('ROLE_USER')" />
 		<security:intercept-url pattern="/post"
 			access="hasRole('ROLE_USER')" />
@@ -50,7 +62,6 @@ http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 			access="hasRole('ROLE_USER')" />
 		<security:intercept-url pattern="/users/{id}"
 			access="hasRole('ROLE_USER')" />
-
 	</security:http>
 
 	<!-- <security:logout logout-success-url="/login?logout" /> <security:http 

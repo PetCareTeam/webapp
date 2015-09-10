@@ -10,19 +10,28 @@
     
     
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
-     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+
     <link rel="stylesheet" href="bower_components/AngularJS-Toaster/toaster.css" />
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" >
+    <link rel="stylesheet" href="bower_components/angular-ui-bootstrap/ui-bootstrap-csp.css" >
+     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css" />
+     <link rel="stylesheet" href="bower_components/angular/angular-csp.css" />
+     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+     
 	 <link rel="stylesheet" href="styles/welcomepage.css" />
 	 <link rel="stylesheet" href="styles/register_page.css" />
 	  <link rel="stylesheet" href="styles/login_page.css" /> 
+	  <link rel="stylesheet" href="styles/homepage.css" /> 
+	    <link rel="stylesheet" href="styles/profile.css" /> 
+ 	    <link rel="stylesheet" href="styles/tips.css" /> 
+  <link rel="stylesheet" href="styles/kraj.css" /> 
+ 
   
   
   
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    
+  
     <!-- endbuild -->
 </head>
 <!-- 
@@ -35,12 +44,12 @@
 	    your browser</a> to improve your experience.</p>
 	<![endif]-->
 
-	    <div>
+	   
 	    	<!-- 
 	    		container for our views
 	    	 -->
-	        <div ng-view></div>
-	    </div>
+	        <div ng-view ></div>
+	   
 	
 	
 	<!-- build:js(.) scripts/oldieshim.js -->
@@ -54,14 +63,24 @@
 	<!-- bower:js -->
 	<script src="bower_components/jquery/dist/jquery.js"></script>
 	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular/angular.min.js"></script>
 	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 	<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 	<script src="bower_components/angular-animate/angular-animate.js"></script>
 	<script src="bower_components/AngularJS-Toaster/toaster.js"></script>
 	<script src="bower_components/angular-route/angular-route.js"></script>
 	<script src="bower_components/angular-resource/angular-resource.js"></script>
-
+	<script src="bower_components/angular-ui-bootstrap/ui-bootstrap.min.js"></script>
+	<script src="bower_components/ngMask-master/dist/ngMask.min.js"></script>
+	<script src="bower_components/ngMask-master/dist/ngMask.js"></script>
 	
+	
+ 	<script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+ 	<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+		 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true&libraries=places&language=en-US"></script>
+		<script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
+		
 	<!-- endbower -->
 	
 	
@@ -83,15 +102,33 @@
 	<script src="scripts/controllers/WelcomeController.js"></script>
 	<script src="scripts/controllers/LoginController.js"></script>
 	<script src="scripts/controllers/RegisterController.js"></script>
+	<script src="scripts/controllers/HomeController.js"></script>
+	<script src="scripts/controllers/googleMapsController.js"></script>
+	<script src="scripts/controllers/ProfileController.js"></script>
+	<script src="scripts/controllers/MailController.js"></script>
+	<script src="scripts/controllers/tipsController.js"></script>
+	
 	<!-- controllers -->
 	
 	<!-- services -->
 	<script src="scripts/services/services.js"></script>
-	<script src="scripts/services/LoginService.js"></script>
-	<script src="scripts/services/RegisterService.js"></script>
+	<script src="scripts/services/login.js"></script>
+	<script src="scripts/services/multipartFormCommentPost.js"></script>
+	<script src="scripts/services/multipartFormRegister.js"></script>
+	<script src="scripts/services/crud.js"></script>
+	<script src="scripts/services/home.js"></script>
+	<script src="scripts/services/profile.js"></script>
+	<script src="scripts/services/mail.js"></script>
 	
 	<!-- services -->
 
+	<!-- directives -->
+	<script src="scripts/directives/gmDirective.js"></script>
+	<script src="scripts/directives/fileUpload.js"></script>
+	<script src="scripts/directives/SkypeCall.js"></script>
+	
+	<!-- directives -->
+	
 	<!-- endbuild -->
 </body>
 </html>

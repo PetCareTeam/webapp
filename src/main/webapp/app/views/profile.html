@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Profile</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles/profile.css" /> 
+    </head>
+    <body>
+
+        <div id="wrapper"  style="" ng-init="getUser()">
+
+            <!-- Navigation -->
+            <nav id="boxforComments" style="height:90px" class="navbar navbar-inverse navbar-fixed-top" role="navigation"  >
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div id="boxheader" class="navbar-header">
+
+                  
+                   	<a > <img alt="" src="images/LogoWEB_PAGE.png"
+					height="60" width="175"> </a>
+
+
+                </div>
+                <!-- Top Menu Items -->
+                <ul class="nav navbar-right top-nav">
+                  
+                    <li class="dropdown">
+                        <a  data-toggle="dropdown" style="cursor:pointer" ng-click="logout()"><i class="glyphicon glyphicon-log-out" style="cursor:pointer"></i> Log out</a>  
+                    </li>
+                </ul>
+                <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+                <div class="collapse navbar-collapse " id="slidbaronRight" >
+                    <ul id="shadovfromright" class="nav navbar-nav side-nav" style="margin-top:39px;width:300px">
+                        <li style="width:inherit;">
+                            <a href="bootstrap-elements.html" style="width:inherit;"><i class="fa fa-fw fa-home" id="iconscollor" ></i> Home</a>
+                        </li>
+                        <li  style="width: inherit;">
+                            <a  style="width:inherit;"><i class="fa fa-fw fa-search" id="iconscollor"></i> Lost and Found pets</a>
+                        </li>
+                        <li  style="width: inherit;">
+                            <a style="width:inherit;"><i class="glyphicon glyphicon-shopping-cart" id="iconscollor"></i> Adopt a pet</a>
+                        </li>
+                        <li  style="width: inherit;" >
+                            <a ng-click="tips()" style="width:inherit;"><i class="fa fa-fw fa-list" id="iconscollor"></i> Tips Pet Care</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </nav>
+
+            <div id="page-wrapper">
+
+                <div class="container-fluid" >
+
+                    <!-- Page Heading -->
+
+                    <div class="row" styles="">
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <div class="row kiko" style="margin-left:60px">
+                                <br>
+                                <div class="row">
+                                    <div class="col-lg-2">
+                                        <img class="img-responsive" ng-src="images/users/{{user.profileImage }}" width="150" height="150" alt="">  
+                                    </div>
+                                    <div class="col-lg-9  user_information_div   " align="bottom" >
+                                        <h2>{{user.firstName}} {{user.lastName}}</h2>
+                                      <!--   <button class="btn btn-primary  btn_edit_profile_picture " type="button" onclick=""  ><i class="fa fa-2x fa-edit"></i> Edit Profile</button>
+                                    </div>-->
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row" ">
+                        <div class="col-lg-8">
+
+                            <!-- *****************************CUSTUM**ITEM*******************************************-->
+
+                            <div class="row headerforcomments" ng-repeat="comment in comments | reverse" style="margin-left:100px"> 
+                                <div class="row">
+                                    <div id="footer_post" class="row" style="margin-left: 1px;">
+                                        <div class="col-sm-2 col-md-2  col-lg-2" >
+                                            <img alt="" ng-src="images/users/{{comment.pet.profileImage}}" class="img-responsive" width="50" height="50">
+                                        </div>
+                                        <div id="header_for_name_time" class="col-sm-10 col-md-10  col-lg-10 " style="">
+                                            <h4 id="style_name" >{{comment.user.firstName}} {{comment.user.lastName}}</h4>
+                                            <p  id="stile_time" >{{convertTimestampToDate(comment.time_post)}}</p>
+                                        </div>
+                                        <div id="style_img_and_comment" class="row ">
+                                            <div class="col-lg-12">
+                                                <p >{{comment.message}}</p>
+                                            </div>
+
+                                            <div class="col-md-12" style=" " ng-if="comment.image_comment">
+                                                <img ng-src="images/comments/{{comment.image_comment}}" class="img-responsive " alt="" style="">
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- *****************************CUSTUM**ITEM*******************************************-->
+
+
+                        </div>
+                        <div class="col-lg-4"  >
+                            <div class="row headerforcomments">
+                                <h3>Activitis :</h3>
+
+                                <div class="row  activitysOnprofile" style=" ">
+                                    <div class="col-sm-2 col-md-2 col-lg-2 ">
+                                        <i style="color: #31b0d5;" class="fa fa-2x fa-comment"></i>
+                                    </div>
+                                    <div class="col-sm-1 col-md-1  col-lg-1" style="padding-top: 6px;">
+                                        {{commentsNo}}
+                                    </div>
+                                    <div class="col-sm-5 col-md-5  col-lg-5" style="padding-top: 6px;">
+                                        Comments
+                                    </div>
+                                </div>
+
+
+                                <div class="row activitysOnprofile">
+                                    <div class="col-lg-2">
+                                        <i style="color: #c7254e;" class="fa fa-2x fa-camera"></i>
+                                    </div>
+                                    <div class="col-lg-1" style="padding-top: 6px;">
+                                        {{pictureNo}}
+                                    </div>
+                                    <div class="col-lg-5" style="padding-top: 6px;">
+                                        Photos
+                                    </div>
+                                </div>
+
+
+                                <div class="row activitysOnprofile">
+                                    <div class="col-lg-2">
+                                        <i style="color: #f0ad4e;" class="fa fa-2x fa-location-arrow"></i>
+                                    </div>
+                                    <div class="col-lg-1" style="padding-top: 6px;">
+                                        {{locationNo}}
+                                    </div>
+                                    <div class="col-lg-5" style="padding-top: 6px;">
+                                        Check ins 
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+    </body>
+</html>

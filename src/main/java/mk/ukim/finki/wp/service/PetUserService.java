@@ -7,7 +7,7 @@ import mk.ukim.finki.wp.model.PetUser;
 
 public interface PetUserService {
 
-	public PetUser register(String username, String password,String firstName,String lastName,byte[] profileImage,int enabled);
+	public PetUser register(String username, String password,String firstName,String lastName,String profileImage,int enabled,String skypeId);
 	
 	public List<PetUser> getUsers();
 	

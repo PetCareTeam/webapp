@@ -1,12 +1,57 @@
-FirstApp.controller('LoginController', ['$scope', 'LoginService', 
-    function($scope, LoginService) {
+FirstApp.controller('LoginController', ['$scope','LoginService', '$location', '$rootScope',
+                                         function($scope, LoginService, $location, $rootScope) {
 	
-	$scope.mydata= [];
-
-	$scope.login = function(){
+	
+	$scope.alert = false;
+	$scope.success = false;
+	$scope.login = function() {	
 		
-		$scope.mydata = LoginService.login($scope.username, $scope.password);
-	}
+		var user = {
+				username : $scope.username,
+				password : $scope.password
+		};
+		
+		LoginService.login(user).then(
+				
+				function success(data){
+					
+					
+					console.log('success: ', data);
+					$scope.alert = false;
+					$scope.success = true;
+					setTimeout(function(){ 
+						
+					}, 10000);
+					$location.url('/home');
+				},
+				function error(err){
+					$scope.alert = true;
+					$scope.username = '';
+					$scope.password = '';
+					console.log('error: ', err);
+				});
+		
+		
+	};
+	
+
+	
+$scope.logout = function() {	
+		
+	
+		
+		LoginService.logout().then(
+				
+				function success(data){
+					$locatin.url('/');
+				},
+				function error(err){
+					
+				});
+		
+		
+	};
+	
 	
 	
 }]);

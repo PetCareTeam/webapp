@@ -94,13 +94,13 @@ body {
 
 #bodylogin{
     text-align: center;
-
-    background-attachment: scroll;
-    background-image: url(../images/PolyGenPattern_287201511058.png);         
+    background-attachment: scroll;        
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    
+   background: url(../images/PolyGenPattern_287201511058.png);  
 }

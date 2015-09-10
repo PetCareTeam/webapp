@@ -12,7 +12,7 @@
 <title>Profile</title>
 </head>
 <body>
-	<form:form action="post" modelAttribute="comment" method="post" enctype="multipart/form-data">
+	<form:form action="comments/post" modelAttribute="comment" method="post" enctype="multipart/form-data">
 		<table>
 			<tr>
 				<td><label for="username">${user.username}</label></td>
