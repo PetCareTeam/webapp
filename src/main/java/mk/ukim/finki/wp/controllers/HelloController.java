@@ -6,7 +6,6 @@ import java.util.Iterator;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.validation.Valid;
 
 import mk.ukim.finki.wp.model.FilePicture;
 import mk.ukim.finki.wp.model.PetUser;
@@ -14,8 +13,8 @@ import mk.ukim.finki.wp.model.User;
 import mk.ukim.finki.wp.resources.TokenTransfer;
 import mk.ukim.finki.wp.resources.TokenUtils;
 import mk.ukim.finki.wp.service.AuthoritiesService;
-import mk.ukim.finki.wp.service.PostService;
 import mk.ukim.finki.wp.service.PetUserService;
+import mk.ukim.finki.wp.service.PostService;
 
 import org.apache.commons.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +25,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -231,13 +228,7 @@ public class HelloController implements ServletContextAware {
 		if (pet_user != null) {
 			response.setStatus(HttpServletResponse.SC_FORBIDDEN);
 		} else {
-		
-			System.out.println("Userot ne e null");
-			System.out.println("Username " + mRequest.getParameter("username"));
-			System.out.println("PAssword " + mRequest.getParameter("password"));
-			System.out.println("fisrtName " + mRequest.getParameter("firstName"));
-			System.out.println("LastName " + mRequest.getParameter("lastName"));
-			System.out.println("SkypeId " + mRequest.getParameter("skypeId"));
+			if(mFile!=null)
 				pet_user = user_service.register(
 						mRequest.getParameter("username"),
 						mRequest.getParameter("password"),
@@ -247,6 +238,15 @@ public class HelloController implements ServletContextAware {
 								"username").getBytes()))
 								+ ".jpg", 1,
 						mRequest.getParameter("skypeId"));
+			else
+				pet_user = user_service.register(
+						mRequest.getParameter("username"),
+						mRequest.getParameter("password"),
+						mRequest.getParameter("firstName"),
+						mRequest.getParameter("lastName"),
+						"profile_picture.png", 1,
+						mRequest.getParameter("skypeId"));
+				
 				
 				role_service.save_role(pet_user, "ROLE_USER");
 		}

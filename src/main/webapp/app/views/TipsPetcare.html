@@ -49,48 +49,7 @@ and open the template in the editor.
 				</ul>
 
 				<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-				<ul id="shadovfromright" class="nav navbar-nav side-nav"
-					style="margin-top: 39px; width: 300px;">
 
-					<li id="slidbarright_home" class="sidbarheader"><a
-						style="width: inherit;">
-
-							<div class="profileheader">
-								<div id="lowleftpading" class="row">
-									<div class="col-md-5">
-
-										<img ng-src="images/users/{{user.profileImage}}"
-											class="img-rounded img-responsive" alt="" style=""
-											ng-click="openProfile()">
-									</div>
-
-								</div>
-								<div class="row">
-									<div class="col-lg-9">
-										<p style="color: #fff;">
-											<b>{{user.firstName}} {{user.lastName}}</b>
-										</p>
-									</div>
-								</div>
-							</div>
-
-					</a></li>
-
-
-					<li style="width: inherit;"><a style="width: inherit;"
-						ng-click="home()"><i class="fa fa-fw fa-home"
-							id="iconscollor"></i> Home</a></li>
-					<li style="width: inherit;"><a style="width: inherit;"
-						href="blank-page.html"><i class="fa fa-fw fa-search"
-							id="iconscollor"></i> Lost and Found pets</a></li>
-					<li style="width: inherit;"><a style="width: inherit;"
-						href="index-rtl.html"><i
-							class="glyphicon glyphicon-shopping-cart" id="iconscollor"></i>
-							Adopt a pet</a></li>
-					<li style="width: inherit; cursor:pointer"><a style="width: inherit;"
-						ng-click="tips()"><i class="fa fa-fw fa-list" id="iconscollor"></i>
-							Tips Pet Care</a></li>
-				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
 		</nav>
@@ -98,6 +57,48 @@ and open the template in the editor.
 
 		<!-- GLAVNIOT DEL SO POPOLNUVA -->
 
+		<ul id="shadovfromright" class="nav navbar-nav side-nav"
+			style="margin-top: 39px; width: 300px;">
+
+			<li id="slidbarright_home" class="sidbarheader"><a
+				style="width: inherit;">
+
+					<div class="profileheader">
+						<div id="lowleftpading" class="row">
+							<div class="col-md-5">
+
+								<img ng-src="images/users/{{user.profileImage}}"
+									class="img-rounded img-responsive" alt="" style=""
+									ng-click="openProfile()">
+							</div>
+
+						</div>
+						<div class="row">
+							<div class="col-lg-9">
+								<p style="color: #fff;">
+									<b>{{user.firstName}} {{user.lastName}}</b>
+								</p>
+							</div>
+						</div>
+					</div>
+
+			</a></li>
+
+
+			<li style="width: inherit;"><a style="width: inherit;"
+				ng-click="home()"><i class="fa fa-fw fa-home" id="iconscollor"></i>
+					Home</a></li>
+			<li style="width: inherit;"><a style="width: inherit;"
+				href="blank-page.html"><i class="fa fa-fw fa-search"
+					id="iconscollor"></i> Lost and Found pets</a></li>
+			<li style="width: inherit;"><a style="width: inherit;"
+				href="index-rtl.html"><i
+					class="glyphicon glyphicon-shopping-cart" id="iconscollor"></i>
+					Adopt a pet</a></li>
+			<li style="width: inherit; cursor: pointer"><a
+				style="width: inherit;" ng-click="tips()"><i
+					class="fa fa-fw fa-list" id="iconscollor"></i> Tips Pet Care</a></li>
+		</ul>
 
 		<div id="page-wrapper">
 			<div class="container-fluid">
@@ -232,12 +233,13 @@ and open the template in the editor.
 					<div class="row" align="center">
 						<ul class="pagination">
 
-							<li class="active" id="1" style="cursor:pointer"><a href="">1 <span
-									class="sr-only">(current)</span></a></li>
-							<li id="2" style="cursor:pointer"><a ng-click="click(this)">2</a></li>
-							<li id="3" style="cursor:pointer"><a ng-click="click(this)">3</a></li>
-							<li id="4" style="cursor:pointer"><a ng-click="click(this)">4</a></li>
-							<li id="6" style="cursor:pointer"><a ng-click="">»</a></li>
+							<li class="active" id="1" style="cursor: pointer"><a href="">1
+									<span class="sr-only">(current)</span>
+							</a></li>
+							<li id="2" style="cursor: pointer"><a ng-click="click(this)">2</a></li>
+							<li id="3" style="cursor: pointer"><a ng-click="click(this)">3</a></li>
+							<li id="4" style="cursor: pointer"><a ng-click="click(this)">4</a></li>
+							<li id="6" style="cursor: pointer"><a ng-click="">»</a></li>
 						</ul>
 					</div>
 

@@ -1,0 +1,82 @@
+<div class="modal-header"
+	style="background:red; color: #fff; border-radius: 5px;" ng-init="initModal()">
+	<button type="button" class="close" data-dismiss="modal"
+		ng-click="cancel()">&times;</button>
+	<h3 class="modal-title">Write a comment</h3>
+</div>
+
+
+
+
+<div class="modal-body"
+	style="height: 450px; overflow-y: scroll; padding-top: 0px;">
+
+		<!-- OLD COMMENTS -->
+
+		<div ng-repeat="comment in comments ">
+		
+			<div class="row"
+				style="border-bottom: 1px solid #31cfa7; padding-top: 14px;">
+				<div class="col-lg-2">
+					<img alt="" class="img-rounded img-responsive" width="50" ng-src="images/users/{{comment.user.profileImage}}"
+						height="50">
+				</div>
+				<div class="col-lg-10">
+					<p style="margin-bottom: 0px; color: #222;"> {{comment.user.firstName}} {{comment.user.lastName}}  </p>
+					<p style="font-size: 12px; color: #BEC0BF;">
+						<span class="fa fa-clock-o"></span> {{convertTimestampToDate(comment.time_post)}}
+					</p>
+					<p> {{comment.message}} </p>
+				</div>
+			</div>
+		</div>
+		
+		<!-- OLD COMMENTS -->
+		
+		<!-- NEW COMMENTS -->
+		
+		<div ng-repeat="comment in newComments ">
+		
+			<div class="row"
+				style="border-bottom: 1px solid #1ad394; padding-top: 14px;">
+				<div class="col-lg-2">
+					<img alt="" class="img-rounded img-responsive" width="50" ng-src="images/users/{{comment.user.profileImage}}"
+						height="50">
+				</div>
+				<div class="col-lg-10">
+					<p style="margin-bottom: 0px; color: #222;"> {{comment.user.firstName}} {{comment.user.lastName}}  </p>
+					<p style="font-size: 12px; color: #BEC0BF;">
+						<span class="fa fa-clock-o"></span> {{convertTimestampToDate(comment.time_post)}}
+					</p>
+					<p> {{comment.message}} </p>
+				</div>
+			</div>
+		</div>
+		
+		<!-- NEW COMMENTS -->
+</div>
+
+
+
+
+
+<div class="modal-footer">
+
+	<div class="col-lg-2">
+		<img alt="" class="img-rounded img-responsive" width="70" height="70" ng-src="images/users/{{user.profileImage}}">
+	</div>
+	<div class="col-lg-8">
+		<textarea class="form-control" rows="2"
+			placeholder="Write your comment here ... "
+			ng-model="replyComment.message"
+			
+			style="border: none; overflow: auto; outline: none; resize: none; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none;"></textarea>
+
+	</div>
+	<div class="col-lg-2" style="padding-top: 14px;">
+		<button type="button" class="pull-right  button button-action button-circle button-longshadow" data-dismiss="modal" ng-click="reply()">
+			<i class="fa fa-paper-plane"></i> Reply
+		</button>
+	</div>
+</div>
+

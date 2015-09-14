@@ -1,6 +1,6 @@
-FirstApp.factory('homeService',['crudResource', '$q',
+FirstApp.factory('homeService',['crudResource', '$q', 'likecomment',
                              
-       function(crudResource, $q) {
+       function(crudResource, $q, likecomment) {
 
              return { 
 					loadComments : function(){
@@ -55,6 +55,28 @@ FirstApp.factory('homeService',['crudResource', '$q',
 						);
 						
 						return dfd.promise;
+					},
+					
+					setFlagsLikes : function(comments){
+						/* ne ni treba */
+						var listFlags = [];
+						var result = true;
+						
+						for (var int = 0; int < comments.length; int++) {
+							console.log("comment id is " + comments[int].id);
+							result = likecomment.checkLike(comments[int].id).then(
+									function succ(response){
+										console.log('smee da lajkne: ' + response);
+										listFlags.push(result);
+									},
+									function failure(error){
+										console.log('error');
+									}
+							);
+						
+						}
+						
+						return listFlags;
 					}
 					
 					

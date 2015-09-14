@@ -16,28 +16,93 @@
 	border-color: #ebccd1;
 }
 
-#simple-btn-keyboard-nav:HOVER {
-	 text-decoration: none;
+#linktoprofileheadestyling:hover, #linktoprofileheadestyling:focus {
+	text-decoration: none;
 }
 
+#li_in_header_to_profile {
+	text-align: center;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	background-attachment: scroll;
+	background-image: url(images/PolyGenPattern_287201511058.png);
+	background-position: center center;
+	background-repeat: none;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+}
+
+#li_in_header_to_profile:hover {
+	text-decoration: none;
+}
 </style>
-<link rel="stylesheet" href="styles/homepage.css" /> 
+<link rel="stylesheet" href="styles/homepage.css" />
 </head>
-<body>
+<body id="fonts">
 
 	<div id="wrapper">
 
 		<!-- Navigation -->
-		<nav id="boxforComments" 
+		<!-- SIDE BAR -->
+
+		<ul id="shadovfromright" class="nav navbar-nav side-nav"
+			style="margin-top: 13px; width: 300px;">
+
+
+
+
+
+			<li id="li_in_header_to_profile" style="">
+				<div class="profileheader-home" style="color: #088B70;">
+					<div class="row">
+						<div class="col-md-6" align="left">
+							<a ng-click="openProfile()" id="linktoprofileheadestyling"> <img
+								ng-src="images/users/{{user.profileImage}}"
+								class="img-rounded img-responsive" alt="" style=""
+								ng-click="openProfile()">
+							</a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-12" align="left">
+							<a ng-click="openProfile()" id="linktoprofileheadestyling"><p
+									style="color: #fff;">
+									<b>{{user.firstName}} {{user.lastName}}</b>
+								</p> </a>
+						</div>
+					</div>
+				</div>
+			</li>
+
+
+			<li style="width: inherit; cursor: pointer"><a
+				style="width: inherit;" href="bootstrap-elements.html"><i
+					class="fa fa-fw fa-home" id="iconscollor"></i> Home</a></li>
+			<li style="width: inherit; cursor: pointer"><a
+				style="width: inherit;" href="blank-page.html"><i
+					class="fa fa-fw fa-search" id="iconscollor"></i> Lost and Found
+					pets</a></li>
+			<li style="width: inherit; cursor: pointer"><a
+				style="width: inherit;" href="index-rtl.html"><i
+					class="glyphicon glyphicon-shopping-cart" id="iconscollor"></i>
+					Adopt a pet</a></li>
+			<li style="width: inherit; cursor: pointer"><a
+				style="width: inherit;" ng-click="tips()"><i
+					class="fa fa-fw fa-list" id="iconscollor"></i> Tips Pet Care</a></li>
+		</ul>
+
+		<nav id="boxforComments"
 			class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 			<!-- Brand and toggle get grouped for better mobile display -->
-			<div id="boxheader" class="navbar-header" style="padding-top: 14px; padding-left:50px;">
+			<div id="boxheader" class="navbar-header"
+				style="padding-top: 14px; padding-left: 50px;">
 
 
-				<img alt="" src="images/LogoWEB_PAGE.png" height="30" width="89" >
-
-
-
+				<img alt="" src="images/LogoWEB_PAGE.png" height="30" width="89">
 
 			</div>
 
@@ -45,9 +110,10 @@
 
 			<!-- Top Menu Items -->
 			<div ng-init="getUser()">
-				<ul class="nav navbar-right top-nav" style="padding-bottom: 7px; padding-top: 7px;"   >
-					<li class="dropdown"><a id="user" ng-click="openProfile()" style="font-size: 16px;">
-							{{user.firstName}} {{user.lastName}}</a></li>
+				<ul class="nav navbar-right top-nav"
+					style="padding-bottom: 7px; padding-top: 7px;">
+					<li class="dropdown"><a ng-click="openProfile()"
+						style="font-size: 16px;"> {{user.firstName}} {{user.lastName}}</a></li>
 					<li class="dropdown" ng-click="logout()"><a
 						data-toggle="dropdown" style="cursor: pointer"><i
 							class="glyphicon glyphicon-log-out" style="cursor: pointer"></i>
@@ -55,48 +121,7 @@
 				</ul>
 
 				<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-				<ul id="shadovfromright" class="nav navbar-nav side-nav"
-					style="margin-top: 13px; width: 300px;">
 
-					<li id="slidbarright_home" class="sidbarheader"><a
-						style="width: inherit;" >
-
-							<div class="profileheader">
-								<div id="lowleftpading" class="row">
-									<div class="col-md-5">
-
-										<img ng-src="images/users/{{user.profileImage}}"
-											class="img-rounded img-responsive" alt="" style=""
-											ng-click="openProfile()">
-									</div>
-
-								</div>
-								<div class="row">
-									<div class="col-lg-9" >
-										<p style="color: #fff; ">
-											<b>{{user.firstName}} {{user.lastName}}</b>
-										</p>
-									</div>
-								</div>
-							</div>
-
-					</a></li>
-
-
-					<li style="width: inherit; cursor:pointer"><a style="width: inherit;"
-						href="bootstrap-elements.html"><i class="fa fa-fw fa-home"
-							id="iconscollor"></i> Home</a></li>
-					<li style="width: inherit; cursor:pointer"><a style="width: inherit;"
-						href="blank-page.html"><i class="fa fa-fw fa-search"
-							id="iconscollor"></i> Lost and Found pets</a></li>
-					<li style="width: inherit; cursor:pointer"><a style="width: inherit;"
-						href="index-rtl.html"><i
-							class="glyphicon glyphicon-shopping-cart" id="iconscollor"></i>
-							Adopt a pet</a></li>
-					<li style="width: inherit; cursor:pointer"><a style="width: inherit;"
-						ng-click="tips()"><i class="fa fa-fw fa-list"
-							id="iconscollor"></i> Tips Pet Care</a></li>
-				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
 		</nav>
@@ -104,6 +129,9 @@
 		<div id="page-wrapper">
 
 			<div class="container-fluid">
+
+
+				<br> <br> <br>
 
 				<!-- Page Heading -->
 
@@ -115,19 +143,18 @@
 
 							<form>
 								<div id="footer_post" class="row">
-									<div class="col-lg-2" >
+									<div class="col-lg-2">
 										<img ng-src="images/users/{{user.profileImage}}"
 											class="img-responsive" width="60" height="60" alt="" style="">
 
 									</div>
-									<div class="col-lg-10" style="maring-left:0px">
-										
-										<br>
-										<br>
+									<div class="col-lg-10" style="maring-left: 0px">
+
+
 										<textarea id="text_area_in_post" ng-model="comment.message"
-											class="form-control" rows="4" style="font-size: 15px"
+											class="form-control" rows="3" style="font-size: 15px"
 											placeholder="Write your comment here ... "></textarea>
-									
+
 									</div>
 								</div>
 								<div class="row"
@@ -135,49 +162,41 @@
 
 									<!-- Googple PLaces Directive -->
 									<input ng-model="comment.address" class="form-control"
-										ng-show="toAddLocation" googleplace /> 
-										
-										<input class="form-control" type='text' ng-model="comment.contact_phone" tabindex="1" 
-										placeholder="Enter you phone contact ..." ng-show="toAddContactPhone" phone-input/>
+										ng-show="toAddLocation" googleplace /> <input
+										class="form-control" type='text'
+										ng-model="comment.contact_phone" tabindex="1"
+										placeholder="Enter you phone contact ..."
+										ng-show="toAddContactPhone" phone-input />
 
-									<div ng-show="toAddType">
-										<ul class="list-inline" style="margin-bottom: 0px;">
-											<li><label> <input type="radio"
-													ng-model="comment.type" value="give/sell" "> You want
-													to give/sell pet
-											</label></li>
-											<li><label> <input type="radio"
-													ng-model="comment.type" value="adopt"> You want to
-													abopt a pet
-											</label></li>
-											<li><label> <input type="radio"
-													ng-model="comment.type" value="found"> You
-													found/lost pet
-											</label></li>
-										</ul>
-									</div>
+
 
 
 									<p ng-show="error" class="error"
 										style="margin-top: 10px; margin-left: 5px;">You can not
 										add empty message</p>
 
-									<hr style="margin-bottom: 20px; margin-top: 20px">
+									<hr style="margin-bottom: 20px; margin-top: 20px;">
 									<img id="previewImg" class="img-responsive"
 										style="margin-bottom: 10px" ng-show="showImage">
-										
-										<ul style="margin-left:0px" class="list-inline">
-											<li class="fa fa-map-marker" style="color:#FFCC00" ng-show="showLocation"> <span style="color:#A3C2C2"> {{addressShow}} </span></li>
-											
-											<li class="fa fa-phone" style="color:#99CCFF" ng-show="showContact"> <span style="color:#A3C2C2"> {{comment.contact_phone}} </span> </li>
-											
-											<li class="fa fa-paw"  style="color:#00FF99" ng-show="showType"> <span style="color:#A3C2C2" ng-model="showType" > {{showType}} </span></li>
-										</ul>
+
+									<ul style="margin-left: 0px" class="list-inline">
+										<li class="fa fa-map-marker" style="color: #FFCC00"
+											ng-show="showLocation"><span style="color: #A3C2C2">
+												{{addressShow}} </span></li>
+
+										<li class="fa fa-phone" style="color: #99CCFF"
+											ng-show="showContact"><span style="color: #A3C2C2">
+												{{comment.contact_phone}} </span></li>
+
+										<li class="fa fa-paw" style="color: #00FF99"
+											ng-show="showType"><span style="color: #A3C2C2"
+											ng-model="showType"> {{showType}} </span></li>
+									</ul>
 									<hr ng-if="showHR" style="margin-bottom: 7px;">
 
 									<div class="col-lg-10">
 										<ul class="list-inline" style="margin-bottom: 0px;">
-											<li style="cursor:pointer">
+											<li style="cursor: pointer">
 												<div class="form-group"
 													style="color: #B0F2E5; font-size: 18px;">
 													<label for="file-upload" class="glyphicon glyphicon-camera" />
@@ -186,40 +205,57 @@
 														accept=".jpg" />
 												</div>
 											</li>
-											<li style="cursor:pointer"><a id="buttons_post"><span
+											<li style="cursor: pointer"><a id="buttons_post"><span
 													class="fa fa-map-marker" ng-click="addLocation()"></span></a></li>
 
 
-											<li style="cursor:pointer"><a id="buttons_post"><span class="fa fa-phone"
-													ng-click="addPhone()"></span></a></li>
+											<li style="cursor: pointer"><a id="buttons_post"><span
+													class="fa fa-phone" ng-click="addPhone()"></span></a></li>
 
 											<div class="btn-group" dropdown keyboard-nav>
-												<p style="cursor:pointer"><a id="simple-btn-keyboard-nav"    class="fa fa-paw"
-													dropdown-toggle
-													style="color: #B0F2E5; font-size: 20px; background: transparent; border: none  ">
-													<span class="caret"></span>
-												</a>
+												<p style="cursor: pointer">
+													<a id="simple-btn-keyboard-nav" class="fa fa-paw"
+														dropdown-toggle
+														style="color: #B0F2E5; font-size: 20px; background: transparent; border: none">
+														<span class="caret"></span>
+													</a>
 												<ul class="dropdown-menu" role="menu"
 													aria-labelledby="simple-btn-keyboard-nav">
-													<li style="cursor:pointer" role="menuitem" ng-click="adopt()"><a
-														ng-model="comment.type" value="adopt">Adopting a pet</a></li>
-													<li style="cursor:pointer" role="menuitem" ng-click="sell()"><a
-														ng-model="comment.type" value="sell/giv">Selling a pet</a></li>
-													<li  style="cursor:pointer" role="menuitem" ng-click="lost()"><a
-														ng-model="comment.type" value="found/lost">I found or
-															lost a pet</a></li>
+													<li style="cursor: pointer" role="menuitem"
+														ng-click="adopt()"><a ng-model="comment.type"
+														value="adopt">I am giving a pet (adopting)</a></li>
+													<li style="cursor: pointer" role="menuitem"
+														ng-click="sell()"><a ng-model="comment.type"
+														value="sell/giv">I am selling a pet</a></li>
+													<li style="cursor: pointer" role="menuitem"
+														ng-click="lost()"><a ng-model="comment.type"
+														value="found/lost">I have lost my pet</a></li>
+													<li style="cursor: pointer" role="menuitem"
+														ng-click="found()"><a ng-model="comment.type"
+														value="adopt">I have found someone's pet</a></li>
+													<li style="cursor: pointer" role="menuitem"
+														ng-click="injure()"><a ng-model="comment.type"
+														value="sell/giv">My pet is injured</a></li>
 
 												</ul>
 												</p>
 											</div>
 										</ul>
 									</div>
-									<div class="col-lg-2" style="padding-right: 5px;">
-										<button id="button_add_post" type="button"
-											class="btn btn-success pull-right" ng-click="post()">
-											<i class="fa fa-paw" style="padding-right: 4px;"></i>Post
+									<div class="col-lg-2"  style="    padding-right: 0px;">
+										
+										
+										
+										<button  type="button"
+											class="button button-action button-circle  button-longshadow  pull-right" ng-click="post()">
+											<i class="fa fa-paw" ></i>
 										</button>
+										
+										
+										
+										
 									</div>
+									
 
 								</div>
 
@@ -229,122 +265,419 @@
 
 						</div>
 
+						<!-- MOOOOOOOOOODALLLLLLLLLLLL -->
+
+						<div ng-controller="ModalDemoCtrl"
+							style="width: 100%; height: 100%">
+							<script type="text/ng-template" id="myModalContent.html">
+       								 <div class="modal-header" >
+          								  <h3 class="modal-title">Maps!</h3>
+        							 </div>
+     							     <div class="modal-body" ng-init="init()" style="width:100%; height:100%;">
+       								   	<div id="map"></div>
+ 									
+        							</div>
+        							<div class="modal-footer">
+          								  <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+        							</div>
+    					</script>
 
 
-
-						<div ng-hide="!newComments.length" class="row headerforcomments"
-							ng-repeat="comment in newComments | reverse"
-							style="margin-left: 100px">
-							<div class="row">
-								<div id="footer_post" class="row" style="margin-left: 1px">
-									<div class="col-lg-2">
-										<img ng-src="images/users/{{comment.pet.profileImage}}"
-											class="img-responsive" width="50" height="50" alt="" style="">
-
-									</div>
-									<div id="header_for_name_time" class="col-lg-10 " style="">
-										<h4 id="style_name" style="font-size:20px">{{comment.pet.firstName}}
-											{{comment.pet.lastName}}</h4>
-											<br>
-										<i class="fa fa-phone" style="color:#99CCFF"> </i><span style="color:#A3C2C2"> {{comment.contact_phone}} </span>
-										<br>
-										<i class="fa fa-map-marker" style="color:#FFCC00" id="stile_location"> </i> <span style="color:#A3C2C2"> {{comment.address}} </span>
-										<br>
-										<i  class="fa fa-paw"  style="color:#00FF99"> </i> <span style="color:#A3C2C2"> {{comment.type}}</span>
-										<br>
-										<i class="fa fa-clock-o" style="color:#FF0000"></i><span style="color:#A3C2C2"> {{convertTimestampToDate(comment.time_post)}}</span> 
-										<skype-ui id="SkypeButton_Call_mike_1"
-											participants="participants"> </skype-ui>
-									</div>
-									<div id="style_img_and_comment" class="row ">
-										<div class="col-lg-12">{{comment.message}}</div>
-
-
-										<div class="col-md-12" ng-if="comment.image_comment">
-											<img ng-src="images/posts/{{comment.image_comment}}"
-												class="img-responsive " alt="" style="">
-										</div>
-
-									</div>
-								</div>
-
-							</div>
-
+							<!-- MAAAAAAAAAAAAAPAAAAAAAAAAAAAA -->
+							<button ng-click="open()">open me!</button>
 						</div>
-						<!-- ****************************** OLD COMMENTS ********************************-->
+
+						<!-- MOOOOOOOOOODALLLLLLLLLLLL -->
+
+						<!-- new comments start here -->
+						
+						
+						
+						
 
 
 						<div class="row headerforcomments"
-							ng-repeat="comment in comments | reverse"
-							style="margin-left: 100px">
-							<div class="row">
-								<div id="footer_post" class="row" style="margin-left: 1px">
-									<div class="col-lg-2">
-										<img ng-src="images/users/{{comment.pet.profileImage}}"
-											class="img-responsive" width="50" height="50" alt="" style="">
-									</div>
-									
-									<div id="header_for_name_time" class="col-lg-10 " style="">
-										<h4 id="style_name" style="font-size:20px">{{comment.pet.firstName}}
-											{{comment.pet.lastName}}</h4>
-											<br>
-										<i class="fa fa-phone" style="color:#99CCFF"> </i><span style="color:#A3C2C2"> {{comment.contact_phone}} </span>
-										<br>
-										<i class="fa fa-map-marker" style="color:#FFCC00" id="stile_location"> </i> <span style="color:#A3C2C2"> {{comment.address}} </span>
-										<br>
-										<i  class="fa fa-paw"  style="color:#00FF99"> </i> <span style="color:#A3C2C2"> {{comment.type}}</span>
-										<br>
-										<i class="fa fa-clock-o" style="color:#FF0000"></i><span style="color:#A3C2C2"> {{convertTimestampToDate(comment.time_post)}}</span> 
-										<skype-ui id="SkypeButton_Call_mike_1"
-											participants="participants"> </skype-ui>
-									</div>
-									
-									<div id="style_img_and_comment" class="row ">
-										<div class="col-lg-12">{{comment.message}}</div>
+							ng-repeat="post in newComments | reverse"
+							style="margin-left: 100px; padding-top: 0px; padding-left: 14px; padding-right: 14px;">
 
-										<div class="col-md-12" ng-if="comment.image_comment">
-											<img ng-src="images/posts/{{comment.image_comment}}"
+							<div class="row">
+
+								<div class="row " ng-class="post.type"></div>
+
+
+								<div id="footer_post" class="row" style="margin-left: 1px">
+
+									<ul class="list-inline"
+										style="margin-left: 13px; display: flex;">
+
+
+										<li><img ng-src="images/users/{{post.pet.profileImage}}"
+											class="img-responsive" width="80" height="80" alt="" style="">
+
+
+										</li>
+
+
+										<li style="padding-bottom: 10px;" align="top">
+											<h4 id="style_name" style="font-size: 20px; margin-top: 0px;">{{post.pet.firstName}}
+												{{post.pet.lastName}}</h4>
+
+											<ul class="list-inline" style="margin-bottom: 0px;">
+												<li><i class="fa fa-clock-o" style="color: #FF0000"></i><span
+													style="color: #A3C2C2">
+														{{convertTimestampToDate(post.time_post)}}</span></li>
+												<li><i class="fa fa-phone" style="color: #99CCFF"
+													ng-if="post.contact_phone"> </i><span
+													style="color: #A3C2C2"> {{post.contact_phone}} </span></li>
+											</ul> <i class="fa fa-map-marker" style="color: #FFCC00;"
+											id="stile_location" ng-if="post.address"> </i> <span
+											style="color: #A3C2C2"> {{post.address}} </span>
+
+
+
+
+
+										</li>
+
+									</ul>
+
+
+									<hr
+										style="margin-left: 20px; margin-right: 34px; margin-top: 0px; margin-bottom: 0px;">
+
+
+
+
+									<div id="style_img_and_comment" class="row "
+										style="margin-top: 8px;">
+										
+										<div class="col-lg-12" align="justify"
+											style="padding-right: 0px;">{{post.message}}</div>
+										<br> <br>
+
+										<div class="col-ld-12" ng-if="post.image_comment"
+											align="center" style="margin-top: 10px; margin-left: 14px;">
+											<img ng-src="images/posts/{{post.image_comment}}"
 												class="img-responsive " alt="" style="">
+
 										</div>
 
 									</div>
-									<input type="button" value="like" ng-click="like( user.id,comment.id)"/>
+
+									<hr
+										style="margin-left: 20px; margin-right: 34px; margin-top: 0px; margin-bottom: 0px;">
+
+
+									<div class="row">
+										<div class="col-lg-12 "
+											style="padding-left: 20px; padding-right: 28px;">
+
+											<br> <i id="post-new-{{$index}}"
+												ng-click="likeNew(post, $index)"
+												style="background: transparent; border: none; color: #e74c3c; font-size: 32px; padding: 0px; margin-left: 20px; cursor: pointer"
+												class="fa fa-heart-o"></i> <span>
+												{{newComments[newComments.length - 1 - $index].likes}} </span> 
+												
+												<span>
+												
+												
+											
+											<button
+												class="pull-right button button-highlight button-circle  button-longshadow"
+												ng-click="openReplyModal(post.id)"
+												style="margin-right: 20px; margin-left: 20px; margin-bottom: 10px;"
+												
+												>
+												<i class="fa fa-comment"></i>
+											</button>
+											
+												<a
+												id="skype-new-{{$index}}"
+												href="skype:hardcode?chat&topic=this+works"
+												ng-click="changeHrefForCall($index, post.pet.skypeId,0)"
+												ng-if="post.pet.skypeId"
+												class="pull-right  button button-primary button-circle button-longshadow">
+												<i class="fa fa-skype"></i>
+											 </a>
+											
+											</span>
+
+										</div>
+									</div>
+
+
+
 								</div>
+							
+
+
+								<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
+
+
+
+
+
+
+
+
+
+
+								<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
+
+
+
+
+
 
 							</div>
+						</div>
+						
+	
+		
+						
+					
 
+
+						<!-- new comments end here -->
+
+						<!-- ****************************** OLD COMMENTS ********************************-->
+
+
+
+
+						<div class="row headerforcomments"
+							ng-repeat="post in comments | reverse"
+							style="margin-left: 100px; padding-top: 0px; padding-left: 14px; padding-right: 14px;">
+
+							<div class="row">
+
+								<div class="row " ng-class="post.type"></div>
+
+
+								<div id="footer_post" class="row" style="margin-left: 1px">
+
+									<ul class="list-inline"
+										style="margin-left: 13px; display: flex;">
+
+
+										<li><img ng-src="images/users/{{post.pet.profileImage}}"
+											class="img-responsive" width="80" height="80" alt="" style="">
+
+
+										</li>
+
+
+										<li style="padding-bottom: 10px;" align="top">
+											<h4 id="style_name" style="font-size: 20px; margin-top: 0px;">{{post.pet.firstName}}
+												{{post.pet.lastName}}</h4>
+
+											<ul class="list-inline" style="margin-bottom: 0px;">
+												<li><i class="fa fa-clock-o" style="color: #FF0000"></i><span
+													style="color: #A3C2C2">
+														{{convertTimestampToDate(post.time_post)}}</span></li>
+												<li><i class="fa fa-phone" style="color: #99CCFF"
+													ng-if="post.contact_phone"> </i><span
+													style="color: #A3C2C2"> {{post.contact_phone}} </span></li>
+											</ul> <i class="fa fa-map-marker" style="color: #FFCC00;"
+											id="stile_location" ng-if="post.address"> </i> <span
+											style="color: #A3C2C2"> {{post.address}} </span>
+
+
+
+
+
+										</li>
+
+									</ul>
+
+
+									<hr
+										style="margin-left: 20px; margin-right: 34px; margin-top: 0px; margin-bottom: 0px;">
+
+
+
+
+									<div id="style_img_and_comment" class="row "
+										style="margin-top: 8px;">
+										
+										<div class="col-lg-12" align="justify"
+											style="padding-right: 0px;">{{post.message}}</div>
+										<br> <br>
+
+										<div class="col-ld-12" ng-if="post.image_comment"
+											align="center" style="margin-top: 10px; margin-left: 14px;">
+											<img ng-src="images/posts/{{post.image_comment}}"
+												class="img-responsive " alt="" style="">
+
+										</div>
+
+									</div>
+
+									<hr
+										style="margin-left: 20px; margin-right: 34px; margin-top: 0px; margin-bottom: 0px;">
+
+
+									<div class="row">
+										<div class="col-lg-12 "
+											style="padding-left: 20px; padding-right: 28px;">
+
+											<br> <i id="post-{{$index}}"
+												ng-click="like(post, $index)"
+												style="background: transparent; border: none; color: #e74c3c; font-size: 32px; padding: 0px; margin-left: 20px; cursor: pointer"
+												class="fa fa-heart-o"></i> <span>
+												{{comments[comments.length - 1 - $index].likes}} </span> 
+												
+												<span>
+												
+												
+											
+											<button
+												class="pull-right button button-highlight button-circle  button-longshadow"
+												ng-click="openReplyModal(post.id)"
+												style="margin-right: 20px; margin-left: 20px; margin-bottom: 10px;"
+												
+												>
+												<i class="fa fa-comment"></i>
+											</button>
+											
+												<a
+												id="skype-{{$index}}"
+												href="skype:hardcode?chat&topic=this+works"
+												ng-click="changeHrefForCall($index, post.pet.skypeId,1)"
+												ng-if="post.pet.skypeId"
+												class="pull-right  button button-primary button-circle button-longshadow">
+												<i class="fa fa-skype"></i>
+											 </a>
+											
+											</span>
+
+										</div>
+									</div>
+
+
+
+								</div>
+							
+
+
+								<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
+
+
+
+
+
+
+
+
+
+
+								<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
+
+
+
+
+
+
+							</div>
 						</div>
 
 						<!-- ***************************** END OLD COMMENTS ******************************************-->
-
-
 					</div>
 
-
-					<div class="col-lg-4">
-						<div class="row headerforcomments" style="">
-							<div class="page-header"
-								style="margin-top: 0px; margin-bottom: 0px;">
-								<h3>Resent News</h3>
+					<div class="col-lg-4"
+						style="position: fixed; top: 50; left: 20; right: 0; height: 23px; margin-left: 20; padding-left: 60px;">
+						<div class="row headerforcomments" style="padding-top: 0px;">
+							<div style="border-bottom: 1px solid #1ab394;" align="center">
+								<p
+									style="font-size: 20px; margin-bottom: 0px; border-top-width: 10px; margin-top: 10px;">Popular
+									Article</p>
 							</div>
-							<!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$CUSTUM_VIEW_FOR_RESENT_NEWS$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
+
+							<c3-simple ng-model="chart.data" id="chart" config="chart"></c3-simple>
 
 
-							<div class="row itemnews">
-								<div class="col-md-5">
-									<img alt="" src="images/dfgdfgdfg.JPG" class="img-responsive">
+
+							<!-- 
+         <button ng-click="loadingWithProgress();" 
+         ladda-button="laddaLoadingBar" data-style="zoom-in"
+		class="red ladda-button"><span class="ladda-label">Submit</span>
+          </button> -->
+
+							<div
+								style="border-bottom: 1px solid #1ab394; margin-bottom: 7px;"
+								align="center">
+								<p
+									style="font-size: 20px; margin-bottom: 0px; border-top-width: 10px; margin-top: 10px;">
+									Nearby Places</p>
+							</div>
+							<div ng-controller="NearByController">
+
+
+
+
+								<div class="row" style="margin-left: 25px; margin-bottom: 3px;">
+									<div class="col-md-2"
+										style="padding-right: 0px; padding-left: 0px;">
+										<img alt="" src="images/nearbyimages/vet.jpg"
+											class="img-responsive" width="50" height="50">
+									</div>
+									<div class="col-md-10">
+										<p>
+											<br> <a style="color: #1ab394;"
+												ng-click="retrivePetStores()">Find nearby pharmacies</a>
+										</p>
+									</div>
 								</div>
-								<div class="col-md-7">
-									<p>
-										This is an example and if you want to read more then go... <a
-											href="#" style="color: #1ab394;">Read more</a>
-									</p>
+								<div class="row" style="margin-left: 25px; margin-bottom: 3px;">
+									<div class="col-md-2"
+										style="padding-right: 0px; padding-left: 0px;">
+										<img alt="" src="images/nearbyimages/park.jpg"
+											class="img-responsive" width="50" height="50">
+									</div>
+									<div class="col-md-10">
+										<p>
+											<br> <a href="#" style="color: #1ab394;">Find nearby
+												parks </a>
+										</p>
+									</div>
+								</div>
+
+								<div class="row" style="margin-left: 25px; margin-bottom: 3px;">
+									<div class="col-md-2"
+										style="padding-right: 0px; padding-left: 0px;">
+										<img alt="" src="images/nearbyimages/gogshop.jpg"
+											class="img-responsive" width="50" height="50">
+									</div>
+									<div class="col-md-10">
+										<p>
+											<br> <a href="#" style="color: #1ab394;">Find nearby
+												Veterinary Clinics </a>
+										</p>
+									</div>
+								</div>
+								<div class="row" style="margin-left: 25px; margin-bottom: 3px;">
+									<div class="col-md-2"
+										style="padding-right: 0px; padding-left: 0px;">
+										<img alt="" src="images/nearbyimages/vetshops.jpg"
+											class="img-responsive" width="50" height="50">
+									</div>
+									<div class="col-md-10">
+										<br>
+										<button style="color: #1ab394;" ng-click="retrivePetStores()">Find
+											nearby Pet-Shops</button>
+
+									</div>
 								</div>
 							</div>
-							<!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
+
 
 
 						</div>
+						<!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
+
+
+
+
 					</div>
 				</div>
 
@@ -355,7 +688,6 @@
 
 	</div>
 	<!-- /#page-wrapper -->
-
 
 
 

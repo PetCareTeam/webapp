@@ -9,7 +9,7 @@ import mk.ukim.finki.wp.model.Post;
 
 public interface CommentService {
 	
-	public Comment postComment(PetUser petUser, Post post, String message, Date time_post,String image_comment);
+	public Comment postComment(PetUser petUser, Post post, String message, Date time_post);
 	
 	public List<Comment> findByPost(Post post);
 

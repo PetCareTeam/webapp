@@ -9,10 +9,12 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import mk.ukim.finki.wp.model.Likedpost;
 import mk.ukim.finki.wp.model.Post;
 import mk.ukim.finki.wp.model.FilePicture;
 import mk.ukim.finki.wp.model.ListPosts;
 import mk.ukim.finki.wp.model.PetUser;
+import mk.ukim.finki.wp.model.User;
 import mk.ukim.finki.wp.service.LikedPostService;
 import mk.ukim.finki.wp.service.PetUserService;
 import mk.ukim.finki.wp.service.PostService;
@@ -27,11 +29,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.ServletContextAware;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-@Controller
+@RestController
 public class PetUserPostController implements ServletContextAware {
 
 	@Autowired
@@ -62,17 +65,7 @@ public class PetUserPostController implements ServletContextAware {
 	}
 
 	
-	@RequestMapping(value="/posts/like", method=RequestMethod.POST)
-	@ResponseBody
-	public void like(@RequestBody Long post_id, @RequestBody Long user_id)
-	{
-		Post post=post_service.findPost(post_id);
-		PetUser user=petuser_service.findUser(user_id);
-		
-		System.out.println("User_id " + user_id + "Post_id: "+ post_id);
-		likedPost_service.saveLike(post, user);
-		
-	}
+	
 	
 	@RequestMapping(value = "/posts/post", method = RequestMethod.POST, produces = "application/json")
 	@ResponseBody
@@ -151,7 +144,7 @@ public class PetUserPostController implements ServletContextAware {
 
 	}
 
-	@RequestMapping(value = "/posts/type/get", method = RequestMethod.GET, produces = "application/json")
+	/*@RequestMapping(value = "/posts/type/get", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
 	public ListPosts getCommentsByType(@RequestBody String type,
 			HttpServletResponse response) {
@@ -159,7 +152,7 @@ public class PetUserPostController implements ServletContextAware {
 		ListPosts list_comments = new ListPosts();
 		list_comments.setPosts(comments);
 		return list_comments;
-	}
+	}*/
 
 	@RequestMapping(value = "/posts/get/{id}", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody

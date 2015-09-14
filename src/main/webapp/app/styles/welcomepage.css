@@ -80,8 +80,8 @@ header .intro-text .intro-heading {
 
 #loginbtn {
 	border-radius: 0px;
-	background: #18c09f;
-	border-color: #18c09f;
+	background: #31cfa7;
+	border-color: #31cfa7;
 	font-size: 15px;
 	padding-left: 35px;
 	padding-right: 35px;
@@ -92,9 +92,9 @@ header .intro-text .intro-heading {
 #registerbtn {
 	border-radius: 0px;
 	background: #fff;
-	border-color: #18c09f;
+	border-color: #31cfa7;
 	font-size: 15px;
-	color: #18c09f;
+	color: #31cfa7;
 	padding-left: 35px;
 	padding-right: 35px;
 	padding-top: 10px;
@@ -303,7 +303,7 @@ footer ul.quicklinks {
 }
 
 #about {
-	background: #18c09f;
+	background: #31cfa7;
 	margin-top: 140px;
 }
 

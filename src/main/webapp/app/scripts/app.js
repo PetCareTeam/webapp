@@ -18,5 +18,7 @@ var FirstApp = angular.module('avAngularStartupApp',
 		 'ngResource',
 		 'ui.bootstrap',
 		 'ngCookies',
-		 'ngMask'
-		]);
+		 'ngMask',
+		 'angular-c3-simple',
+		 'duScroll'
+		]).value('duScrollDuration', 2000).value('duScrollOffset', 30);

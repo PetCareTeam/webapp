@@ -92,7 +92,9 @@ body {
     color: #666;
 }
 
-#bodylogin{
+#containerlogin_background{
+	    
+   background: url(../images/PolyGenPattern_287201511058.png);
     text-align: center;
     background-attachment: scroll;        
     background-position: center center;
@@ -101,6 +103,5 @@ body {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-    
-   background: url(../images/PolyGenPattern_287201511058.png);  
+  
 }

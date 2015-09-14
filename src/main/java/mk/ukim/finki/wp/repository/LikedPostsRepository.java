@@ -10,6 +10,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface LikedPostsRepository extends JpaRepository<Likedpost, Long> {
 		public List<Likedpost> findByPost(Post post);
+		public List<Likedpost> findByLiker(PetUser user);
 	}
 	
 

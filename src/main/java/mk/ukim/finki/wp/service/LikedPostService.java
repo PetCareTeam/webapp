@@ -9,6 +9,17 @@ import mk.ukim.finki.wp.model.Post;
 public interface LikedPostService {
 	public void saveLike(Post post, PetUser user);
 	public List<Likedpost> findLikedpostByPost(Post post);
+	public void deleteLiked(Post post);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public List<Likedpost> findByUser(PetUser user);
 }
 
 

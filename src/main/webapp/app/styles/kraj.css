@@ -1,59 +1,99 @@
-#loginbe{
-	    background-image: url(../images/PolyGenPattern_287201511058.png);
-	    background-size: cover; 
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;          
-
+#loginbe {
+	background-image: url(../images/PolyGenPattern_287201511058.png);
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
 }
 
-.boxForComments{
-		    background-image: url(../images/PolyGenPattern_287201511058.png);
+.boxForComments {
+	background-image: url(../images/PolyGenPattern_287201511058.png);
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+}
+
+#navbar-wellcomepage {
+	background-color: transparent;
+	border-bottom: none;
+	border-color: #1ab394;
+}
+
+#ul-header-wellcome>li>a {
+	color: #fff;
+	font-size: 17px;
+}
+
+.navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus
+	{
+	color: #fff;
+	background-color: #096a57;
+}
+
+.navbar-default .nav li a:hover, .navbar-default .nav li a:focus {
+	outline: 0;
+	color: #096a57;
+}
+
+.navbar-default .navbar-nav>.active>a {
+	border-radius: 0;
+	color: #fff;
+	background-color: #096a57;
+	border-radius: 4px;
+}
+
+#navbarwellcome {
+	background-color: #1ab394;
+	border-color: transparent;
+}
+
+.ng-scope>.navbar-default {
+	background-color: #1ab394;
+	border-color: transparent;
+}
+
+.injured {
+	border: 5px solid #f0776c;
+	margin-left: 1px;
+	margin-right: 1px;
+	margin-bottom: 14px;
+	opacity: 0.7;
+}
+
+.lost {
+	border: 5px solid #c49cde;
+	margin-left: 1px;
+	margin-right: 1px;
+	margin-bottom: 14px;
+	opacity: 0.7;
+}
+
+.adopt {
+	border: 5px solid #62c2e4;
+	margin-left: 1px;
+	margin-right: 1px;
+	margin-bottom: 14px;
+	opacity: 0.7;
+}
+
+.found {
+	border: 5px solid #c4e17f;
+	margin-left: 1px;
+	margin-right: 1px;
+	margin-bottom: 14px;
+	opacity: 0.7;
+}
+
+.sell {
+	border: 5px solid #fecf71;
+	margin-left: 1px;
+	margin-right: 1px;
+	margin-bottom: 14px;
+	opacity: 0.7;
+}
+
+#fonts {
 	
-	background-size: cover; 
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover; 
+	
 }
-
-
-            #navbar-wellcomepage {
-                background-color:transparent;
-                border-bottom: none;
-                border-color: #1ab394;
-            }
-            #ul-header-wellcome>li>a{
-                color: #fff;
-                font-size: 17px;
-            }
-            .navbar-default .navbar-nav>.active>a:hover,
-            .navbar-default .navbar-nav>.active>a:focus {
-                color: #fff;
-                background-color: #096a57;
-            }
-
-            .navbar-default .nav li a:hover,
-            .navbar-default .nav li a:focus {
-                outline: 0;
-                color: #096a57;
-            }
-
-            .navbar-default .navbar-nav>.active>a {
-                border-radius: 0;
-                color: #fff;
-                background-color: #096a57;
-                border-radius: 4px;
-            }
-            
-            #navbarwellcome{
-            background-color: #1ab394; 
-              border-color: transparent;
-            
-            }
-            
-            
-            .ng-scope > .navbar-default{
-              background-color: #1ab394; 
-              border-color: transparent;
-            }
-

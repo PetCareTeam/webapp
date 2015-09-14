@@ -1,15 +1,7 @@
-FirstApp.controller('WelcomeController', ['$scope', '$location','$route','anchorSmoothScroll',
-    function($scope, $location,$route,anchorSmoothScroll) {
+FirstApp.controller('WelcomeController', ['$scope', '$location','$route','anchorSmoothScroll','$document',
+    function($scope, $location,$route,anchorSmoothScroll,$document) {
     
-	 $scope.gotoElement = function (eID){
-	      // set the location.hash to the id of
-	      // the element you wish to scroll to.
-	      $location.hash('services');
 	 
-	      // call $anchorScroll()
-	      anchorSmoothScroll.scrollTo(eID);
-	      
-	    };
 	$scope.comment = {};
 	
 	$scope.redirectLogin = function(){
@@ -20,6 +12,34 @@ FirstApp.controller('WelcomeController', ['$scope', '$location','$route','anchor
 	$scope.redirectRegister = function(){
 
 		$location.path('/register');
-	}
+	};
 	
-}]);
+	$scope.scroll = function() {
+	$document.scrollTopAnimated(400).then(function() {
+	      console && console.log('You just scrolled to the top!');
+	    });
+	}
+	$scope.scrollToServices=function(){
+
+	    var someElement = angular.element(document.getElementById('services'));
+	    $document.scrollToElementAnimated(someElement);
+	};
+	$scope.scrollToAbout=function(){
+
+	    var someElement = angular.element(document.getElementById('about'));
+	    $document.scrollToElementAnimated(someElement);
+	};
+	$scope.scrollToContact=function(){
+
+	    var someElement = angular.element(document.getElementById('contact'));
+	    $document.scrollToElementAnimated(someElement);
+	};
+	$scope.scrollToTop=function(){
+
+	    var someElement = angular.element(document.getElementById('wellcomepage'));
+	    $document.scrollToElementAnimated(someElement);
+	};
+	
+
+}
+]);

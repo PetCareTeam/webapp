@@ -76,15 +76,35 @@ FirstApp.service('crudResource', ['$resource',
 					
 				}
 			},
-			
-			updateLike:{
-				method:'POST',
+			getLikedPosts:{
+				method:'GET',
 				params:{
 					service:'posts',
-					action: 'like'
-					
+					action: 'liked'
+				}
+			},
+			comment:{
+				method:'POST',
+				params:{
+					service:'post',
+					action:'comment'
+				}
+			},
+			getReplies:{
+				method:'GET',
+				params:{
+					service:'post',
+					action:'comments'
+				}
+			},
+			nearBy:{
+				method:'GET',
+				params:{
+					service:'nearby'
 				}
 			}
+			
+			
 			
 			
 		});

@@ -42,7 +42,7 @@ public class PostServiceImpl implements PostService {
 		
 		return comment;
 	}
-
+	
 	
 
 	@Override
@@ -73,7 +73,15 @@ public class PostServiceImpl implements PostService {
 		
 		Post post=repository.findOne(id_post);
 		post.setLikes(post.getLikes()+1);
-		System.out.println(id_post);
+		//System.out.println(id_post);
+		repository.saveAndFlush(post);
+		
+	}
+	@Override
+	public void deleteLike(Post post) {
+		System.out.println("Likes pred: "+ post.getLikes());
+		post.setLikes(post.getLikes()-1);
+		System.out.println("Likes po : "+ post.getLikes());
 		repository.saveAndFlush(post);
 		
 	}

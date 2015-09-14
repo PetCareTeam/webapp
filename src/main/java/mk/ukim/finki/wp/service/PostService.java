@@ -22,6 +22,8 @@ public interface PostService {
 	public Post findPost(Long id_post);
 	
 	public void update(Long id_post);
+	
+	public void deleteLike(Post post);
 }
 
 

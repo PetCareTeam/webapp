@@ -20,14 +20,14 @@ public class CommentServiceImpl implements CommentService{
 	CommentRepository repository;
 	@Override
 	public Comment postComment(PetUser petUser, Post post, String message,
-			Date time_comment, String image_comment) {
+			Date time_comment) {
 		
 		Comment comment=new Comment();
 		comment.setUser(petUser);
 		comment.setPost(post);
 		comment.setMessage(message);
 		comment.setTime_post(time_comment);
-		comment.setImage_comment(image_comment);
+		
 		repository.save(comment);
 		return comment;
 	}

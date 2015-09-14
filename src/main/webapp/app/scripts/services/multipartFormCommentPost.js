@@ -8,7 +8,7 @@ FirstApp.service("postService", [ '$http','$q', function($http,$q) {
 		 var fd = new FormData();
 		 /* podatocite od formata za postiranje na post */
 		 for (var key in data){
-			 console.log('post data ' + key + ' data[key] ' + data[key])
+			 //console.log('post data ' + key + ' data[key] ' + data[key]);
 	        fd.append(key, data[key]); 
 		 }
 		
