@@ -82,4 +82,9 @@ FirstApp.controller('ProfileController', ['$scope','profileService', '$resource'
 					});
 		}
 		
+		$scope.home = function(){
+			
+			$location.url('/home');
+		}
+		
 }]);

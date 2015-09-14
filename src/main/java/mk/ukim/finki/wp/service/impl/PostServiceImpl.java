@@ -24,7 +24,7 @@ public class PostServiceImpl implements PostService {
 	@Override
 	public Post post(PetUser pet, Date time_post, String message,
 			Double longitude, Double latitude, String type,
-			String image_comment, String contact_phone, String address, int likes) {
+			String image_comment, String contact_phone, String address, int likes,int replies) {
 		
 		Post comment=new Post();
 		comment.setPet(pet);
@@ -37,6 +37,7 @@ public class PostServiceImpl implements PostService {
 		comment.setContact_phone(contact_phone);
 		comment.setAddress(address);
 		comment.setLikes(likes);
+		comment.setReplies(replies);
 		repository.save(comment);
 		
 		
@@ -82,6 +83,14 @@ public class PostServiceImpl implements PostService {
 		System.out.println("Likes pred: "+ post.getLikes());
 		post.setLikes(post.getLikes()-1);
 		System.out.println("Likes po : "+ post.getLikes());
+		repository.saveAndFlush(post);
+		
+	}
+public void updateReplay(Long id_post) {
+		
+		Post post=repository.findOne(id_post);
+		post.setReplies(post.getReplies()+1);
+		//System.out.println(id_post);
 		repository.saveAndFlush(post);
 		
 	}

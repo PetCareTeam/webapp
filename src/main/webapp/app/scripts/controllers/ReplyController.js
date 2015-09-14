@@ -13,8 +13,11 @@ function($scope, $modalInstance, items, $rootScope, likecomment) {
 	$scope.initModal = function() {
 		$scope.user = $rootScope.user;
 	}
+	
+	$scope.numReplys = 0;
 	$scope.ok = function() {
-		$modalInstance.close($scope.selected.item);
+		
+		$modalInstance.close(numReplys);
 	};
 
 	$scope.cancel = function() {
@@ -45,6 +48,9 @@ function($scope, $modalInstance, items, $rootScope, likecomment) {
 	/* leave comment */
 	$scope.reply = function() {
 		
+		if($scope.replyComment.message.length > 0){
+			
+		
 			var data = {
 			post : $scope.post,
 			message : $scope.replyComment.message
@@ -65,6 +71,9 @@ function($scope, $modalInstance, items, $rootScope, likecomment) {
 											'error in posting comment: ',
 											error);
 						});
+			
+			
+		} 
 	}
 	
 	

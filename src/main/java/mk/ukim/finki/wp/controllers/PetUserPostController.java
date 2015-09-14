@@ -124,7 +124,7 @@ public class PetUserPostController implements ServletContextAware {
 					new String(Base64.encodeBase64(user.getUsername()
 							.getBytes())) + date.getTime() + ".jpg",
 					mRequest.getParameter("contact_phone"),
-					mRequest.getParameter("address"),0);
+					mRequest.getParameter("address"),0,0);
 		}
 		else
 		comment = post_service.post(
@@ -136,7 +136,7 @@ public class PetUserPostController implements ServletContextAware {
 				mRequest.getParameter("type"),
 				null,
 				mRequest.getParameter("contact_phone"),
-				mRequest.getParameter("address"),0);
+				mRequest.getParameter("address"),0,0);
 
 		response.setStatus(HttpServletResponse.SC_OK);
 

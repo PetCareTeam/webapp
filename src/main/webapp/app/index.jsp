@@ -29,9 +29,7 @@
 	<link rel="stylesheet"
 	href="bower_components/c3/c3.css" />
 	
-	<link href="http://fonts.googleapis.com/css?family=Merienda+One" rel="stylesheet" type="text/css">
 	
-
 <link rel="stylesheet" href="styles/welcomepage.css" />
 <link rel="stylesheet" href="styles/register_page.css" />
 <link rel="stylesheet" href="styles/login_page.css" />
@@ -80,6 +78,9 @@
 	<!-- build:js(.) scripts/vendor.js -->
 	<!-- bower:js -->
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_BDNP4tTFTBGo0iCRhFePgnYNz2GL3xM&libraries=places&sensor=false"></script>
+	<script
+		src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+	
 	<script src="bower_components/jquery/dist/jquery.js"></script>
 	<script src="bower_components/angular/angular.js"></script>
 	<script src="bower_components/angular/angular.min.js"></script>
@@ -113,8 +114,7 @@
 
 	<script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
 	<script src="bower_components/angular-cookies/angular-cookies.js"></script>
-	<script
-		src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+	
 	
 	<script type="text/javascript"
 		src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>

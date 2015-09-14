@@ -192,55 +192,69 @@ FirstApp
 							};
 
 							$scope.post = function() {
+console.log('validation ' + $scope.comment.message.length);
+								
+								if (($scope.comment.message.length > 0)) {
+									
+									$scope.error = false;
+									$scope.toAddLocation = false;
+									$scope.toAddContactPhone = false;
+									var uploadUrl = "http://localhost:9966/petCareWeb/posts/post";
+									postService
+											.postComment(uploadUrl, $scope.comment)
+											.then(
 
-								var uploadUrl = "http://localhost:9966/petCareWeb/posts/post";
-								postService
-										.postComment(uploadUrl, $scope.comment)
-										.then(
+													function success(response) {
 
-												function success(response) {
+														$scope.newComments
+																.push(response);
 
-													$scope.newComments
-															.push(response);
-
-													/* updating pita */
-													switch ($scope.comment.type) {
-														case 'found':{
-															$scope.foundNum  = $scope.foundNum + 1;
-															break;										
-														};
-														case 'lost':{
-															$scope.lostNum  = $scope.lostNum+ 1;
-															break;										
-														};
-														case 'adopt':{
-															$scope.adoptingNum  = $scope.adoptingNum + 1;
-															break;										
-														};
-														case 'sell':{
-															$scope.sellingNum = $scope.sellingNum + 1;
-															break;										
-														};
-														case 'injured':{
-															$scope.injuredNum = $scope.injuredNum + 1;
-															break;										
-														};
+														/* updating pita */
+														switch ($scope.comment.type) {
+															case 'found':{
+																$scope.foundNum  = $scope.foundNum + 1;
+																break;										
+															};
+															case 'lost':{
+																$scope.lostNum  = $scope.lostNum+ 1;
+																break;										
+															};
+															case 'adopt':{
+																$scope.adoptingNum  = $scope.adoptingNum + 1;
+																break;										
+															};
+															case 'sell':{
+																$scope.sellingNum = $scope.sellingNum + 1;
+																break;										
+															};
+															case 'injured':{
+																$scope.injuredNum = $scope.injuredNum + 1;
+																break;										
+															};
+															
+															default:
+																break;
+														}
 														
-														default:
-															break;
-													}
-													
-													$scope.updatePita();
-													
-													clearPostingCommentSection();
-												},
-												function failure(error) {
-													$scope.error = true;
-													console
-															.log(
-																	'error in posting comment: ',
-																	error);
-												});
+														$scope.updatePita();
+														
+														clearPostingCommentSection();
+													},
+													function failure(error) {
+														$scope.error = true;
+														console
+																.log(
+																		'error in posting comment: ',
+																		error);
+													});
+									
+								} else {
+									
+									$scope.error = true;
+								}
+								
+								
+								
 
 							};
 
@@ -528,6 +542,9 @@ FirstApp
 								      }
 								    };
 							
+							 $scope.home = function(){
+								 event.preventDefault();
+							 }
 							/* end C3 - D3 DATA */
 							 
 							 /*ladda button */
@@ -556,7 +573,7 @@ FirstApp
 							    $scope.openReplyModal = function (post_id, size) {
 							    	
 							    
-
+							    
 							    	reply.getReplies(post_id).then(
 							    			
 							    			function success(response){
@@ -588,7 +605,34 @@ FirstApp
 							    
 							    /* MODAL */
 								  
+								
 								  
+								  /* MODAL MAPA */
+								  
+								  $scope.openMaps = function (size) {
+
+									    var modalInstance = $modal.open({
+									      animation: $scope.animationsEnabled,
+									      templateUrl: 'myModalContent.html',
+									      controller: 'ModalInstanceCtrl',
+									      size: size,
+							    	      resolve: {
+							    	          items: function () {
+							    	            return $scope.comments;
+							    	            /* gi prakja komentarite na postot na koj sme kliknale, vo modal-ot */
+							    	          	}
+							    	      }
+									    });
+
+									    modalInstance.result.then(function () {
+									    
+									    	
+									    }, function () {
+									      $log.info('Modal dismissed at: ' + new Date());
+									    });
+									  };
+									  
+								  /* MODAL MAPA */
 								  
 							
 						} ]);
@@ -600,18 +644,12 @@ FirstApp.controller('ModalDemoCtrl', ['$scope', '$modal', '$log', 'Map', functio
 
 	    var modalInstance = $modal.open({
 	      animation: $scope.animationsEnabled,
-	      templateUrl: 'myModalContent.html',
+	      templateUrl: 'views/modalMaps.html',
 	      controller: 'ModalInstanceCtrl',
-	      size: size,
-	      resolve: {
-	        items: function () {
-	          return $scope.items;
-	        }
-	      }
+	      size: size
 	    });
 
 	    modalInstance.result.then(function (selectedItem) {
-	      $scope.selected = selectedItem;
 	    }, function () {
 	      $log.info('Modal dismissed at: ' + new Date());
 	    });
@@ -620,7 +658,7 @@ FirstApp.controller('ModalDemoCtrl', ['$scope', '$modal', '$log', 'Map', functio
 
 	}]);
 
-FirstApp.controller('ModalInstanceCtrl', [ '$scope', '$modalInstance', 'items', 'Map', function ($scope, $modalInstance, items, Map) {
+FirstApp.controller('ModalInstanceCtrl', [ '$scope', '$modalInstance',  'Map', 'items', function ($scope, $modalInstance,Map, items) {
 
 	 
 	  $scope.init = function(){

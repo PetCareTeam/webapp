@@ -15,7 +15,7 @@ FirstApp.service('Map', function () {
         this.map = new google.maps.Map(
             document.getElementById("map"), options
         );
-        
+        console.log('document is ' + document.getElementById("map").id);
     	
     	var marker = new google.maps.Marker({
             position:  new google.maps.LatLng(lat, lng),

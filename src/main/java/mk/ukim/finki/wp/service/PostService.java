@@ -9,7 +9,7 @@ import mk.ukim.finki.wp.model.PetUser;
 public interface PostService {
 	
 	public Post post(PetUser username, Date time_post,String message,Double longitude, 
-			Double latitude,String type,String image_comment,String contact_phone, String address,int likes);
+			Double latitude,String type,String image_comment,String contact_phone, String address,int likes,int replies);
 	
 	public List<Post> getPosts();
 	
@@ -22,6 +22,8 @@ public interface PostService {
 	public Post findPost(Long id_post);
 	
 	public void update(Long id_post);
+	
+	public void updateReplay(Long id_post);
 	
 	public void deleteLike(Post post);
 }

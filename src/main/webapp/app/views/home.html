@@ -40,7 +40,7 @@
 	text-decoration: none;
 }
 </style>
-<link rel="stylesheet" href="styles/homepage.css" />
+
 </head>
 <body id="fonts">
 
@@ -69,7 +69,7 @@
 					</div>
 					<div class="row">
 						<div class="col-lg-12" align="left">
-							<a ng-click="openProfile()" id="linktoprofileheadestyling"><p
+							<a style="cursor:pointer;" ng-click="openProfile()" id="linktoprofileheadestyling"><p
 									style="color: #fff;">
 									<b>{{user.firstName}} {{user.lastName}}</b>
 								</p> </a>
@@ -80,16 +80,10 @@
 
 
 			<li style="width: inherit; cursor: pointer"><a
-				style="width: inherit;" href="bootstrap-elements.html"><i
+				style="width: inherit;" ng-click="home()"><i
 					class="fa fa-fw fa-home" id="iconscollor"></i> Home</a></li>
-			<li style="width: inherit; cursor: pointer"><a
-				style="width: inherit;" href="blank-page.html"><i
-					class="fa fa-fw fa-search" id="iconscollor"></i> Lost and Found
-					pets</a></li>
-			<li style="width: inherit; cursor: pointer"><a
-				style="width: inherit;" href="index-rtl.html"><i
-					class="glyphicon glyphicon-shopping-cart" id="iconscollor"></i>
-					Adopt a pet</a></li>
+			
+		
 			<li style="width: inherit; cursor: pointer"><a
 				style="width: inherit;" ng-click="tips()"><i
 					class="fa fa-fw fa-list" id="iconscollor"></i> Tips Pet Care</a></li>
@@ -112,7 +106,7 @@
 			<div ng-init="getUser()">
 				<ul class="nav navbar-right top-nav"
 					style="padding-bottom: 7px; padding-top: 7px;">
-					<li class="dropdown"><a ng-click="openProfile()"
+					<li style="cursor:pointer;	" class="dropdown"><a ng-click="openProfile()"
 						style="font-size: 16px;"> {{user.firstName}} {{user.lastName}}</a></li>
 					<li class="dropdown" ng-click="logout()"><a
 						data-toggle="dropdown" style="cursor: pointer"><i
@@ -152,7 +146,7 @@
 
 
 										<textarea id="text_area_in_post" ng-model="comment.message"
-											class="form-control" rows="3" style="font-size: 15px"
+											class="form-control" rows="3" style="font-size: 15px" maxlength="250"
 											placeholder="Write your comment here ... "></textarea>
 
 									</div>
@@ -267,13 +261,13 @@
 
 						<!-- MOOOOOOOOOODALLLLLLLLLLLL -->
 
-						<div ng-controller="ModalDemoCtrl"
-							style="width: 100%; height: 100%">
+						<div 
+							>
 							<script type="text/ng-template" id="myModalContent.html">
        								 <div class="modal-header" >
           								  <h3 class="modal-title">Maps!</h3>
         							 </div>
-     							     <div class="modal-body" ng-init="init()" style="width:100%; height:100%;">
+     							     <div class="modal-body" ng-init="init()" style="width:300px; height:400px;">
        								   	<div id="map"></div>
  									
         							</div>
@@ -283,8 +277,7 @@
     					</script>
 
 
-							<!-- MAAAAAAAAAAAAAPAAAAAAAAAAAAAA -->
-							<button ng-click="open()">open me!</button>
+							
 						</div>
 
 						<!-- MOOOOOOOOOODALLLLLLLLLLLL -->
@@ -297,10 +290,10 @@
 
 
 						<div class="row headerforcomments"
-							ng-repeat="post in newComments | reverse"
+							ng-repeat="post in newComments | reverse" 
 							style="margin-left: 100px; padding-top: 0px; padding-left: 14px; padding-right: 14px;">
 
-							<div class="row">
+							<div class="row" >
 
 								<div class="row " ng-class="post.type"></div>
 
@@ -411,31 +404,10 @@
 							
 
 
-								<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
-
-
-
-
-
-
-
-
-
-
-								<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
-
-
-
-
-
 
 							</div>
 						</div>
-						
-	
-		
-						
-					
+							
 
 
 						<!-- new comments end here -->
@@ -444,12 +416,11 @@
 
 
 
-
 						<div class="row headerforcomments"
 							ng-repeat="post in comments | reverse"
 							style="margin-left: 100px; padding-top: 0px; padding-left: 14px; padding-right: 14px;">
 
-							<div class="row">
+							<div class="row" ng-if="post">
 
 								<div class="row " ng-class="post.type"></div>
 
@@ -537,6 +508,7 @@
 												style="margin-right: 20px; margin-left: 20px; margin-bottom: 10px;"
 												
 												>
+												
 												<i class="fa fa-comment"></i>
 											</button>
 											
@@ -610,10 +582,10 @@
 									style="font-size: 20px; margin-bottom: 0px; border-top-width: 10px; margin-top: 10px;">
 									Nearby Places</p>
 							</div>
-							<div ng-controller="NearByController">
+							<div ng-controller="NearByController" ng-init="current()">
 
 
-
+	
 
 								<div class="row" style="margin-left: 25px; margin-bottom: 3px;">
 									<div class="col-md-2"
@@ -623,8 +595,8 @@
 									</div>
 									<div class="col-md-10">
 										<p>
-											<br> <a style="color: #1ab394;"
-												ng-click="retrivePetStores()">Find nearby pharmacies</a>
+											<br> <a style="color: #1ab394;cursor:pointer"
+												ng-click="retrivePharmacies()">Find nearby pharmacies</a>
 										</p>
 									</div>
 								</div>
@@ -636,7 +608,7 @@
 									</div>
 									<div class="col-md-10">
 										<p>
-											<br> <a href="#" style="color: #1ab394;">Find nearby
+											<br> <a style="color: #1ab394;cursor:pointer" ng-click="retriveParks()">Find nearby
 												parks </a>
 										</p>
 									</div>
@@ -650,7 +622,7 @@
 									</div>
 									<div class="col-md-10">
 										<p>
-											<br> <a href="#" style="color: #1ab394;">Find nearby
+											<br> <a ng-click="retriveVet()" style="cursor:pointer;color: #1ab394;">Find nearby
 												Veterinary Clinics </a>
 										</p>
 									</div>
@@ -663,8 +635,8 @@
 									</div>
 									<div class="col-md-10">
 										<br>
-										<button style="color: #1ab394;" ng-click="retrivePetStores()">Find
-											nearby Pet-Shops</button>
+										<a style="color: #1ab394;cursor:pointer" ng-click="retrivePetStores()">Find
+											nearby Pet-Shops</s>
 
 									</div>
 								</div>

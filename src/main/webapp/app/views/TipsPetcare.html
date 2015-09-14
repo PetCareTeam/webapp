@@ -9,9 +9,6 @@ and open the template in the editor.
 <title>Tips for Pet Care</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="css/tips.css">
 
 
 
@@ -22,16 +19,15 @@ and open the template in the editor.
 
 		<!-- Navigation -->
 		<!-- Navigation -->
-		<nav id="boxforComments" style="height: 90px"
+
+		<nav id="boxforComments"
 			class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 			<!-- Brand and toggle get grouped for better mobile display -->
-			<div id="boxheader" class="navbar-header">
+			<div id="boxheader" class="navbar-header"
+				style="padding-top: 14px; padding-left: 50px;">
 
 
-				<img alt="" src="images/LogoWEB_PAGE.png" height="60" width="175">
-
-
-
+				<img alt="" src="images/LogoWEB_PAGE.png" height="30" width="89">
 
 			</div>
 
@@ -39,8 +35,10 @@ and open the template in the editor.
 
 			<!-- Top Menu Items -->
 			<div ng-init="getUser()">
-				<ul class="nav navbar-right top-nav">
-					<li class="dropdown"><a id="user" ng-click="openProfile()">
+				<ul class="nav navbar-right top-nav"
+					style="padding-bottom: 7px; padding-top: 7px;">
+					<li style="cursor: pointer;" class="dropdown"><a
+						ng-click="openProfile()" style="font-size: 16px;">
 							{{user.firstName}} {{user.lastName}}</a></li>
 					<li class="dropdown" ng-click="logout()"><a
 						data-toggle="dropdown" style="cursor: pointer"><i
@@ -58,50 +56,49 @@ and open the template in the editor.
 		<!-- GLAVNIOT DEL SO POPOLNUVA -->
 
 		<ul id="shadovfromright" class="nav navbar-nav side-nav"
-			style="margin-top: 39px; width: 300px;">
+			style="margin-top: 13px; width: 300px;">
 
-			<li id="slidbarright_home" class="sidbarheader"><a
-				style="width: inherit;">
 
-					<div class="profileheader">
-						<div id="lowleftpading" class="row">
-							<div class="col-md-5">
 
-								<img ng-src="images/users/{{user.profileImage}}"
-									class="img-rounded img-responsive" alt="" style=""
-									ng-click="openProfile()">
-							</div>
 
-						</div>
-						<div class="row">
-							<div class="col-lg-9">
-								<p style="color: #fff;">
-									<b>{{user.firstName}} {{user.lastName}}</b>
-								</p>
-							</div>
+
+			<li id="li_in_header_to_profile" style="">
+				<div class="profileheader-home" style="color: #088B70;">
+					<div class="row">
+						<div class="col-md-6" align="left">
+							<a ng-click="openProfile()" id="linktoprofileheadestyling"> <img
+								ng-src="images/users/{{user.profileImage}}"
+								class="img-rounded img-responsive" alt="" style=""
+								ng-click="openProfile()">
+							</a>
 						</div>
 					</div>
+					<div class="row">
+						<div class="col-lg-12" align="left">
+							<a style="cursor: pointer;" ng-click="openProfile()"
+								id="linktoprofileheadestyling"><p style="color: #fff;">
+									<b>{{user.firstName}} {{user.lastName}}</b>
+								</p> </a>
+						</div>
+					</div>
+				</div>
+			</li>
 
-			</a></li>
+
+			<li style="width: inherit; cursor: pointer"><a
+				style="width: inherit;" ng-click="home()"><i
+					class="fa fa-fw fa-home" id="iconscollor"></i> Home</a></li>
 
 
-			<li style="width: inherit;"><a style="width: inherit;"
-				ng-click="home()"><i class="fa fa-fw fa-home" id="iconscollor"></i>
-					Home</a></li>
-			<li style="width: inherit;"><a style="width: inherit;"
-				href="blank-page.html"><i class="fa fa-fw fa-search"
-					id="iconscollor"></i> Lost and Found pets</a></li>
-			<li style="width: inherit;"><a style="width: inherit;"
-				href="index-rtl.html"><i
-					class="glyphicon glyphicon-shopping-cart" id="iconscollor"></i>
-					Adopt a pet</a></li>
 			<li style="width: inherit; cursor: pointer"><a
 				style="width: inherit;" ng-click="tips()"><i
 					class="fa fa-fw fa-list" id="iconscollor"></i> Tips Pet Care</a></li>
 		</ul>
 
 		<div id="page-wrapper">
-			<div class="container-fluid">
+		
+			<div class="container-fluid" style="margin-top: 80px">
+			
 				<div class="row headerforcomments"
 					style="padding-right: 17px; margin-left: 100px">
 					<div id="headerTip" class="row" align="center">
@@ -113,137 +110,217 @@ and open the template in the editor.
 
 
 
-					<div id="carousel-example" class="carousel slide"
-						data-ride="carousel">
-						<!-- Wrapper for slides -->
-						<div class="carousel-inner">
-							<div class="item active" id="t1">
-								<div class="col-lg-7">
-									<img src="images/exams.png" class="img-responsive" alt="Chania">
-								</div>
-								<div class="col-lg-5">
-
-									<div class="row">
-										<div class="col-lg-12" style="color: #00A988;">
-											<h3>
-												<i class="fa fa-paw" style="margin-right: 5px;"></i> Tip 1
-											</h3>
-										</div>
-										<div class="col-lg-12" style="padding-left: 60px;">
-											<h4>- Just like you, your pet can get heart problems,
-												develop arthritis, or have a toothache. The best way to
-												prevent such problems or catch them early is to see your
-												veterinarian every year.</h4>
-											<h4>- The best way to prevent such problems or catch
-												them early is to see your veterinarian every year.</h4>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="item" id="t2">
-								<div class="col-lg-7">
-									<img src="images/exams1.jpg" class="img-responsive"
-										alt="Chania">
-								</div>
-								<div class="col-lg-5">
-
-									<div class="row">
-										<div class="col-lg-12" style="color: #00A988;">
-											<h3>
-												<i class="fa fa-paw" style="margin-right: 5px;"></i> Tip 2
-											</h3>
-										</div>
-										<div class="col-lg-12" style="padding-left: 60px;">
-											<h4>- Just like you, your pet can get heart problems,
-												develop arthritis, or have a toothache.</h4>
-											<h4>- The best way to prevent such problems or catch
-												them early is to see your veterinarian every year.</h4>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="item" id="t3">
-								<div class="col-lg-7">
-									<img src="images/exams2.jpg" class="img-responsive"
-										alt="Chania">
-								</div>
-								<div class="col-lg-5">
-
-									<div class="row">
-										<div class="col-lg-12" style="color: #00A988;">
-											<h3>
-												<i class="fa fa-paw" style="margin-right: 5px;"></i> Tip 3
-											</h3>
-										</div>
-										<div class="col-lg-12" style="padding-left: 60px;">
-											<h4>- The best way to prevent such problems or catch
-												them early is to see your veterinarian every year. Just like
-												you, your pet can get heart problems, develop arthritis, or
-												have a toothache. The best way to prevent such problems or
-												catch them early is to see your veterinarian every year.</h4>
-											<h4>- The best way to prevent such problems or catch
-												them early is to see your veterinarian every year.</h4>
-											<h4>- The best way to prevent such problems or catch
-												them early is to see your veterinarian every year.</h4>
-										</div>
-									</div>
-
-
-								</div>
-							</div>
-
-							<div class="item" id="t4">
-								<div class="col-lg-7">
-									<img src="images/nurture.jpg" class="img-responsive"
-										alt="Chania">
-								</div>
-								<div class="col-lg-5">
-
-									<div class="row">
-										<div class="col-lg-12" style="color: #00A988;">
-											<h3>
-												<i class="fa fa-paw" style="margin-right: 5px;"></i> Tip 4
-											</h3>
-										</div>
-										<div class="col-lg-12" style="padding-left: 60px;">
-											<h4>- Eight million to 10 million pets end up in U.S.
-												shelters every year. Some are lost, some have been
-												abandoned, and some are homeless. Here's an easy way to
-												avoid adding to that number -- spay and neuter your cats and
-												dogs. It's a procedure that can be performed as early as six
-												to eight weeks of age.</h4>
-											<h4>- Spaying and neutering doesn't just cut down on the
-												number of unwanted pets; it has other substantial benefits
-												for your pet. Studies show it also lowers the risk of
-												certain cancers, Burns tells WebMD, and reduces a pet's risk
-												of getting lost by decreasing the tendency to roam.</h4>
-										</div>
-									</div>
-
-
-								</div>
-							</div>
-						</div>
-					</div>
-
 					<!-- Buttons  for slider -->
 
 
 
 					<div class="row" align="center">
-						<ul class="pagination">
 
-							<li class="active" id="1" style="cursor: pointer"><a href="">1
-									<span class="sr-only">(current)</span>
-							</a></li>
-							<li id="2" style="cursor: pointer"><a ng-click="click(this)">2</a></li>
-							<li id="3" style="cursor: pointer"><a ng-click="click(this)">3</a></li>
-							<li id="4" style="cursor: pointer"><a ng-click="click(this)">4</a></li>
-							<li id="6" style="cursor: pointer"><a ng-click="">»</a></li>
-						</ul>
+
+						<!-- SLIDE SHOW -->
+
+
+
+						<div >
+							<div style="height: 305px">
+								<carousel interval="myInterval" no-wrap="noWrapSlides">
+								<slide ng-repeat="slide in slides" active="slide.active">
+								<img ng-src="{{slide.image}}" style="margin: auto;">
+								<div class="carousel-caption">
+									<h4>Slide {{$index}}</h4>
+									<p>{{slide.text}}</p>
+								</div>
+								</slide> </carousel>
+							</div>
+							
+						</div>
+
+						<!-- SLIDE SHOW -->
+						
+						
+						
+						
+
 					</div>
+					
+					
+					
 
 				</div>
+			
+			 <div class="row " style="padding-left:320px">
+
+                        <div class="col-lg-8 ">
+
+                            <!-- ***************** CUSTUM ARTICLE 1    ***********************************************************************************************************************************-->
+                            <div class="row headerforcomments">
+                                <div class="page-header">
+                                    <h1>7 Jobs for Pet Lovers <small> Want a career involving animals? </small></h1>
+                                </div>
+                                <div class="img-responsive">
+                                    <img alt="" src="images/7jobs.jpg"  class="img-responsive">
+                                </div>
+                                <br>
+                             
+
+                                <br>
+                                <p id="paragraphstylings">
+
+                                    <!-- Trigger the modal with a button -->
+                              
+
+                                Pets make us happy. It’s a simple fact of life. After a long day, coming home to a loving pet is a wonderful feeling. Why not carry that into your career and find jobs with animals?
+                                </p>
+                                <p id="paragraphstylings">
+                                    Some of us animal lovers are lucky enough to work in office environments where pets are welcome to curl up by the desk and provide a little respite to our hectic agendas. However, those of us who aren’t allowed to bring our pets to work may feel like there’s something lacking in our lives.
+                                </p>
+                                <p id="paragraphstylings">
+                                    “Having a pet-centric career exposes one to pets and pet lovers on a more frequent basis,” says Kristen Levine, pet expert and president of Fetching Communications and PetPR.com. "Less traditional pet jobs can allow a person to apply their existing expertise in a pet-centric way For example, dog grooming would utilize creative and beauty skills!
+                                </p>
+                                <p id="paragraphstylings">
+                                    Here are seven career options for people who love animals.
+                                </p>
+                                <p id="paragraphstylings">
+                                    Want to learn how much pet care providers in your area earn? Check out Care.com's pet care rate calculator.
+
+                                </p>
+                                <p id="paragraphstylings">
+                                    1.	<b>Animal Shelter Worker</b>
+                                    There are a wide variety of positions at animal shelters -- ranging from kennel cleaning to adoptions to clerk to fundraising to management, says Levine. You can even find degree programs for people interested in animal welfare management positions. The typical pay starts at $20,000 and can go up to $60,000. 
+
+                                    Find jobs through this job site run by the Humane Society of the United States. 
+                                    <br><br>
+                                    2.	<b>Pet Blogger</b>
+                                    If you love pets, why not start a fun blog about it. There are lots of pet blogs around, so think about how yours can be different and what type of audience you want. This position requires a great deal of social media stamina, but if you’re lucky and successful, you can make a good living. Or it could be a great part-time job to keep you thinking about animals.Check out BlogPaws, a community of pet bloggers, for more information.
+                                    <br><br>
+                                    3.	<b>Dog Handler</b>
+                                    “If you’ve always wanted to work at a dog show, the best way to start out is being an apprentice to a dog handler,” says Darlene Arden, author and certified animal behavior consultant. “It’s a very tiring job, but can pay up into six-figures." You could even get a bonus depending on how your dog places. Plus, you could get to travel all over the country.
+
+                                    For more advice, head to the Professional Handlers Association.
+                                    <br><br>
+                                    4.	<b>Veterinarian</b>
+                                    If you like animals, but also math and science, think about becoming a vet. There are many specialties and fields a veterinarian can venture into -- ranging from oncology to cardiology to orthopedics, just to name a few. “Depending on your specialty, you can become chief-of-staff at a pet hospital or a college professor,” says Arden.
+
+                                    According to the Bureau of Labor Statistics, the average vet makes about $86,000 per year.
+
+                                    Follow these Steps to Becoming a Veterinarian.
+                                    <br><br>
+                                    5.	<b>Pet Retail,</b>
+                                    From selling pet accessories, food or the pets themselves, there are a lot of options in this field! Levine recommends checking out careers in management, stocking or being a clerk if you’re considering working in a pet store. Those careers range from $20,000 to $80,000 a year.
+                                    <br><br>
+                                    6.	<b>Dog Walker</b>
+                                    Want a part time job that lets you be outside all day and play with animals? Dog walkers can work as freelance consultants and create their own schedule and client roster, or even join a dog walking agency.
+
+                                    Find dog walking jobs on Care.com.
+                                    <br><br>
+                                    7.	<b>Dog Trainer</b>
+                                    A lot of training and precaution is involved in becoming a dog trainer. The best way to start out is to apprentice with a trainer who has a significant amount of experience. The next step is to take a dog trainer exam to become certified. Dog trainers can make anywhere from $25,000 to $300,000 a year. Quite a range, but start small and sky's the limit!
+
+
+                                </p>
+
+
+                            </div>
+
+                            <!-- ************************************************************************************************************************************************************** -->
+                            <!-- ***************** CUSTUM ARTICLE 1    ***********************************************************************************************************************************-->
+                            <div class="row headerforcomments">
+                                <div class="page-header">
+                                    <h1>Petworking! Social Networking for Animal Lovers <small> The right pet for you </small></h1>
+                                </div>
+                                <div class="img-responsive">
+                                    <img alt="" src="images/choosepet.jpg"  class="img-responsive">
+                                </div>
+                                <br>
+                             
+
+
+                                <br>
+                                <p id="paragraphstylings">
+                                    Have you tried the animalistic side of online social networking? No, we don't mean the fact-defying Facebook and MySpace pages of people looking for dates. We're talking about pet-related social networking websites. Our favorite term for this new way of connecting with other animal lovers is pet networking, or petworking! </p>
+                                <p id="paragraphstylings">
+                                    <b>Birds, Fish, and Dogs, Oh My!</b><br><br>
+
+                                    The internet is home to countless websites for animal lovers. If it runs, flies or swims, you can find it online. Bird lovers can connect via the forums on BirdBoard, while self-described Fish Geeks can swim on over to Aquaria. If you're a dog lover looking to get ultra-local, check out UrbanHound, which has sites for Chicago, New York, and San Francisco.  </p>
+                                <p id="paragraphstylings">
+                                    Although not exclusively focused on pets, Meetup is one way to connect with pet lovers in your hometown. With groups across the country focused on everything from the American Bulldog to Turtles and Tortoises, you're bound to find some animal lovers near you. And if there's a not a group in your area, you can start one or sign up to be notified when someone else does.  </p>
+                                <p id="paragraphstylings">
+                                    Some petworking sites are less focused on connecting people than on showcasing the pets themselves through photos, profiles, and blogs written from the pets' perspectives. Taking this last idea to an extreme, Petentials dubs itself the "Internet for Pets" and focuses on the animals rather than the owners. It's a cute idea, but can begin to feel somewhat gimmicky after awhile. On the plus side, Petentials does have a news section that aggregates pet-related stories from around the web. </p>
+                                <p id="paragraphstylings">
+                                    <b>Favorite Petworking Sites</b><br><br>
+                                    But our top picks for online petworking sites include those that go beyond the cute photos and "pat the dog" features. The following sites enable pet lovers to build meaningful community, both online and off.
+                                </p>
+                                <p id="paragraphstylings">
+                                    <b>FCatster.com and Dogster.com</b><br><br>
+                                    Online since 2004 and patterned after Friendster.com, Catster and Dogster are two of the most well-established and well-known petworking sites. While some other petworking sites feel cluttered and hard to use, these two are pleasant to look at and easy to navigate - two essential elements for a positive petworking experience.
+                                    <br><br>
+                                    There's plenty of opportunity to connect with other pet people and build community on these sites. The forums are well-trafficked and cover a wide range of topics from food and pet fashion to training and grooming. The groups section enables users to meet other members (both people and pets!) based on shared interests or geographic region. Groups also have their own forums where members can post photos, messages, and calendar events. In addition to the forums and groups, Catster and Dogster both have an "Answers" section where visitors can post questions and provide answers for one another.
+                                    <br><br>
+                                    There is also a strong educational component to Catster and Dogster, including an extensive breed information center and humorous, yet insightful, cat and dog guides. The "Blogs" section contains pet-relevant news and a blog written by a veterinarian.
+                                    <br><br>
+                                    If you need information for the non-virtual world, look no further than the section called "Local," where you can search for listings and reviews of pet-centric places. Categories cover everything from healthcare and pet stores to pet services and pet-friendly businesses. There's a lot more on these sites, including adoption information, diaries of member cats and dogs, and contests and promotions of pet products. Overall, Catster and Dogster get a big "paws up" for having a lot of community activity and for being well-designed, informative, and easy to use.
+                                </p>
+
+
+                            </div>
+
+                            <!-- ************************************************************************************************************************************************************** -->
+
+                            <!-- ***************** CUSTUM ARTICLE 1    ***********************************************************************************************************************************-->
+                            <div class="row headerforcomments">
+                                <div class="page-header">
+                                    <h1>So You Want to Adopt a Rabbit! <small style="font-size: 15px;"> They might be sweet and furry, but pet rabbits take a lot of work.  </small></h1>
+                                </div>
+                                <div class="img-responsive">
+                                    <img alt="" src="images/img-bunny.jpg"  class="img-responsive">
+                                </div>
+                                <br>
+                               
+
+
+                                <br>
+                                <p id="paragraphstylings">
+                                    Thinking of adding an "Easter Bunny" to your family? From an early age, we see those ridiculously cute faces, twitching noses, long whiskers and, in some cases, irresistible floppy ears. They are just too cute. But many people don't realize how much it takes to properly care for a rabbit. And, as a sad result, these adorable animals are often surrendered to shelters. Rabbits truly are great pets, but before you add a bunny to your family, here are some things to consider:  <p id="paragraphstylings">
+                                    <b>Rabbits are not starter pets.</b><br><br>
+
+                                    As cute as a bunny can be, they need a lot more care than a goldfish does. They require daily food, weekly cage cleaning and lots of love. And kids should never have the sole responsibility of caring for rabbits. 
+                                <p id="paragraphstylings">
+                                    <b> Consider the time commitment.</b><br><br>
+                                    Most domestic rabbits can live 7-10 years. They'll need daily exercise and time out of the cage, weekly cage cleaning and fresh hay and clean water daily.   
+                                <p id="paragraphstylings">
+                                    <b> Spay or neuter</b><br><br>
+
+                                    Un-neutered male rabbits are prone to prostate cancer and un-spayed females have a 60-80 percent chance of developing ovarian, uterine or other reproductive cancers. And since we all know the phrase "multiply like rabbits," you'd be wise to neuter and spay your rabbit--or else you could be very quickly outnumbered!
+                                <p id="paragraphstylings">
+                                    <b>Favorite Petworking Sites</b><br><br>
+                                    But our top picks for online petworking sites include those that go beyond the cute photos and "pat the dog" features. The following sites enable pet lovers to build meaningful community, both online and off.
+                                </p>
+                                <p id="paragraphstylings">
+                                    <b>Find an "exotic" veterinarian.</b><br><br>
+                                    Rabbits are considered an "exotic" pet (as are birds, reptiles, chinchillas and ferrets), and not all veterinarians treat them. Do your research to see if there are vets near you who treat rabbits. Local animal shelters and rabbit rescue organizations can help you find one. Get yearly check-ups for your rabbit until the age of 5, and twice a year after that.
+                                    <br><br>
+                                    A sad fact: Rabbits are the third-most surrendered animal to shelters. There are rabbit rescue groups across the United States, as well as rabbits waiting for homes in local shelters.
+                                    <br><br>
+                                </p>
+
+
+                            </div>
+
+                            <!-- ************************************************************************************************************************************************************** -->
+
+
+
+                        </div>
+
+
+                        <div class="col-lg-4">
+
+
+                            </div>
+
+
+
+                        </div>
 			</div>
 			<!-- /.container-fluid -->
 			<!-- GLAVNIOT DEL SO POPOLNUVA -->

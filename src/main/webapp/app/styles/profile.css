@@ -131,7 +131,7 @@ body {
 
 .top-nav {
     padding: 0 15px;
-    background: #1ab394;
+    background: #31cfa7;
     color: #fff;
 }
 
@@ -224,7 +224,7 @@ ul.alert-dropdown {
     .side-nav li a:hover,
     .side-nav li a:focus {
         outline: none;
-        background-color: #088B70 !important;
+        background-color: #31cfa7 !important;
     }
 
 
@@ -287,28 +287,28 @@ ul.alert-dropdown {
 }
 #barshover:hover,
 #barshover:focus{
-    background: #088B70;
+    background: #31cfa7;
     color:#fff;
-    border-color: #088B70;
+    border-color: #31cfa7;
 }
 
 #barshover{
-    background: #1ab394;
+    background: #31cfa7;
     color:#fff;
-    border-color: #1ab394; 
+    border-color: #31cfa7; 
 }
 #barsiconhover{
-    background: #1ab394; 
+    background: #31cfa7; 
     color:#fff; 
 }
 #barsiconhover:hover,
 #barsiconhover:focus{
-    background: #088B70; 
+    background: #31cfa7; 
     color:#fff; 
 }
 #boxforComments{
-    background: #1ab394;
-    border-color: #1ab394; 
+    background: #31cfa7;
+    border-color: #31cfa7; 
     box-shadow: 0 8px 6px -6px #999;
     -moz-box-shadow: 0 8px 6px -6px #999;
     -webkit-box-shadow: 0 8px 6px -6px #999;
@@ -328,7 +328,7 @@ ul.alert-dropdown {
     padding-left: 25px;
 }
 #iconscollor{
-    color: #1ab394;
+    color: #31cfa7;
 }
 
 #style_name{

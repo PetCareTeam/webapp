@@ -47,13 +47,23 @@ public class Post extends BaseEntity {
 	@Column(name="likes")
 	public int likes;
 
+	public int getReplies() {
+		return replies;
+	}
+
+	public void setReplies(int replies) {
+		this.replies = replies;
+	}
+
+	@Column(name="replies")
+	public int replies;
 	public Post() {
 		super();
 	}
 	
 	public Post(PetUser username, String message, Date time_post,
 			double longitude, double latitude, String type,
-			String image_comment, String contact_phone, String address,int likes) {
+			String image_comment, String contact_phone, String address,int likes,int replies) {
 		super();
 		this.pet = username;
 		this.message = message;
@@ -64,6 +74,7 @@ public class Post extends BaseEntity {
 		this.image_comment = image_comment;
 		this.contact_phone = contact_phone;
 		this.address=address;
+		this.replies=replies;
 		this.likes=likes;
 	}
 

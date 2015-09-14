@@ -61,6 +61,8 @@ public class CommentPostController implements ServletContextAware{
 		String username = auth.getName();
 		PetUser user = petuser_service.findByUsername(username);
 		Comment comm=comment_service.postComment(user, comment.getPost(), comment.getMessage(), new Date());
+		Post post=comment.getPost();
+		post_service.updateReplay(post.getId());
 		return comm;
 
 	}

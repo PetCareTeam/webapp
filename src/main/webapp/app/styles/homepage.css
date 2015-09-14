@@ -72,7 +72,7 @@ body {
 .top-nav>.open>a:hover,
 .top-nav>.open>a:focus {
     color: #fff;
-    background-color: #088B70;
+    background-color: #31cfa7;
 }
 
 .top-nav>.open>.dropdown-menu {
@@ -142,7 +142,7 @@ ul.alert-dropdown {
     .side-nav li a:hover,
     .side-nav li a:focus {
         outline: none;
-        background-color: #088B70 !important;
+        background-color: #31cfa7 !important;
     }
 }
 
@@ -203,23 +203,23 @@ ul.alert-dropdown {
 }
 #barshover:hover,
 #barshover:focus{
-    background: #088B70;
+    background: #31cfa7;
     color:#fff;
-    border-color: #088B70;
+    border-color: #31cfa7;
 }
 
 #barshover{
-    background: #1ab394;
+    background: #31cfa7;
     color:#fff;
-    border-color: #1ab394; 
+    border-color: #31cfa7; 
 }
 #barsiconhover{
-    background: #1ab394; 
+    background: #31cfa7; 
     color:#fff; 
 }
 #barsiconhover:hover,
 #barsiconhover:focus{
-    background: #088B70; 
+    background: #31cfa7; 
     color:#fff; 
 }
 #boxforComments{
@@ -263,10 +263,10 @@ ul.alert-dropdown {
     font-size: 20px
 }
 #button_add_post{
-    background: #1ab394;
+    background: #31cfa7;
     color: #fff;
     border-radius: 0px;
-    border-color: #1ab394;
+    border-color: #31cfa7;
     padding-top: 3px; 
     padding-bottom: 3px;
     padding-left: 6px; 
@@ -274,7 +274,7 @@ ul.alert-dropdown {
 }
 #buttons_post:hover,
 #buttons_post:focus{
-    color: #1ab394;
+    color: #31cfa7;
     font-size: 20px
 }
 
@@ -289,7 +289,7 @@ ul.alert-dropdown {
 }
 #stile_time{
     font-size:12px;
-    color: #9BA9A6; 
+    color: #fff; 
 }
 #style_img_and_comment{
     margin-top: 30px;
@@ -298,7 +298,7 @@ ul.alert-dropdown {
     margin-left: 3px;
 }
 .itemnews{
-    border-top: 1px solid #1ab394;
+    border-top: 1px solid #31cfa7;
     padding-top: 20px;
     padding-bottom: 10px;
 }

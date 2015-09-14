@@ -1,0 +1,51 @@
+<div class="modal-header"
+	style="background:#31cfa7; color: #fff; border-radius: 5px;" ng-init="initModal()">
+	<button type="button" class="close" data-dismiss="modal"
+		ng-click="cancel()">&times;</button>
+	<h3 class="modal-title">Nearby</h3>
+</div>
+
+
+
+
+<div class="modal-body"
+	style="height: 450px; overflow-y: scroll; padding-top: 0px;">
+
+		<!-- OLD COMMENTS -->
+
+		<div ng-repeat="item in items ">
+		
+			<div class="row"
+				style="padding-top: 14px;">
+				<div class="col-lg-2">
+					<img alt="" class="img-rounded img-responsive" width="50" ng-src="images/nearbyimages/gogshop.jpg"
+						height="50">
+				</div>
+				<div class="col-lg-10">
+					<p style="margin-bottom: 0px; color: #222;"> Name: {{item.name}} </p>
+					<p style="font-size: 12px; color: #BEC0BF;">
+						Vicinity: {{item.vicinity}}
+					</p>
+					<p ng-if="item.opening_hours"> Opening hours: [open now: {{item.opening_hours.open_now}} ] </p>
+				</div>
+			</div>
+			
+			<hr>
+		</div>
+		
+		<!-- OLD COMMENTS -->
+		
+		
+</div>
+
+
+
+
+
+<div class="modal-footer">
+	<button type="button" class="pull-right  button button-action button-circle button-longshadow" data-dismiss="modal" ng-click="ok()">
+			 OK
+		</button>
+
+</div>
+
